@@ -30208,3 +30208,63 @@ WHERE `id` = '1';
 UPDATE `user` SET `last_login` = '2024-10-07 17:21:22', `ip_address` = '::1'
 WHERE `id` = '1';
 INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Basin', 1);
+UPDATE `user` SET `last_login` = '2024-10-08 05:39:45', `ip_address` = '::1'
+WHERE `id` = '1';
+UPDATE `setting` SET `id` = '2', `title` = 'Habib Traders', `address` = 'Amghat Road, Tangail', `email` = 'habibtraders@gmail.com', `phone` = '0123456789', `logo` = 'assets/img/icons/logo.png', `favicon` = 'assets/img/icons/m.png', `language` = 'english', `site_align` = 'LTR', `footer_text` = '2017Â©Copyright'
+WHERE `id` = '2';
+UPDATE `user` SET `last_login` = '2024-10-08 11:32:40', `ip_address` = '::1'
+WHERE `id` = '1';
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`) VALUES (40100003, '1212-Habib', 'Store Expenses', '2', '1', '1', '0', 'E', '0', '0', '0', '1', '2024-10-08 11:34:48');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`) VALUES ('1020101000001', 'Cash-1212-Habib', 'Cash In Hand', '4', '1', '1', '0', 'A', '0', '0', '0', '1', '2024-10-08 11:34:48');
+INSERT INTO `store` (`store_id`, `store_name`, `store_code`, `store_phone`, `store_address`, `createby`, `createdate`, `isactive`) VALUES ('', 'Habib', '1212', '24513412354', 'Tangail', '1', '2024-10-08 11:34:48', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Store', 'create', 'Store ID :1', '1', '2024-10-08 11:34:48');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`) VALUES ('1020301000001', '-Customer 1', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0', '1', '2024-10-08 11:35:30');
+INSERT INTO `customer` (`customer_id`, `customer_code`, `customer_name`, `type`, `customer_phone`, `store_id`, `job_designation`, `customer_address`, `customer_cnic`, `business_address`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('', '', 'Customer 1', '1', '2452345245', '1', '', '', '2345', '', '1', '1', '2024-10-08 11:35:30', '', '');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Customer', 'create', 27, '1', '2024-10-08 11:35:30');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Basin', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Pipe', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'B-12', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'P-21', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'Stella', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'A1', 1);
+INSERT INTO `product_unit` (`unit_id`, `unit_name`, `isactive`) VALUES ('', 'Pcs', 1);
+INSERT INTO `product_unit` (`unit_id`, `unit_name`, `isactive`) VALUES ('', 'Ft', 1);
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Basin-Stella-B-12', 'pro-1001', '1', '1', '1', '1', 'Test', '0', '0', '0', '0', '1', '2024-10-08 11:37:58', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :1', '1', '2024-10-08 11:37:58');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Pipe-A1-P-21', 'pro-1002', '2', '3', '2', '2', '', '0', '0', '0', '0', '1', '2024-10-08 11:38:17', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :2', '1', '2024-10-08 11:38:17');
+UPDATE `product` SET `product_id` = '2', `product_name` = 'Pipe-A1-P-21', `product_code` = 'pro-1002', `category` = '3', `model` = '2', `unit` = '2', `brand` = '2', `product_details` = '', `purchase_price` = '50', `minimum_price` = '50', `retail_price` = '55', `block_price` = '55', `isactive` = '1'
+WHERE `product_id` IN('2');
+UPDATE `product` SET `product_id` = '1', `product_name` = 'Basin-Stella-B-12', `product_code` = 'pro-1001', `category` = '1', `model` = '1', `unit` = '1', `brand` = '1', `product_details` = 'Test', `purchase_price` = '0', `minimum_price` = '0', `retail_price` = '0', `block_price` = '0', `isactive` = '1'
+WHERE `product_id` IN('1');
+UPDATE `product` SET `product_id` = '2', `product_name` = 'Pipe-A1-P-21', `product_code` = 'pro-1002', `category` = '3', `model` = '2', `unit` = '2', `brand` = '2', `product_details` = '', `purchase_price` = '50', `minimum_price` = '50', `retail_price` = '55', `block_price` = '55', `isactive` = '1'
+WHERE `product_id` IN('2');
+UPDATE `product` SET `product_id` = '1', `product_name` = 'Basin-Stella-B-12', `product_code` = 'pro-1001', `category` = '1', `model` = '1', `unit` = '1', `brand` = '1', `product_details` = 'Test', `purchase_price` = '2222', `minimum_price` = '2250', `retail_price` = '2350', `block_price` = '2450', `isactive` = '1'
+WHERE `product_id` IN('1');
+CALL get_store_stock('0',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id);
+CALL get_store_stock('0',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id);
+INSERT INTO `stock_movement` (`proposal_code`, `for_store_id`, `from_store_id`, `proposal_datetime`, `proposal_by`) VALUES ('p-0001', '1', '1', '2024-10-08', '1');
+INSERT INTO `stock_movement_details` (`movement_id`, `product_id`, `proposal_qty`) VALUES (1, '2', '100');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Stockmovment', 'create', 'Stockmovment ID :1', '1', '2024-10-08 11:40:02');
+INSERT INTO `purchase_order` (`po_no`, `supplier_id`, `total_amnt`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`) VALUES ('20241008115554', '0', '72600.00', 0, 0, '1', '2024-10-08 11:55:54', 0);
+INSERT INTO `purchase_order_details` (`row_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`) VALUES ('324793428127182', '20241008115554', '', '220', '330', '', '');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('purchase order', 'create', 'Orde Id-20241008115554 total amount-72600.00', '1', '2024-10-08 11:55:54');
+UPDATE `product` SET `product_id` = '2', `isactive` = 0
+WHERE `product_id` = '2';
+CALL get_store_stock('0',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id);
+CALL get_store_stock('0',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id);
+DELETE FROM `stock_movement`
+WHERE `movement_id` = '1';
+UPDATE `stock_movement` SET `movement_id` = '1', `proposal_code` = 'p-0001', `for_store_id` = '1', `from_store_id` = '1', `proposal_datetime` = '2024-10-08', `proposal_by` = '1', `issue_by` = '1', `for_warehouse` = 0, `from_warehouse` = 0, `issue_code` = 'is-1', `issue_datetime` = '2024-10-08 15:08:51', `issue_remarks` = '', `is_issued` = 1, `is_approved` = 1
+WHERE `movement_id` = '1';
+UPDATE `stock_movement_details` SET `movement_id` = '1', `product_id` = '2', `proposal_qty` = '100', `issue_qty` = '100', `received_qty` = 0
+WHERE `movement_id` = '1'
+AND `product_id` = '2';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Stockmovment', 'issue', 'Stockmovment ID :1', '1', '2024-10-08 15:08:51');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Pipe-A1-P-21', 'pro-1003', '2', '3', '2', '2', '', '0', '0', '0', '0', '1', '2024-10-08 15:50:35', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :3', '1', '2024-10-08 15:50:35');
+UPDATE `product` SET `product_id` = '2', `isactive` = 1
+WHERE `product_id` = '2';
+DELETE FROM `product`
+WHERE `product_id` = '3';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'delete', 'product ID :3', '1', '2024-10-08 15:50:54');

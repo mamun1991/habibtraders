@@ -12,21 +12,21 @@ $HmvcMenu["sale"] = array(
             "method"     => "form",
             "permission" => "create"
         ), 
-        'cash_sale_list'  => array( 
-            "controller" => "sale",
-            "method"     => "index",
-            "permission" => "read"
-        ), 
-         'credit_sale_list'  => array( 
-            "controller" => "sale",
-            "method"     => "credit_sale",
-            "permission" => "read"
-        ), 
-          'lease_sale_list'  => array( 
-            "controller" => "sale",
-            "method"     => "lease_sale",
-            "permission" => "read"
-        ), 
+        // 'cash_sale_list'  => array( 
+        //     "controller" => "sale",
+        //     "method"     => "index",
+        //     "permission" => "read"
+        // ), 
+        //  'credit_sale_list'  => array( 
+        //     "controller" => "sale",
+        //     "method"     => "credit_sale",
+        //     "permission" => "read"
+        // ), 
+        //   'lease_sale_list'  => array( 
+        //     "controller" => "sale",
+        //     "method"     => "lease_sale",
+        //     "permission" => "read"
+        // ), 
   
 );
    

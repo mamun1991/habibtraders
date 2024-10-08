@@ -41,8 +41,7 @@
                                     ?>
                                       <?php echo form_dropdown('for_store',$store,(!empty($store->for_store_id)?$store->for_store_id:null), 'class="form-control" required') ?>
                                         <?php }else{?>
-                                        <input type="text" name="" value="<?php 
-$store=$this->db->select('*')->from('store')->where('store_id',$this->session->userdata('store_id'))->get()->row(); echo $store->store_name;?>" class="form-control" readonly>
+                                        <input type="text" name="" value="<?php $store=$this->db->select('*')->from('store')->where('store_id',$this->session->userdata('store_id'))->get()->row(); echo $store->store_name;?>" class="form-control" readonly>
                                         <input type="hidden" name="for_store" value="<?php echo $this->session->userdata('store_id'); ?>">
                                       <?php }?>
                                     </div>

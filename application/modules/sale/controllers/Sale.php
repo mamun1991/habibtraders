@@ -141,8 +141,8 @@ class Sale extends MX_Controller {
 		echo Modules::run('template/layout', $data); 
 	}  
 //puchase data insert process
-      public function form()
-	      { 
+    public function form()
+	{ 
 	      	$this->permission->method('sale','create')->redirect();
 		   $this->form_validation->set_rules('customer_id', display('customer_id')  ,'max_length[50]');
 		
@@ -151,11 +151,11 @@ class Sale extends MX_Controller {
 					$this->session->set_flashdata('message', display('save_successfully'));
 					if($this->input->post('sale_type') ==1){
 					redirect('sale/sale/index/');
-				}else if($this->input->post('sale_type') ==2){
-                    redirect('sale/sale/credit_sale/');
-				}else{
-				    redirect('sale/sale/lease_sale/');	
-				}
+					}else if($this->input->post('sale_type') ==2){
+						redirect('sale/sale/credit_sale/');
+					}else{
+						redirect('sale/sale/lease_sale/');	
+					}
 				} else {
 					$this->session->set_flashdata('exception',  display('please_try_again'));
 				}
