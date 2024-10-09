@@ -30268,3 +30268,7 @@ WHERE `product_id` = '2';
 DELETE FROM `product`
 WHERE `product_id` = '3';
 INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'delete', 'product ID :3', '1', '2024-10-08 15:50:54');
+UPDATE `user` SET `last_login` = '2024-10-09 06:47:53', `ip_address` = '::1'
+WHERE `id` = '1';
+CALL get_store_stock('0',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id);
+CALL get_store_stock('0',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id);
