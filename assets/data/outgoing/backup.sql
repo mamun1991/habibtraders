@@ -30268,3 +30268,13 @@ WHERE `product_id` = '2';
 DELETE FROM `product`
 WHERE `product_id` = '3';
 INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'delete', 'product ID :3', '1', '2024-10-08 15:50:54');
+UPDATE `user` SET `last_login` = '2024-10-09 05:11:00', `ip_address` = '::1'
+WHERE `id` = '1';
+UPDATE `stock_movement` SET `movement_id` = '1', `proposal_code` = 'p-0001', `for_store_id` = '1', `from_store_id` = '1', `proposal_by` = '1', `issue_by` = '1', `for_warehouse` = 0, `from_warehouse` = 0, `issue_code` = 'is-1', `issue_remarks` = NULL, `is_issued` = 1, `is_received` = 1, `is_proposed` = 1, `receive_by` = '1', `receive_datetime` = '2024-10-09 05:23:33'
+WHERE `movement_id` = '1';
+UPDATE `stock_movement_details` SET `movement_id` = '1', `product_id` = '2', `proposal_qty` = '100', `issue_qty` = '100', `received_qty` = '100'
+WHERE `movement_id` = '1'
+AND `product_id` = '2';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('stockmovement ', 'create', 'movemet received', '1', '2024-10-09 05:23:33');
+UPDATE `user` SET `last_login` = '2024-10-09 13:48:46', `ip_address` = '::1'
+WHERE `id` = '1';
