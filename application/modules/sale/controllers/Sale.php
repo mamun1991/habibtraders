@@ -267,6 +267,7 @@ class Sale extends MX_Controller {
 //product info ajax data
 	public function retrieve_product_data()
 	{	
+		echo json_encode(array('test'=>'test data'));exit;
 		$product_id = $this->input->post('product_id');
 		$product_info = $this->sale_model->get_total_product($product_id);
 

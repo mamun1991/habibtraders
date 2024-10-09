@@ -99,7 +99,7 @@
                                 <tbody id="addsaleItem">
                                     <tr>
                                        <td class="span3 manufacturer ts">
-                                           <input type="text" name="product_name" required class="form-control product_name productSelection" onkeyup="product_sale_list(1);" placeholder="<?php echo display('product_name') ?>" id="product_name_1" tabindex="5" >
+                                           <input type="text" name="product_name" required class="form-control product_name productSelection" onkeyup="product_sale_list('http://localhost/habibtraders/')" placeholder="<?php echo display('product_name') ?>" id="product_name_1" tabindex="5" >
 
                                             <input type="hidden" class="autocomplete_hidden_value product_id_1" name="product_id[]" id="SchoolHiddenId"/>
 
@@ -164,6 +164,7 @@
 </div>
 
        
+<script src="<?php echo base_url('assets/js/sales.js') ?>" type="text/javascript"></script>
 <script type="text/javascript">
 
     function modal_load(){

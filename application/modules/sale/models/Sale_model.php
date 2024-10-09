@@ -695,7 +695,7 @@ class Sale_model extends CI_Model {
 		$query=$this->db->select('*')
 				->from('product')
 				->where('isactive',1)
-				->like('product_name', $product_name, 'after')
+				->like('product_name', $product_name, 'both')
 				->group_by('product_id')
 				->get();
 		if ($query->num_rows() > 0) {

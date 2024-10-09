@@ -1,24 +1,27 @@
 
 
 
-function product_sale_list(sl) {
+function product_sale_list(url) {
 
     // Auto complete
+    var mainurl = url + "sale/sale/product_search";
+    console.log('test...', mainurl);
     var options = {
         minLength: 0,
         source: function( request, response ) {
-            var product_name = $('#product_name_'+sl).val();
-            var csrf_test_name = $('[name="csrf_test_name"]').val();
+            var product_name = $('#product_name_1').val();
+            // var csrf_test_name = $('[name="csrf_test_name"]').val();
         $.ajax( {
-          url: "<?php echo site_url('sale/sale/product_search')?>",
+          url: mainurl,
           method: 'post',
           dataType: "json",
           data: {
             term: request.term,
             product_name:product_name,
-            csrf_test_name: csrf_test_name
+            // csrf_test_name: csrf_test_name
           },
           success: function( data ) {
+            console.log('test', data);
             response(data);
           }
         });
@@ -40,8 +43,8 @@ function product_sale_list(sl) {
            
             $.ajax({
                 type: "POST",
-                url: "<?php echo site_url('sale/sale/retrieve_product_data')?>",
-                 data: {product_id:product_id},
+                url: url + "sale/sale/retrieve_product_data",
+                data: {product_id:product_id},
                 cache: false,
                 success: function(data)
                 {
@@ -96,7 +99,7 @@ function product_sale_list(sl) {
            
 
 
-            newdiv.innerHTML ='<td class="span3 supplier"><input type="text" name="product_name" required class="form-control product_name productSelection" onkeyup="product_sale_list('+ count +');" placeholder="<?php echo display("product_name") ?>" id="product_name_'+ count +'" tabindex="'+tab1+'" > <input type="hidden" class="autocomplete_hidden_value product_id_'+ count +'" name="product_id[]" id="SchoolHiddenId"/>  <input type="hidden" class="sl" value="'+ count +'">  </td><td class="wt"> <input type="text" id="available_quantity_'+ count +'" class="form-control text-right stock_ctn_'+ count +'" placeholder="0.00" readonly/> </td><td class="text-right"><input type="text" name="product_quantity[]" tabindex="'+tab2+'" required  id="quantity_'+ count +'" class="form-control text-right store_cal_' + count + '" onkeyup="calculate_store(' + count + '),checkqty(' + count + ');" onchange="calculate_store(' + count + ');" placeholder="0.00" value="" min="0"/>  </td><td class="test"><input type="text" name="product_rate[]" required onkeyup="calculate_store('+ count +'),checkqty(' + count + ');" onchange="calculate_store('+ count +');" id="product_rate_'+ count +'" class="form-control product_rate_'+ count +' text-right" placeholder="0.00" value="" min="0" tabindex="'+tab3+'"/></td><td class="text-right"><input class="form-control total_price text-right total_price_'+ count +'" type="text" name="total_price[]" id="total_price_'+ count +'" value="0.00" readonly="readonly" /> </td><td><button style="text-align: right;" class="btn btn-danger red" type="button" value="<?php echo display('delete')?>" onclick="deleteRow(this)"tabindex="'+tab4+'"><i class="fa fa-close" aria-hidden="true"></i></button></td>';
+            newdiv.innerHTML ='<td class="span3 supplier"><input type="text" name="product_name" required class="form-control product_name productSelection" onkeyup="product_sale_list('+ count +');" placeholder="<?php echo display("product_name") ?>" id="product_name_'+ count +'" tabindex="'+tab1+'" > <input type="hidden" class="autocomplete_hidden_value product_id_'+ count +'" name="product_id[]" id="SchoolHiddenId"/>  <input type="hidden" class="sl" value="'+ count +'">  </td><td class="wt"> <input type="text" id="available_quantity_'+ count +'" class="form-control text-right stock_ctn_'+ count +'" placeholder="0.00" readonly/> </td><td class="text-right"><input type="text" name="product_quantity[]" tabindex="'+tab2+'" required  id="quantity_'+ count +'" class="form-control text-right store_cal_' + count + '" onkeyup="calculate_store(' + count + '),checkqty(' + count + ');" onchange="calculate_store(' + count + ');" placeholder="0.00" value="" min="0"/>  </td><td class="test"><input type="text" name="product_rate[]" required onkeyup="calculate_store('+ count +'),checkqty(' + count + ');" onchange="calculate_store('+ count +');" id="product_rate_'+ count +'" class="form-control product_rate_'+ count +' text-right" placeholder="0.00" value="" min="0" tabindex="'+tab3+'"/></td><td class="text-right"><input class="form-control total_price text-right total_price_'+ count +'" type="text" name="total_price[]" id="total_price_'+ count +'" value="0.00" readonly="readonly" /> </td><td><button style="text-align: right;" class="btn btn-danger red" type="button" value="Delete" onclick="deleteRow(this)"tabindex="'+tab4+'"><i class="fa fa-close" aria-hidden="true"></i></button></td>';
             document.getElementById(divName).appendChild(newdiv);
             document.getElementById(tabin).focus();
             document.getElementById("add_invoice_item").setAttribute("tabindex", tab5);
@@ -264,7 +267,7 @@ function product_sale_list(sl) {
            
 
 
-            newdiv.innerHTML ='<td class="span3 supplier"><input type="text" name="product_name" required class="form-control product_name productSelection" onkeyup="cr_product_sale_list('+ count +');" placeholder="<?php echo display("product_name") ?>" id="cr_product_name_'+ count +'" tabindex="'+tab1+'" > <input type="hidden" class="autocomplete_hidden_value product_id_'+ count +'" name="product_id[]" id="SchoolHiddenId"/>  <input type="hidden" class="sl" value="'+ count +'">  </td><td class="wt"> <input type="text" id="cr_available_quantity_'+ count +'" class="form-control text-right stock_ctn_'+ count +'" placeholder="0.00" readonly/> </td><td class="text-right"><input type="text" name="product_quantity[]" tabindex="'+tab2+'" required  id="cr_quantity_'+ count +'" class="form-control text-right store_cal_' + count + '" onkeyup="calculate_crsal(' + count + '),checkcrqty(' + count + ');" onchange="calculate_crsal(' + count + ');" placeholder="0.00" value="" min="0"/>  </td><td class="test"><input type="text" name="product_rate[]" required onkeyup="calculate_crsal('+ count +'),checkcrqty(' + count + ');" onchange="calculate_crsal('+ count +');" id="cr_product_rate_'+ count +'" class="form-control cr_product_rate_'+ count +' text-right" placeholder="0.00" value="" min="0" tabindex="'+tab3+'"/></td><td class="text-right"><input class="form-control total_cr_price text-right cr_total_price_'+ count +'" type="text" name="total_price[]" id="cr_total_price_'+ count +'" value="0.00" readonly="readonly" /> </td><td> <button style="text-align: right;" class="btn btn-danger red" type="button" value="<?php echo display('delete')?>" onclick="deleteRowcr(this)"tabindex="'+tab4+'"><i class="fa fa-close" aria-hidden="true"></i></button></td>';
+            newdiv.innerHTML ='<td class="span3 supplier"><input type="text" name="product_name" required class="form-control product_name productSelection" onkeyup="cr_product_sale_list('+ count +');" placeholder="<?php echo display("product_name") ?>" id="cr_product_name_'+ count +'" tabindex="'+tab1+'" > <input type="hidden" class="autocomplete_hidden_value product_id_'+ count +'" name="product_id[]" id="SchoolHiddenId"/>  <input type="hidden" class="sl" value="'+ count +'">  </td><td class="wt"> <input type="text" id="cr_available_quantity_'+ count +'" class="form-control text-right stock_ctn_'+ count +'" placeholder="0.00" readonly/> </td><td class="text-right"><input type="text" name="product_quantity[]" tabindex="'+tab2+'" required  id="cr_quantity_'+ count +'" class="form-control text-right store_cal_' + count + '" onkeyup="calculate_crsal(' + count + '),checkcrqty(' + count + ');" onchange="calculate_crsal(' + count + ');" placeholder="0.00" value="" min="0"/>  </td><td class="test"><input type="text" name="product_rate[]" required onkeyup="calculate_crsal('+ count +'),checkcrqty(' + count + ');" onchange="calculate_crsal('+ count +');" id="cr_product_rate_'+ count +'" class="form-control cr_product_rate_'+ count +' text-right" placeholder="0.00" value="" min="0" tabindex="'+tab3+'"/></td><td class="text-right"><input class="form-control total_cr_price text-right cr_total_price_'+ count +'" type="text" name="total_price[]" id="cr_total_price_'+ count +'" value="0.00" readonly="readonly" /> </td><td> <button style="text-align: right;" class="btn btn-danger red" type="button" value="Delete" onclick="deleteRowcr(this)"tabindex="'+tab4+'"><i class="fa fa-close" aria-hidden="true"></i></button></td>';
             document.getElementById(divName).appendChild(newdiv);
             document.getElementById(tabin).focus();
             document.getElementById("add_invoice_item_cr").setAttribute("tabindex", tab5);
@@ -450,7 +453,7 @@ $("#remaining_amnt").val(e.toFixed(2,2));
            
 
 
-            newdiv.innerHTML ='<td class="span3 supplier"><input type="text" name="product_name" required class="form-control product_name productSelection" onkeyup="ls_product_sale_list('+ count +');" placeholder="<?php echo display("product_name") ?>" id="ls_product_name_'+ count +'" tabindex="'+tab1+'" > <input type="hidden" class="autocomplete_hidden_value product_id_'+ count +'" name="product_id[]" id="SchoolHiddenId"/>  <input type="hidden" class="sl" value="'+ count +'">  </td><td class="wt"> <input type="text" id="ls_available_quantity_'+ count +'" class="form-control text-right stock_ctn_'+ count +'" placeholder="0.00" readonly/> </td><td class="text-right"><input type="text" name="product_quantity[]" tabindex="'+tab2+'" required  id="ls_quantity_'+ count +'" class="form-control text-right store_cal_' + count + '" onkeyup="calculate_lssal(' + count + '),checklsqty(' + count + ');" onchange="calculate_lssal(' + count + ');" placeholder="0.00" value="" min="0"/>  </td><td class="test"><input type="text" name="product_rate[]" required onkeyup="calculate_lssal('+ count +'),checklsqty(' + count + ');" onchange="calculate_lssal('+ count +');" id="ls_product_rate_'+ count +'" class="form-control ls_product_rate_'+ count +' text-right" placeholder="0.00" value="" min="0" tabindex="'+tab3+'"/></td><td class="text-right"><input class="form-control total_ls_price text-right ls_total_price_'+ count +'" type="text" name="total_price[]" id="ls_total_price_'+ count +'" value="0.00" readonly="readonly" /> </td><td> <button style="text-align: right;" class="btn btn-danger red" type="button" value="<?php echo display('delete')?>" onclick="deleteRowls(this)"tabindex="'+tab4+'"><i class="fa fa-close" aria-hidden="true"></i></button></td>';
+            newdiv.innerHTML ='<td class="span3 supplier"><input type="text" name="product_name" required class="form-control product_name productSelection" onkeyup="ls_product_sale_list('+ count +');" placeholder="<?php echo display("product_name") ?>" id="ls_product_name_'+ count +'" tabindex="'+tab1+'" > <input type="hidden" class="autocomplete_hidden_value product_id_'+ count +'" name="product_id[]" id="SchoolHiddenId"/>  <input type="hidden" class="sl" value="'+ count +'">  </td><td class="wt"> <input type="text" id="ls_available_quantity_'+ count +'" class="form-control text-right stock_ctn_'+ count +'" placeholder="0.00" readonly/> </td><td class="text-right"><input type="text" name="product_quantity[]" tabindex="'+tab2+'" required  id="ls_quantity_'+ count +'" class="form-control text-right store_cal_' + count + '" onkeyup="calculate_lssal(' + count + '),checklsqty(' + count + ');" onchange="calculate_lssal(' + count + ');" placeholder="0.00" value="" min="0"/>  </td><td class="test"><input type="text" name="product_rate[]" required onkeyup="calculate_lssal('+ count +'),checklsqty(' + count + ');" onchange="calculate_lssal('+ count +');" id="ls_product_rate_'+ count +'" class="form-control ls_product_rate_'+ count +' text-right" placeholder="0.00" value="" min="0" tabindex="'+tab3+'"/></td><td class="text-right"><input class="form-control total_ls_price text-right ls_total_price_'+ count +'" type="text" name="total_price[]" id="ls_total_price_'+ count +'" value="0.00" readonly="readonly" /> </td><td> <button style="text-align: right;" class="btn btn-danger red" type="button" value="Delete" onclick="deleteRowls(this)"tabindex="'+tab4+'"><i class="fa fa-close" aria-hidden="true"></i></button></td>';
             document.getElementById(divName).appendChild(newdiv);
             document.getElementById(tabin).focus();
             document.getElementById("add_invoice_item_sl").setAttribute("tabindex", tab5);
