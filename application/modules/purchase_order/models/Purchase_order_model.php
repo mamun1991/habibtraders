@@ -9,7 +9,7 @@ class Purchase_order_model extends CI_Model {
 		$createby=$this->session->userdata('id');
 		$createdate=date('Y-m-d H:i:s');
 	
-			 $postData = array(
+		$postData = array(
 			'po_no'			        =>	$po_no,
 			'supplier_id'		    =>	$this->input->post('supplier_id'),
 			'total_amnt'	        =>	$this->input->post('grand_total_price'),
@@ -21,11 +21,12 @@ class Purchase_order_model extends CI_Model {
 		); 
 
 			
-	$this->db->insert('purchase_order',$postData);
+		$this->db->insert('purchase_order',$postData);
 
 
 		#-------------------------------#
         $st_id = $this->input->post('store_id');
+        $um = $this->input->post('um');
 		$rate = $this->input->post('product_rate');
 		$quantity = $this->input->post('product_quantity');
 		$t_price = $this->input->post('total_price');
@@ -36,14 +37,16 @@ class Purchase_order_model extends CI_Model {
 			$product_id = $p_id[$i];
 			$discount   = $dis[$i];
 			$store_id = $st_id[$i];
+			$unit = $um[$i];
 			$data = array(
-				'row_id'            =>	$this->generator(15),
+				// 'row_id'            =>	$this->generator(15),
 				'po_no'		        =>	$po_no,
 				'product_id'		=>	$product_id,
 				'order_qty'			=>	$product_quantity,
 				'product_rate'	    =>	$product_rate,
 				'discount'          =>  $discount,
 				'store_id'          =>  $store_id,
+				'unit'          	=>  $unit,
 			);
 
 			if(!empty($quantity))

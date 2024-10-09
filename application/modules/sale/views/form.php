@@ -1,11 +1,8 @@
 
 <style type="text/css">
-
-
-.content-wrapper {
-    min-height: 1200px;
-}
-   
+    .content-wrapper {
+        min-height: 1200px;
+    }
    
 </style>
 
@@ -90,7 +87,9 @@
                                             <th class="text-center" width="20%"><?php echo display('product_name') ?><i class="text-danger">*</i></th> 
                                             <th class="text-center"><?php echo display('stock_ctn') ?></th>
                                             <th class="text-center"><?php echo display('quantity') ?> <i class="text-danger">*</i></th>
+                                            <th class="text-center">Unit</th>
                                             <th class="text-center"><?php echo display('price') ?><i class="text-danger">*</i></th>
+                                            <th class="text-center">Discount %</th>
                                             <th class="text-center"><?php echo display('total') ?></th>
                                             
                                             <th class="text-center"><?php echo display('action') ?></th>
@@ -98,8 +97,9 @@
                                 </thead>
                                 <tbody id="addsaleItem">
                                     <tr>
-                                       <td class="span3 manufacturer ts">
-                                           <input type="text" name="product_name" required class="form-control product_name productSelection" onkeyup="product_sale_list('http://localhost/habibtraders/')" placeholder="<?php echo display('product_name') ?>" id="product_name_1" tabindex="5" >
+                                        <td class="span3 manufacturer ts">
+                                           <input type="text" name="product_name" required class="form-control product_name productSelection" 
+                                           onkeyup="product_sale_list(1)" placeholder="<?php echo display('product_name') ?>" id="product_name_1" tabindex="5" >
 
                                             <input type="hidden" class="autocomplete_hidden_value product_id_1" name="product_id[]" id="SchoolHiddenId"/>
 
@@ -107,20 +107,25 @@
                                         </td>
                                       
 
-                                       <td class="wt">
-                                                <input type="text" id="available_quantity_1" class="form-control text-right stock_ctn_1" placeholder="0.00" readonly/>
-                                            </td>
+                                        <td class="wt">
+                                            <input type="text" id="available_quantity_1" class="form-control text-right stock_ctn_1" placeholder="0.00" readonly/>
+                                        </td>
                                         
-                                            <td class="text-right">
-                                                <input type="text" name="product_quantity[]" id="quantity_1" class="form-control text-right store_cal_1" onkeyup="calculate_store(1),checkqty(1);" onchange="calculate_store(1);" placeholder="0.00" value="" min="0" tabindex="8" required="required"/>
-                                            </td>
-                                            <td class="test">
-                                                <input type="text" name="product_rate[]" onkeyup="calculate_store(1),checkqty(1);" onchange="calculate_store(1);" id="product_rate_1" class="form-control product_rate_1 text-right" placeholder="0.00" value="" min="0" tabindex="9" required="required" />
-                                                <input type="hidden" name="">
-                                                 <input type="hidden" name="" id="cminimum_price_1" />
-                                                 <input type="hidden" name="" id="cblock_price_1" />
-                                            </td>
-                                           
+                                        <td class="text-right">
+                                            <input type="text" name="product_quantity[]" id="quantity_1" class="form-control text-right store_cal_1" onkeyup="calculate_store(1),checkqty(1);" onchange="calculate_store(1);" placeholder="0.00" value="" min="0" tabindex="8" required="required"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <input type="text" id="unit_1" class="form-control text-right unit" placeholder="0.00" readonly/>
+                                        </td>
+                                        <td class="test">
+                                            <input type="text" name="product_rate[]" onkeyup="calculate_store(1),checkqty(1);" onchange="calculate_store(1);" id="product_rate_1" class="form-control product_rate_1 text-right" placeholder="0.00" value="" min="0" tabindex="9" required="required" />
+                                            <input type="hidden" name="">
+                                                <input type="hidden" name="" id="cminimum_price_1" />
+                                                <input type="hidden" name="" id="cblock_price_1" />
+                                        </td>
+                                        <td class="text-right">
+                                            <input class="form-control total_price text-right" type="text" name="discount[]" id="discount_1" value="" placeholder="0%" />
+                                        </td>
 
                                             <td class="text-right">
                                                 <input class="form-control total_price text-right" type="text" name="total_price[]" id="total_price_1" value="0.00"  />

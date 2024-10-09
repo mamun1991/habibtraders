@@ -49,7 +49,7 @@
                                     <tr>
                                        <th class="text-center" width="20%"><?php echo display('product_name') ?><i class="text-danger">*</i></th>
                                             <th class="text-center" width="10%"><?php echo display('product_code') ?></th>
-                                             <th class="text-center" width="15%"><?php echo display('location') ?></th>
+                                            <th class="text-center" width="15%"><?php echo display('location') ?></th>
                                             <th class="text-center"><?php echo display('stock_ctn') ?></th>
                                             <th class="text-center"><?php echo display('quantity') ?> <i class="text-danger">*</i></th>
                                             <th class="text-center"><?php echo display('um') ?></th>

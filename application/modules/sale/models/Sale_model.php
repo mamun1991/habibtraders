@@ -5,10 +5,10 @@ class Sale_model extends CI_Model {
 	public function create()
 	{	 
  
-        $pq = $this->input->post('product_quantity');
-        $sale_id = date('YmdHis');
-        $payment_id = date('YmdHs');
-	    $invoice_no = $this->input->post('invoice_no');
+    $pq = $this->input->post('product_quantity');
+    $sale_id = date('YmdHis');
+    $payment_id = date('YmdHs');
+	  $invoice_no = $this->input->post('invoice_no');
 		$p_id = $this->input->post('product_id');
 
 		$createby=$this->session->userdata('id');
@@ -17,7 +17,7 @@ class Sale_model extends CI_Model {
 		$gurrantor1=array_shift($gurrantor);
 		$gurrantor2=array_pop($gurrantor);
 		$installmentamnt= $this->input->post('installment_price');
-    	$remainamt= $this->input->post('remaining_amnt');
+    $remainamt= $this->input->post('remaining_amnt');
 		$installamnt = (!empty($installmentamnt)? $this->input->post('installment_price'):0);
 		$pack_pr= $this->input->post('package_price');
 		$package_price = (!empty($pack_pr)? $this->input->post('package_price'):0);
@@ -76,7 +76,7 @@ class Sale_model extends CI_Model {
     ); 
       // $this->db->insert('acc_transaction',$cc);
 // Cash in hand debit
-	        $cdv = array(
+	    $cdv = array(
       'VNo'            =>  $invoice_no,
       'Vtype'          =>  'CIV',
       'VDate'          =>  $createdate,
@@ -720,39 +720,56 @@ class Sale_model extends CI_Model {
 		return false;
 	}
 	// stock available qty
-	public function get_total_product($product_id){
-	$id = 0;   
-        $this->db->query("CALL get_store_stock('".$id."',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id)");
-		$this->db->select('sum(tmp_store_stock.InQty) as qty');
-		$this->db->from('tmp_store_stock');
-		$this->db->where('tmp_store_stock.ProdID',$product_id);
+	public function get_total_product($product_id)
+  {
+	  $id = 0;   
+
+    // echo '<pre>'; print_r($product_id);exit;
+
+    // $this->db->query("CALL get_store_stock('".$id."',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id)");
+		$this->db->select('sum(purchase_order_details.order_qty) as qty, product.retail_price, purchase_order_details.product_rate, purchase_order_details.unit');
+		$this->db->from('purchase_order_details');
+		$this->db->join('product', 'product.product_id = purchase_order_details.product_id');
+		$this->db->where('purchase_order_details.product_id',$product_id);
 		if($this->session->userdata('isAdmin')==0){
-		$this->db->where('tmp_store_stock.StoreID',$this->session->userdata('store_id'));
+		  $this->db->where('purchase_order_details.store_id',$this->session->userdata('store_id'));
 		}
+    // $this->db->order_by('purchase_order_details.pod_id', 'ASC');
 		$pur = $this->db->get()->row();
 
-		$this->db->select('sum(tmp_store_stock.OutQty) as sqty');
-		$this->db->from('tmp_store_stock');
-		$this->db->where('tmp_store_stock.ProdID',$product_id);
-		if($this->session->userdata('isAdmin')==0){
-		$this->db->where('tmp_store_stock.StoreID',$this->session->userdata('store_id'));
-		}
-		$sal = $this->db->get()->row();		     
-						     
-		//$sal= $this->db->select('sum(qty) as sqty')->from('sale_details')->where('product_id',$product_id)->get()->row();
-        $pro_price = $this->db->select('*')->from('product')->where('product_id',$product_id)->get()->row();
-		$available_quantity = $pur->qty-$sal->sqty;
-        $price = $pro_price->retail_price;
-        $minprice = $pro_price->minimum_price;
-        $blocprice = $pro_price->block_price;
-		$data2 = array(
-			'total_product'  => $available_quantity,
-			'price'          => $price,
-			'minprice'       => $minprice,
-			'blockprice'     => $blocprice,
-			);
+    $resultarray = array(
+      'qty'     => $pur->qty,
+      'rtp'     => $pur->retail_price,
+      'dp'      => $pur->product_rate,
+      'unit'    => $pur->unit,
+    );
 
-		return $data2;
+    return $resultarray;
+
+    //echo '<pre>'; print_r($resultarray);exit;
+
+		// $this->db->select('sum(tmp_store_stock.OutQty) as sqty');
+		// $this->db->from('tmp_store_stock');
+		// $this->db->where('tmp_store_stock.ProdID',$product_id);
+		// if($this->session->userdata('isAdmin')==0){
+		// $this->db->where('tmp_store_stock.StoreID',$this->session->userdata('store_id'));
+		// }
+		// $sal = $this->db->get()->row();		     
+						     
+		// //$sal= $this->db->select('sum(qty) as sqty')->from('sale_details')->where('product_id',$product_id)->get()->row();
+    //     $pro_price = $this->db->select('*')->from('product')->where('product_id',$product_id)->get()->row();
+		// $available_quantity = $pur->qty-$sal->sqty;
+    //     $price = $pro_price->retail_price;
+    //     $minprice = $pro_price->minimum_price;
+    //     $blocprice = $pro_price->block_price;
+		// $data2 = array(
+		// 	'total_product'  => $available_quantity,
+		// 	'price'          => $price,
+		// 	'minprice'       => $minprice,
+		// 	'blockprice'     => $blocprice,
+		// 	);
+
+		// return $data2;
 	}
 	
 	// Retrive lease product info

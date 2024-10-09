@@ -55,8 +55,8 @@ class Purchase_order extends MX_Controller {
 		echo Modules::run('template/layout', $data); 
 	}  
 //puchase data insert process
-      public function form()
-	      { 
+    public function form()
+	{ 
 	      $this->permission->method('purchase_order','create')->redirect();
 		   $this->form_validation->set_rules('supplier_id', display('supplier_id')  ,'max_length[50]');
 		
