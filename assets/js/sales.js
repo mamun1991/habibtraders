@@ -51,12 +51,17 @@ function product_sale_list(list) {
                 cache: false,
                 success: function(data)
                 {
+                  obj = JSON.parse(data);
+                  var prolos = parseFloat(obj.rtp) - parseFloat(obj.dp);
                     
-                    obj = JSON.parse(data);
-                    console.log('data::', obj.unit);
-                   $('#'+available_quantity).val(obj.qty);
-                   $('#'+pur_price).val(obj.rtp);
-                   $('#unit_'+list).val(obj.unit);
+                    // console.log('data::', obj.dp);
+                  $('#'+available_quantity).val(obj.qty);
+                  $('#'+pur_price).val(obj.rtp);
+                  $('#retailRate_'+sl).val(obj.rtp);
+                  $('#unit_'+list).val(obj.unit);
+                  $('#dp_'+list).html('DP - ' + obj.dp + ' / ');
+                  $('#pl_'+list).html(' PL - ' + prolos);
+                  // <p id="dp_1" class="dp_1 dpStyle">DP - 700 / </p><p id="pl_1" class="pl_1 dpStyle">PL - 100 </p>
         
                   
                 } 
@@ -74,7 +79,14 @@ function product_sale_list(list) {
 
 }
 
-
+$('.showPrice').click(function() {
+  // Check if the element is currently visible
+  if ($('.hideprice').is(':visible')) {
+      $('.hideprice').hide();  // If it's visible, hide it
+  } else {
+      $('.hideprice').show();  // If it's hidden, show it
+  }
+});
 
 
 
@@ -107,10 +119,10 @@ function product_sale_list(list) {
             newdiv.innerHTML =
             '<td class="span3 supplier"><input type="text" name="product_name" required class="form-control product_name productSelection" onkeyup="product_sale_list('+ count +');" placeholder="Product Name" id="product_name_'+ count +'" tabindex="'+tab1+'" > <input type="hidden" class="autocomplete_hidden_value product_id_'+ count +'" name="product_id[]" id="SchoolHiddenId"/>  <input type="hidden" class="sl" value="'+ count +'">  </td>'
             +'<td class="wt"> <input type="text" id="available_quantity_'+ count +'" class="form-control text-right stock_ctn_'+ count +'" placeholder="0.00" readonly/> </td>'
-            +'<td class="text-right"><input type="text" name="product_quantity[]" tabindex="'+tab2+'" required  id="quantity_'+ count +'" class="form-control text-right store_cal_' + count + '" onkeyup="calculate_store(' + count + '),checkqty(' + count + ');" onchange="calculate_store(' + count + ');" placeholder="0.00" value="" min="0"/>  </td>'
-            +'<td class="text-right"><input type="text" id="unit_'+ count +'" class="form-control text-right unit'+ count +'" placeholder="0.00" readonly/></td>'
-            +'<td class="test"><input type="text" name="product_rate[]" required onkeyup="calculate_store('+ count +'),checkqty(' + count + ');" onchange="calculate_store('+ count +');" id="product_rate_'+ count +'" class="form-control product_rate_'+ count +' text-right" placeholder="0.00" value="" min="0" tabindex="'+tab3+'"/></td>'
-            +'<td class="text-right"><input class="form-control discount_'+ count +' text-right" type="text" name="discount[]" id="discount_'+ count +'" value="" placeholder="0%" /></td>'
+            +'<td class="text-right"><input type="text" name="product_quantity[]" tabindex="'+tab2+'" required  id="quantity_'+ count +'" class="form-control text-right store_cal_' + count + '" onkeyup="calculate_store(' + count + '),checkqty(' + count + ');" placeholder="0.00" value="" min="0"/>  </td>'
+            +'<td class="text-right"><input type="text" id="unit_'+ count +'" class="form-control text-right unit_'+ count +'" placeholder="0.00" readonly/></td>'
+            +'<td class="test"><input type="text" name="product_rate[]" required onkeyup="calculate_store('+ count +'),checkqty(' + count + ');" id="product_rate_'+ count +'" class="form-control product_rate_'+ count +' text-right" placeholder="0.00" value="" min="0" tabindex="'+tab3+'"/><input type="hidden" name="" id="retailRate_'+ count +'" value=""><p id="dp_'+ count +'" class="hideprice dp_'+ count +' dpStyle">DP - 700 / </p><p id="pl_'+ count +'" class="hideprice pl_'+ count +' dpStyle">PL - 100 </p></td>'
+            +'<td class="text-right"><input class="form-control discount_'+ count +' text-right" type="text" onkeyup="calculate_store('+ count +'),checkqty(' + count + ');" name="discount[]" id="discount_'+ count +'" value="" placeholder="0%" /></td>'
             +'<td class="text-right"><input class="form-control total_price text-right total_price_'+ count +'" type="text" name="total_price[]" id="total_price_'+ count +'" value="0.00" readonly="readonly" /> </td><td><button style="text-align: right;" class="btn btn-danger red" type="button" value="Delete" onclick="deleteRow(this)"tabindex="'+tab4+'"><i class="fa fa-close" aria-hidden="true"></i></button></td>';
             document.getElementById(divName).appendChild(newdiv);
             document.getElementById(tabin).focus();
@@ -132,11 +144,20 @@ function product_sale_list(list) {
        
         var gr_tot = 0;
         var item_ctn_qty    = $("#quantity_"+sl).val();
-        var vendor_rate = $("#product_rate_"+sl).val();
+        var vendor_rate = $("#retailRate_"+sl).val();
+        var discount = $("#discount_"+sl).val();
+        var dp = $('#dp_'+sl).html();
+        var maindp = dp.replace(/\D/g, '');
 
-        var total_price     = item_ctn_qty * vendor_rate;
+        var totalDis = (vendor_rate * discount) / 100;
+        // console.log('discount::', maindp);
+        var discountRate = parseFloat(vendor_rate) - parseFloat(totalDis);
+        var total_price = item_ctn_qty * discountRate;
+        var profitlos = parseFloat(discountRate) - parseFloat(maindp);
+
+        $('#product_rate_'+sl).val(Math.round(discountRate));
+        $('#pl_'+sl).html(' PL - ' + profitlos.toFixed(2));
         $("#total_price_"+sl).val(total_price.toFixed(2));
-
        
         //Total Price
         $(".total_price").each(function() {
@@ -161,25 +182,25 @@ function product_sale_list(list) {
 
 
 
-     function checkqty(sl)
-{
-  
-  var y=$("#quantity_"+sl).val();
-  var x=$("#product_rate_"+sl).val();
-  if (isNaN(y)) 
+  function checkqty(sl)
   {
-    alert("Must input numbers");
-    document.getElementById("quantity_"+sl).value = '';
-     //$("#quantity_"+sl).val() = '';
-    return false;
+
+    var y=$("#quantity_"+sl).val();
+    var x=$("#product_rate_"+sl).val();
+    if (isNaN(y)) 
+    {
+      alert("Must input numbers");
+      document.getElementById("quantity_"+sl).value = '';
+      //$("#quantity_"+sl).val() = '';
+      return false;
+    }
+    if (isNaN(x)) 
+    {
+      alert("Must input numbers");
+      document.getElementById("product_rate_"+sl).value = '';
+      return false;
+    }
   }
-  if (isNaN(x)) 
-  {
-    alert("Must input numbers");
-     document.getElementById("product_rate_"+sl).value = '';
-    return false;
-  }
-}
 
 //credit sale
 

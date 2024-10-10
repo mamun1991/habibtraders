@@ -3,6 +3,13 @@
     .content-wrapper {
         min-height: 1200px;
     }
+    .dpStyle {
+        font-size: 10px;
+        text-align: center;
+        margin: 0px;
+        float: left;
+        display: none;
+    }
    
 </style>
 
@@ -88,10 +95,9 @@
                                             <th class="text-center"><?php echo display('stock_ctn') ?></th>
                                             <th class="text-center"><?php echo display('quantity') ?> <i class="text-danger">*</i></th>
                                             <th class="text-center">Unit</th>
-                                            <th class="text-center"><?php echo display('price') ?><i class="text-danger">*</i></th>
+                                            <th class="text-center"><p class="showPrice" style="margin: 0px;"><?php echo display('price') ?><i class="text-danger">*</i></p></th>
                                             <th class="text-center">Discount %</th>
                                             <th class="text-center"><?php echo display('total') ?></th>
-                                            
                                             <th class="text-center"><?php echo display('action') ?></th>
                                         </tr>
                                 </thead>
@@ -112,19 +118,20 @@
                                         </td>
                                         
                                         <td class="text-right">
-                                            <input type="text" name="product_quantity[]" id="quantity_1" class="form-control text-right store_cal_1" onkeyup="calculate_store(1),checkqty(1);" onchange="calculate_store(1);" placeholder="0.00" value="" min="0" tabindex="8" required="required"/>
+                                            <input type="text" name="product_quantity[]" id="quantity_1" class="form-control text-right store_cal_1" onkeyup="calculate_store(1),checkqty(1);" placeholder="0.00" value="" min="0" tabindex="8" required="required"/>
                                         </td>
                                         <td class="text-right">
-                                            <input type="text" id="unit_1" class="form-control text-right unit" placeholder="0.00" readonly/>
+                                            <input type="text" id="unit_1" class="form-control text-right unit_1" placeholder="0.00" readonly/>
                                         </td>
                                         <td class="test">
-                                            <input type="text" name="product_rate[]" onkeyup="calculate_store(1),checkqty(1);" onchange="calculate_store(1);" id="product_rate_1" class="form-control product_rate_1 text-right" placeholder="0.00" value="" min="0" tabindex="9" required="required" />
-                                            <input type="hidden" name="">
-                                                <input type="hidden" name="" id="cminimum_price_1" />
-                                                <input type="hidden" name="" id="cblock_price_1" />
+                                            <input type="text" name="product_rate[]" onkeyup="calculate_store(1),checkqty(1);" id="product_rate_1" class="form-control product_rate_1 text-right" placeholder="0.00" value="" min="0" tabindex="9" required="required" />
+                                            <input type="hidden" name="" id="retailRate_1" value="">
+                                            <input type="hidden" name="" id="cminimum_price_1" />
+                                            <input type="hidden" name="" id="cblock_price_1" />
+                                            <p id="dp_1" class="dp_1 hideprice dpStyle">DP - 700 / </p><p id="pl_1" class="pl_1 hideprice dpStyle">PL - 100 </p>
                                         </td>
                                         <td class="text-right">
-                                            <input class="form-control total_price text-right" type="text" name="discount[]" id="discount_1" value="" placeholder="0%" />
+                                            <input class="form-control total_price text-right" type="text" name="discount[]" onkeyup="calculate_store(1),checkqty(1);"  id="discount_1" value="" placeholder="0%" />
                                         </td>
 
                                             <td class="text-right">
