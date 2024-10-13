@@ -103,3 +103,9 @@ INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `D
 INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241009150142', 'PO', '2024-10-09', '5020200008', 'PO received For PO No.20241009150142 Receive No.20241009152443', 0, '13400.00', NULL, 1, '1', '2024-10-09', 1);
 UPDATE `user` SET `last_login` = '2024-10-10 04:54:02', `ip_address` = '::1'
 WHERE `id` = '1';
+UPDATE `user` SET `last_login` = '2024-10-10 13:46:05', `ip_address` = '::1'
+WHERE `id` = '1';
+UPDATE `user` SET `last_login` = '2024-10-11 05:12:14', `ip_address` = '::1'
+WHERE `id` = '1';
+UPDATE `user` SET `last_login` = '2024-10-13 06:49:37', `ip_address` = '::1'
+WHERE `id` = '1';

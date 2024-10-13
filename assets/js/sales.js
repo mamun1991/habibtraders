@@ -170,8 +170,20 @@ $('.showPrice').click(function() {
         var t = $("#saleTable > tbody > tr").length;
         if (1 == t) alert("There only one row you can't delete.");
         else {
-            var a = e.parentNode.parentNode;
-            a.parentNode.removeChild(a)
+          var a = e.parentNode.parentNode;
+          a.parentNode.removeChild(a);
+
+
+          var gr_tot = 0;
+          $(".total_price").each(function() {
+            isNaN(this.value) || 0 == this.value.length || (gr_tot += parseFloat(this.value))
+          });
+
+          console.log(gr_tot);
+
+        $("#grandTotal").val(gr_tot.toFixed(2,2));
+
+            
         }
         // calculateSum()
     }
