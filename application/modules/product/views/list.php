@@ -28,10 +28,9 @@
                                 <th><?php echo display('product_name') ?></th>
                                 <th><?php echo display('category') ?></th>
                                 <th><?php echo display('model') ?></th>
-                                <th><?php echo display('pur_price') ?></th>
-                                <th><?php echo display('min_price') ?></th>
+                                <th>DP</th>
+                                <th>BP</th>
                                 <th><?php echo display('retprice') ?></th>
-                                <th><?php echo display('bl_price') ?></th>
                                 <th><a href="<?php echo base_url("product/product/index") ?>" class="btn btn-info btn-xs" >All</a><a href="<?php echo base_url("product/product/active_list") ?>" class="btn btn-info btn-xs" >A</a>
                                 <a href="<?php echo base_url("product/product/inactive_list") ?>" class="btn btn-info btn-xs" >I</a>
                                 </th>
@@ -68,16 +67,16 @@ $product_info = $this->db->select('product.*,product_category.category_name,prod
                                 </td>
                                  <td><?php echo $product_info->category_name; ?></td>
                                  <td><?php echo $product_info->model_name; ?></td>
+                                 <td><input type="text" name="minim_p[]" style="width:70px" class="form-control" value="<?php echo $product->minimum_price; ?>" <?php if(!$this->permission->method('product','update')->access()): echo 'readonly'; endif?>/></td>
                                 <td>
                                     <input type="text" name="purchase_p[]" style="width:70px" class="form-control" value="<?php echo $product->purchase_price; ?>" <?php if(!$this->permission->method('product','update')->access()): echo 'readonly'; endif?>/>
                                 </td>
-                                <td><input type="text" name="minim_p[]" style="width:70px" class="form-control" value="<?php echo $product->minimum_price; ?>" <?php if(!$this->permission->method('product','update')->access()): echo 'readonly'; endif?>/></td>
+                                
                                 <td><input type="text" name="retail_p[]" style="width:70px" class="form-control" value="<?php echo $product->retail_price; ?>" <?php if(!$this->permission->method('product','update')->access()): echo 'readonly'; endif?>/></td>
-                                <td><input type="text" name="block_p[]" style="width:70px" class="form-control" value="<?php echo $product->block_price; ?>" <?php if(!$this->permission->method('product','update')->access()): echo 'readonly'; endif?>/>
-                              <input type="hidden" name="product_details[]" value="<?php echo $product->product_details; ?>">
-                              <input type="hidden" name="isactive[]" value="<?php echo $product->isactive; ?>">
-                                 </td>
+                                
                                 <td> <?php echo (($product->isactive==1)?display('active'):display('inactive')); ?>
+                                <input type="hidden" name="product_details[]" value="<?php echo $product->product_details; ?>">
+                              <input type="hidden" name="isactive[]" value="<?php echo $product->isactive; ?>">
                                 </td>
                                 <td>
                                    <?php if($product->isactive == 1) { ?>

@@ -10,6 +10,12 @@
         float: left;
         display: none;
     }
+    .mainprol {
+        display: none;
+        font-size: 14px;
+        text-align: center;
+        font-weight: bold;
+    }
    
 </style>
 
@@ -128,7 +134,8 @@
                                             <input type="hidden" name="" id="retailRate_1" value="">
                                             <input type="hidden" name="" id="cminimum_price_1" />
                                             <input type="hidden" name="" id="cblock_price_1" />
-                                            <p id="dp_1" class="dp_1 hideprice dpStyle">DP - 700 / </p><p id="pl_1" class="pl_1 hideprice dpStyle">PL - 100 </p>
+                                            <p id="dp_1" class="dp_1 hideprice dpStyle">BP : 00 / </p><p id="pl_1" class="pl_1 hideprice dpStyle subPl">PL - 00 </p>
+                                            <input type="hidden" name="subprofitloss" class="subprofitloss" id="subprofitloss_1" value="" />
                                         </td>
                                         <td class="text-right">
                                             <input class="form-control text-right" type="text" name="discount[]" onkeyup="calculate_store(1),checkqty(1);"  id="discount_1" value="" placeholder="0%" />
@@ -166,6 +173,10 @@
                                         </td>
                                         <td style="text-align:right;"><b>Due / Advance</b>
                                             <input type="text" id="dueAdvance" class="text-right form-control" name="dueAdvance" value="0.00" readonly="readonly" />
+                                        </td>
+                                        <td style="text-align:right;">
+                                            <div class="hideprice mainprol"><b>P / L</b><p id="" class="netPL">00</p></div>
+                                            <input type="hidden" name="mainprolo" class="mainprolo" id="mainprolo" value="" />
                                         </td>
                                     </tr>
                                 </tfoot>
