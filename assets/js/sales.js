@@ -161,10 +161,17 @@ $('.showPrice').click(function() {
        
         //Total Price
         $(".total_price").each(function() {
-            isNaN(this.value) || 0 == this.value.length || (gr_tot += parseFloat(this.value))
+            // isNaN(this.value) || 0 == this.value.length || (gr_tot = parseFloat(gr_tot) + parseFloat(this.value))
+            if(isNaN(this.value) || this.value.length < 1){
+              gr_tot = 0;
+            } else {
+              gr_tot = parseFloat(gr_tot) + parseFloat(this.value);
+            }
+            // console.log('gr_tot::', gr_tot);
         });
 
-        $("#grandTotal").val(gr_tot.toFixed(2,2));
+        // $("#grandTotal").val(gr_tot.toFixed(2,2));
+        $("#grandTotal").val(Math.round(gr_tot));
     }
     function deleteRow(e) {
         var t = $("#saleTable > tbody > tr").length;

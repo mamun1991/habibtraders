@@ -131,7 +131,7 @@
                                             <p id="dp_1" class="dp_1 hideprice dpStyle">DP - 700 / </p><p id="pl_1" class="pl_1 hideprice dpStyle">PL - 100 </p>
                                         </td>
                                         <td class="text-right">
-                                            <input class="form-control total_price text-right" type="text" name="discount[]" onkeyup="calculate_store(1),checkqty(1);"  id="discount_1" value="" placeholder="0%" />
+                                            <input class="form-control text-right" type="text" name="discount[]" onkeyup="calculate_store(1),checkqty(1);"  id="discount_1" value="" placeholder="0%" />
                                         </td>
 
                                             <td class="text-right">

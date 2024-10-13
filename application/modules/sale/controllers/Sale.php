@@ -145,9 +145,13 @@ class Sale extends MX_Controller {
 	{ 
 	      	$this->permission->method('sale','create')->redirect();
 		   $this->form_validation->set_rules('customer_id', display('customer_id')  ,'max_length[50]');
+
+		//    echo '<pre>---';
 		
 		     if ($this->form_validation->run()) { 
+				echo '<pre>11';
 				if ($this->sale_model->create()) { 
+					echo '<pre>22'; exit;
 					$this->session->set_flashdata('message', display('save_successfully'));
 					if($this->input->post('sale_type') ==1){
 					redirect('sale/sale/index/');
@@ -157,7 +161,7 @@ class Sale extends MX_Controller {
 						redirect('sale/sale/lease_sale/');	
 					}
 				} else {
-					$this->session->set_flashdata('exception',  display('please_try_again'));
+					$this->session->set_flashdata('exception',  'Please try again!');
 				}
 				redirect("sale/sale/form");
  
