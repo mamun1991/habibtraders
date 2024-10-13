@@ -286,7 +286,7 @@ public function procedure(){
         $data['module'] = "reports";
         $data['page']   = "stock_history";   
         echo Modules::run('template/layout', $data); 
-        }
+    }
 // Product wise stock history
      public function product_stock_history(){
         $p_id = $this->input->post('product_id');

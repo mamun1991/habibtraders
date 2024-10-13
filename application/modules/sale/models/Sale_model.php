@@ -4,23 +4,28 @@ class Sale_model extends CI_Model {
  
 	public function create()
 	{	 
+
+    // echo '<pre>22'; exit;
  
-        $pq = $this->input->post('product_quantity');
-        $sale_id = date('YmdHis');
-        $payment_id = date('YmdHs');
-	    $invoice_no = $this->input->post('invoice_no');
+    $pq = $this->input->post('product_quantity');
+    $sale_id = date('YmdHis');
+    $payment_id = date('YmdHs');
+	  $invoice_no = $this->input->post('invoice_no');
 		$p_id = $this->input->post('product_id');
+    
 
 		$createby=$this->session->userdata('id');
 		$createdate=date('Y-m-d H:i:s');
 		$gurrantor = $this->input->post('gurrantor_id');
-		$gurrantor1=array_shift($gurrantor);
-		$gurrantor2=array_pop($gurrantor);
+		// $gurrantor1=array_shift($gurrantor);
+		// $gurrantor2=array_pop($gurrantor);
 		$installmentamnt= $this->input->post('installment_price');
-    	$remainamt= $this->input->post('remaining_amnt');
+    $remainamt= $this->input->post('remaining_amnt');
 		$installamnt = (!empty($installmentamnt)? $this->input->post('installment_price'):0);
 		$pack_pr= $this->input->post('package_price');
 		$package_price = (!empty($pack_pr)? $this->input->post('package_price'):0);
+
+    // echo '<pre>'; print_r($_POST);exit;
 		
 		#----------sales entry---------------------#
 	   $postparentData = array(
@@ -32,8 +37,8 @@ class Sale_model extends CI_Model {
 			'salesman'		          =>	$createby,
 			'sales_date'		        =>	$this->input->post('salesdate'),
 			'sales_time'            =>  date('H:i:s'),
-			'gurrantor_1'           =>  $gurrantor1,
-			'gurrantor_2'           =>  $gurrantor2,
+			// 'gurrantor_1'           =>  $gurrantor1,
+			// 'gurrantor_2'           =>  $gurrantor2,
 			'advance_amnt'          =>  $this->input->post('paid_amount'),
 			'lease_id'              =>  $this->input->post('lease_id'),
 			'inquiry_officer'       =>  $this->input->post('inquiry'),
@@ -42,6 +47,8 @@ class Sale_model extends CI_Model {
 			'package_price'         =>  $package_price,
 			'total_amnt'            =>  $this->input->post('grand_total_price'),
 		); 
+
+    echo '<pre>'; print_r($postparentData);exit;
 
 	 $this->db->insert('sales_parent',$postparentData);
 	  
@@ -76,7 +83,7 @@ class Sale_model extends CI_Model {
     ); 
       // $this->db->insert('acc_transaction',$cc);
 // Cash in hand debit
-	        $cdv = array(
+	    $cdv = array(
       'VNo'            =>  $invoice_no,
       'Vtype'          =>  'CIV',
       'VDate'          =>  $createdate,
@@ -171,221 +178,6 @@ class Sale_model extends CI_Model {
     }
    $sumval = array_sum($sell_avg);
   
-//********* Cash sale end. start Credit sale *****/
-  if($this->input->post('sale_type')==2){
-
-
-// Credit Sale 
-       	// Customer credit for paid amount 
-	        $crsdb = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CRIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  $customer_headcode,
-      'Narration'      =>  'Customer Credit For Invoice No'.$invoice_no,
-      'Debit'          =>  0,
-      'Credit'         => $this->input->post('paid_amount'),
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-       $this->db->insert('acc_transaction',$crsdb);
-
-// Customer Debit for Remaining amount
-	        $crscr = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CRIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  $customer_headcode,
-      'Narration'      =>  'Customer Debit For Invoice No'.$invoice_no,
-      'Debit'          =>  $this->input->post('grand_total_price'), // -$this->input->post('paid_amount')
-      'Credit'         => 0,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-	        $this->db->insert('acc_transaction',$crscr);
-	       // Cash in Hand debit for Paid amnt
- $crdrcashinhand = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CRIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  $store_HeadCode->HeadCode,
-      'Narration'      =>  'Cash in Hand For Invoice No'.$invoice_no,
-      'Debit'          =>  $this->input->post('paid_amount'),
-      'Credit'         =>  0,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-
-
-       $this->db->insert('acc_transaction',$crdrcashinhand);
-       // store credit 
-       $crestore = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CRIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  30102,
-      'Narration'      =>  'Store credit For Invoice No'.$invoice_no,
-      'Debit'          =>  0,
-      'Credit'         =>  $this->input->post('grand_total_price'),
-      'StoreID'        =>  $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
- $this->db->insert('acc_transaction',$crestore);
-//Cost of sale Debit
-  $creditcostsdr = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  403,
-      'Narration'      =>  'Cost of sale Debit For Invoice No'.$invoice_no,
-      'Debit'          =>  $sumval,
-      'Credit'         =>  0,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-
-// Inventory account Credit
-       $this->db->insert('acc_transaction',$creditcostsdr);
-       $creditcoscr = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  10107,
-      'Narration'      =>  'Inventory Credit For Invoice No'.$invoice_no,
-      'Debit'          =>  0,
-      'Credit'         =>  $sumval,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-
-
-       $this->db->insert('acc_transaction',$creditcoscr);
-
-       }
-  /***** End Credit sale. start lease sale  *****/     
-       if($this->input->post('sale_type')==3){
-       	//Customer Accounts credit for paid amount
-       	$leassdb = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'LSIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  $customer_headcode,
-      'Narration'      =>  $coainfo->HeadName.' Credit For Invoice No'.$invoice_no,
-      'Debit'          =>  0,
-      'Credit'         => $this->input->post('paid_amount'),
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-       $this->db->insert('acc_transaction',$leassdb);
-
-// Customer Debit for Total amount
-	        $leasecr = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'LSIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  $customer_headcode,
-      'Narration'      =>  $coainfo->HeadName.' Debit of Total Package Price For Invoice#'.$invoice_no,
-      'Debit'          =>  $package_price,
-      'Credit'         => 0,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-	        $this->db->insert('acc_transaction',$leasecr);
-	       // Cash in Hand debit for Paid amnt
- $leasecashinhand = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'LSIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  $store_HeadCode->HeadCode,
-      'Narration'      =>  'Cash In Hand Debit For Lease Invoice No'.$invoice_no,
-      'Debit'          =>  $this->input->post('paid_amount'),
-      'Credit'         =>  0,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-
-
-       $this->db->insert('acc_transaction',$leasecashinhand);
-       // store credit 
-       $leasestore = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'LSIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  30102,
-      'Narration'      =>  'Store Credit For Invoice No'.$invoice_no,
-      'Debit'          =>  0,
-      'Credit'         =>  $package_price,
-      'StoreID'        =>  $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
- $this->db->insert('acc_transaction',$leasestore);
-// Cost of Sale
-  $leasecostsdr = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'LSIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  403,
-      'Narration'      =>  'Cost Of Sale Debit For Invoice No'.$invoice_no,
-      'Debit'          =>  $sumval,
-      'Credit'         =>  0,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-
-
-       $this->db->insert('acc_transaction',$leasecostsdr);
-       //Inventory credit
-       $leasecoscr = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'LSIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  10107,
-      'Narration'      =>  'Inventory Credit For Invoice No'.$invoice_no,
-      'Debit'          =>  0,
-      'Credit'         =>  $sumval,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-
-
-       $this->db->insert('acc_transaction',$leasecoscr);
-       }
 	      #------------payment collection------------------#
 	      $paidamt = $this->input->post('paid_amount');
 	      if(!empty($paidamt)){
@@ -410,18 +202,18 @@ class Sale_model extends CI_Model {
 	   
 	      	$gr_id = $this->input->post('gurrantor_id');
 	      	for ($i=0, $n=count($gr_id); $i < $n; $i++) {
-	      		$gurrntid=$gr_id[$i];
-	      	$customr_gurrrantormap= array(
-                    'lease_id'     => $this->input->post('lease_id'),
-                    'customer_id'  => $this->input->post('customer_id'),
-                    'gurrantor_id' => $gurrntid,
-					);
-			
-			 if(!empty($gr_id))
-			{
-				 $this->db->insert('customer_gurrantor_map',$customr_gurrrantormap);
-			}
-			}
+              $gurrntid=$gr_id[$i];
+              $customr_gurrrantormap= array(
+                'lease_id'     => $this->input->post('lease_id'),
+                'customer_id'  => $this->input->post('customer_id'),
+                'gurrantor_id' => $gurrntid,
+              );
+          
+            if(!empty($gr_id))
+            {
+              $this->db->insert('customer_gurrantor_map',$customr_gurrrantormap);
+            }
+          }
 	      
 		$rate = $this->input->post('product_rate');
 		$quantity = $this->input->post('product_quantity');
@@ -720,39 +512,56 @@ class Sale_model extends CI_Model {
 		return false;
 	}
 	// stock available qty
-	public function get_total_product($product_id){
-	$id = 0;   
-        $this->db->query("CALL get_store_stock('".$id."',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id)");
-		$this->db->select('sum(tmp_store_stock.InQty) as qty');
-		$this->db->from('tmp_store_stock');
-		$this->db->where('tmp_store_stock.ProdID',$product_id);
+	public function get_total_product($product_id)
+  {
+	  $id = 0;   
+
+    // echo '<pre>'; print_r($product_id);exit;
+
+    // $this->db->query("CALL get_store_stock('".$id."',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id)");
+		$this->db->select('sum(purchase_order_details.order_qty) as qty, product.retail_price, purchase_order_details.product_rate, purchase_order_details.unit');
+		$this->db->from('purchase_order_details');
+		$this->db->join('product', 'product.product_id = purchase_order_details.product_id');
+		$this->db->where('purchase_order_details.product_id',$product_id);
 		if($this->session->userdata('isAdmin')==0){
-		$this->db->where('tmp_store_stock.StoreID',$this->session->userdata('store_id'));
+		  $this->db->where('purchase_order_details.store_id',$this->session->userdata('store_id'));
 		}
+    // $this->db->order_by('purchase_order_details.pod_id', 'ASC');
 		$pur = $this->db->get()->row();
 
-		$this->db->select('sum(tmp_store_stock.OutQty) as sqty');
-		$this->db->from('tmp_store_stock');
-		$this->db->where('tmp_store_stock.ProdID',$product_id);
-		if($this->session->userdata('isAdmin')==0){
-		$this->db->where('tmp_store_stock.StoreID',$this->session->userdata('store_id'));
-		}
-		$sal = $this->db->get()->row();		     
-						     
-		//$sal= $this->db->select('sum(qty) as sqty')->from('sale_details')->where('product_id',$product_id)->get()->row();
-        $pro_price = $this->db->select('*')->from('product')->where('product_id',$product_id)->get()->row();
-		$available_quantity = $pur->qty-$sal->sqty;
-        $price = $pro_price->retail_price;
-        $minprice = $pro_price->minimum_price;
-        $blocprice = $pro_price->block_price;
-		$data2 = array(
-			'total_product'  => $available_quantity,
-			'price'          => $price,
-			'minprice'       => $minprice,
-			'blockprice'     => $blocprice,
-			);
+    $resultarray = array(
+      'qty'     => $pur->qty,
+      'rtp'     => $pur->retail_price,
+      'dp'      => $pur->product_rate,
+      'unit'    => $pur->unit,
+    );
 
-		return $data2;
+    return $resultarray;
+
+    //echo '<pre>'; print_r($resultarray);exit;
+
+		// $this->db->select('sum(tmp_store_stock.OutQty) as sqty');
+		// $this->db->from('tmp_store_stock');
+		// $this->db->where('tmp_store_stock.ProdID',$product_id);
+		// if($this->session->userdata('isAdmin')==0){
+		// $this->db->where('tmp_store_stock.StoreID',$this->session->userdata('store_id'));
+		// }
+		// $sal = $this->db->get()->row();		     
+						     
+		// //$sal= $this->db->select('sum(qty) as sqty')->from('sale_details')->where('product_id',$product_id)->get()->row();
+    //     $pro_price = $this->db->select('*')->from('product')->where('product_id',$product_id)->get()->row();
+		// $available_quantity = $pur->qty-$sal->sqty;
+    //     $price = $pro_price->retail_price;
+    //     $minprice = $pro_price->minimum_price;
+    //     $blocprice = $pro_price->block_price;
+		// $data2 = array(
+		// 	'total_product'  => $available_quantity,
+		// 	'price'          => $price,
+		// 	'minprice'       => $minprice,
+		// 	'blockprice'     => $blocprice,
+		// 	);
+
+		// return $data2;
 	}
 	
 	// Retrive lease product info
