@@ -30272,3 +30272,86 @@ UPDATE `user` SET `last_login` = '2024-10-09 06:47:53', `ip_address` = '::1'
 WHERE `id` = '1';
 CALL get_store_stock('0',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id);
 CALL get_store_stock('0',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'BHL/Parla', 1);
+UPDATE `product_brand` SET `brand_id` = '2', `isactive` = 0
+WHERE `brand_id` = '2';
+UPDATE `product_brand` SET `brand_id` = '2', `isactive` = 1
+WHERE `brand_id` = '2';
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'ABC/Cosmo', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'Astra', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'Apex', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Pillar Cock - Prominant', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'Islam Metal', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Moving Pillar Cock - Lever', 1);
+UPDATE `product_category` SET `category_id` = '2', `category_name` = 'Moving Pillar Cock - Prominant', `isactive` = 1
+WHERE `category_id` = '2';
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Moving Sink Cock - Prominant', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Moving Sink Cock - Lever', 1);
+INSERT INTO `product_unit` (`unit_id`, `unit_name`, `isactive`) VALUES ('', 'Ft', 1);
+UPDATE `product_category` SET `category_id` = '5', `category_name` = 'Sink Cock', `isactive` = 1
+WHERE `category_id` = '5';
+DELETE FROM `product_category`
+WHERE `category_id` = '4';
+DELETE FROM `product_category`
+WHERE `category_id` = '2';
+UPDATE `product_category` SET `category_id` = '3', `category_name` = 'Pillar Cock', `isactive` = 1
+WHERE `category_id` = '3';
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Bib Cock', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Moving - Lever', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Lever', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Moving - Prominant', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Prominant', 1);
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Pillar Cock-Astra-Moving - Prominant', 'pro-1003', '4', '3', '4', '1', '', '0', '0', '0', '0', '1', '2024-10-09 08:57:19', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :3', '1', '2024-10-09 08:57:19');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Pillar Cock-Astra-Moving - Lever', 'pro-1004', '2', '3', '4', '1', '', '0', '0', '0', '0', '1', '2024-10-09 08:58:34', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :4', '1', '2024-10-09 08:58:34');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Bib Cock-Astra-Lever', 'pro-1005', '3', '6', '4', '1', '', '0', '0', '0', '0', '1', '2024-10-09 08:59:13', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :5', '1', '2024-10-09 08:59:13');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Bib Cock-Astra-Prominant', 'pro-1006', '5', '6', '4', '1', '', '0', '0', '0', '0', '1', '2024-10-09 08:59:27', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :6', '1', '2024-10-09 08:59:27');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`) VALUES (5020200008, 'sup-1-Suman Ali', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0', '1', '2024-10-09 09:01:29');
+INSERT INTO `supplier` (`supplier_id`, `supplier_name`, `supplier_code`, `phone`, `address`, `email`, `contact_per_name`, `c_p_contact`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('', 'Suman Ali', 'sup-1', '01812345678', '', '', '', '', 1, '1', '2024-10-09 09:01:29', '', '');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Supplier', 'create', 'Supplier ID :1', '1', '2024-10-09 09:01:29');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`) VALUES (40100004, '123-HT - 1', 'Store Expenses', '2', '1', '1', '0', 'E', '0', '0', '0', '1', '2024-10-09 09:02:29');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`) VALUES (1020101000002, 'Cash-123-HT - 1', 'Cash In Hand', '4', '1', '1', '0', 'A', '0', '0', '0', '1', '2024-10-09 09:02:29');
+INSERT INTO `store` (`store_id`, `store_name`, `store_code`, `store_phone`, `store_address`, `createby`, `createdate`, `isactive`) VALUES ('', 'HT - 1', '123', '0190000000', 'Tangail', '1', '2024-10-09 09:02:29', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Store', 'create', 'Store ID :2', '1', '2024-10-09 09:02:29');
+INSERT INTO `purchase_order` (`po_no`, `supplier_id`, `total_amnt`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`) VALUES ('20241009090654', '1', '49294.00', 0, 0, '1', '2024-10-09 09:06:54', 0);
+INSERT INTO `purchase_order_details` (`row_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`) VALUES ('351441862849262', '20241009090654', '3', '20', '2499', '686', '2');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('purchase order', 'create', 'Orde Id-20241009090654 total amount-49294.00', '1', '2024-10-09 09:06:54');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `supplier_id`, `store_id`, `warehouse_id`, `voucher_no`, `receive_by`, `receive_date`) VALUES ('20241009090728', '20241009090654', '1', 0, 0, 1000, '1', '2024-10-09');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241009090728', '3', '10', '2499', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241009090654', 'PO', '2024-10-09', 10107, 'PO Receive Receive No 20241009090728', '24990.00', 0, '2', 1, '1', '2024-10-09', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241009090654', 'PO', '2024-10-09', '5020200008', 'PO received For PO No.20241009090654 Receive No.20241009090728', 0, '24990.00', NULL, 1, '1', '2024-10-09', 1);
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`) VALUES (5020200009, 'sup-2-Musa', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0', '1', '2024-10-09 09:10:03');
+INSERT INTO `supplier` (`supplier_id`, `supplier_name`, `supplier_code`, `phone`, `address`, `email`, `contact_per_name`, `c_p_contact`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('', 'Musa', 'sup-2', '01712345678', '', '', '', '', 1, '1', '2024-10-09 09:10:03', '', '');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Supplier', 'create', 'Supplier ID :2', '1', '2024-10-09 09:10:03');
+INSERT INTO `purchase_order` (`po_no`, `supplier_id`, `total_amnt`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`) VALUES ('20241009091116', '2', '12400.00', 0, 0, '1', '2024-10-09 09:11:16', 0);
+INSERT INTO `purchase_order_details` (`row_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`) VALUES ('219523336521851', '20241009091116', '1', '5', '2500', '100', '2');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('purchase order', 'create', 'Orde Id-20241009091116 total amount-12400.00', '1', '2024-10-09 09:11:16');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `supplier_id`, `store_id`, `warehouse_id`, `voucher_no`, `receive_by`, `receive_date`) VALUES ('20241009091247', '20241009090654', '1', 0, 0, 1001, '1', '2024-10-09');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241009091247', '3', '10', '2499', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241009090654', 'PO', '2024-10-09', 10107, 'PO Receive Receive No 20241009091247', '24990.00', 0, '2', 1, '1', '2024-10-09', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241009090654', 'PO', '2024-10-09', '5020200008', 'PO received For PO No.20241009090654 Receive No.20241009091247', 0, '24990.00', NULL, 1, '1', '2024-10-09', 1);
+UPDATE `purchase_order` SET `po_no` = '20241009090654', `isapproved` = 1
+WHERE `po_no` = '20241009090654';
+CALL get_store_stock('0',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id);
+INSERT INTO `stock_movement` (`proposal_code`, `for_store_id`, `from_store_id`, `proposal_datetime`, `proposal_by`) VALUES ('p-2', '2', '1', '2024-10-09', '1');
+INSERT INTO `stock_movement_details` (`movement_id`, `product_id`, `proposal_qty`) VALUES (2, '6', '3');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Stockmovment', 'create', 'Stockmovment ID :2', '1', '2024-10-09 09:16:53');
+UPDATE `stock_movement` SET `movement_id` = '1', `is_approved` = 1
+WHERE `movement_id` = '1';
+UPDATE `setting` SET `id` = '2', `title` = 'Habib Traders', `address` = 'Amghat Road, College Para, Tangail', `email` = 'ahsan.habib2512@gmail.com', `phone` = '0195', `logo` = 'assets/img/icons/logo.png', `favicon` = 'assets/img/icons/m.png', `language` = 'english', `site_align` = 'LTR', `footer_text` = '2017Â©Copyright'
+WHERE `id` = '2';
+UPDATE `setting` SET `id` = '2', `title` = 'Habib Traders', `address` = 'Amghat Road, College Para, Tangail', `email` = 'ahsan.habib2512@gmail.com', `phone` = '01959632369', `logo` = 'assets/img/icons/logo.png', `favicon` = 'assets/img/icons/m.png', `language` = 'english', `site_align` = 'LTR', `footer_text` = '2017Â©Copyright'
+WHERE `id` = '2';
+UPDATE `setting` SET `id` = '2', `title` = 'Habib Traders', `address` = 'Amghat Road, College Para, Tangail', `email` = 'ahsan.habib2512@gmail.com', `phone` = '01959632369', `logo` = 'assets/img/icons/logo.png', `favicon` = 'assets/img/icons/m.png', `language` = 'english', `site_align` = 'LTR', `footer_text` = ''
+WHERE `id` = '2';
+UPDATE `user` SET `last_login` = '2024-10-09 13:30:56', `ip_address` = '::1'
+WHERE `id` = '1';
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `CreateBy`, `CreateDate`) VALUES ('3010101', '', 'Cash Sale', '2', '1', '1', '1', 'I', 0, '1', '2024-10-09 13:31:24');
+UPDATE `product` SET `product_id` = '2', `product_name` = 'Basin-Stella-B-21', `product_code` = 'pro-1002', `model` = '1', `category` = '1', `brand` = '1', `unit` = NULL, `product_details` = '', `purchase_price` = '4300', `block_price` = '4700', `minimum_price` = '4500', `retail_price` = '4600', `createby` = '1', `createdate` = '2024-10-09 13:35:01', `updateby` = '1', `updatedate` = '2024-10-09 13:35:01', `isactive` = 1
+WHERE `product_id` = '2';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'update', 'product ID :2', '1', '2024-10-09 13:35:01');
+UPDATE `user` SET `last_login` = '2024-10-13 11:35:11', `ip_address` = '::1'
+WHERE `id` = '1';
