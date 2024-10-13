@@ -149,12 +149,23 @@
                                     <tr>
                                         <td colspan="2">
                                             <input type="button" id="add_invoice_item" class="btn btn-info" name="add-invoice-item"  onClick="addsaleOrderField1('addsaleItem');" value="<?php echo display('add_new_item') ?>"  tabindex="11"/>
-                                          <input type="hidden"   class="text-right form-control" name="paid_amount" value=""  />
+                                            <input type="hidden" class="text-right form-control" name="paid_amount" value=""  />
                                             <input type="hidden" name="baseUrl" class="baseUrl" value="<?php echo base_url();?>"/>
                                         </td>
-                                        <td style="text-align:right;" colspan="2"><b><?php echo display('total_amount') ?>:</b></td>
-                                        <td class="text-right">
+                                        <td style="text-align:right;"><b><?php echo display('total_amount') ?></b>
                                             <input type="text" id="grandTotal" class="text-right form-control" name="grand_total_price" value="0.00" readonly="readonly" />
+                                        </td>
+                                        <td style="text-align:right;"><b>Flat Discount</b>
+                                            <input type="text" id="flatDiscount" class="text-right form-control" name="flatDiscount" value="" placeholder="0.00" />
+                                        </td>
+                                        <td class="text-right"><b>Payble Amount</b>
+                                            <input type="text" id="netTotal" class="text-right form-control" name="netTotal" value="0.00" readonly="readonly" />
+                                        </td>
+                                        <td style="text-align:right;"><b>Paid Amount</b>
+                                            <input type="text" id="paidAmount" class="text-right form-control" name="paidAmount" value="" placeholder="0.00" />
+                                        </td>
+                                        <td style="text-align:right;"><b>Due / Advance</b>
+                                            <input type="text" id="dueAdvance" class="text-right form-control" name="dueAdvance" value="0.00" readonly="readonly" />
                                         </td>
                                     </tr>
                                 </tfoot>

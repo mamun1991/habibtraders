@@ -139,6 +139,18 @@ $('.showPrice').click(function() {
         }
     }
 
+    $(document).on('keyup', '#flatDiscount', function(){
+      var grandTotal = $('#grandTotal').val();
+      var fdval = $(this).val();
+
+      if(fdval == 0 ){
+        fdval = 0;
+      }
+      var netAmount = parseFloat(grandTotal) - parseFloat(fdval);
+      $('#netTotal').val(netAmount);
+      // console.log('flat dis:', fdval);
+    });
+
     //Calculate store product
     function calculate_store(sl) {
        
@@ -172,6 +184,7 @@ $('.showPrice').click(function() {
 
         // $("#grandTotal").val(gr_tot.toFixed(2,2));
         $("#grandTotal").val(Math.round(gr_tot));
+        $("#netTotal").val(Math.round(gr_tot));
     }
     function deleteRow(e) {
         var t = $("#saleTable > tbody > tr").length;
