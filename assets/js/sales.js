@@ -151,6 +151,25 @@ $('.showPrice').click(function() {
       // console.log('flat dis:', fdval);
     });
 
+    $(document).on('keyup', '#paidAmount', function(){
+      var netTotal = $('#netTotal').val();
+      var paidAmount = $(this).val();
+
+      if(paidAmount == 0 ){
+        paidAmount = 0;
+      }
+      // var netAmount = parseFloat(netTotal) - parseFloat(paidAmount);
+      var netAmount = Math.abs(parseFloat(netTotal) - parseFloat(paidAmount));
+      $('#dueAdvance').val(netAmount);
+
+      if(parseFloat(netTotal) > parseFloat(paidAmount)){
+        $("#dueAdvance").css('color', 'red');
+      } else {
+        $("#dueAdvance").css('color', 'green');
+      }
+      // console.log('flat dis:', fdval);
+    });
+
     //Calculate store product
     function calculate_store(sl) {
        
