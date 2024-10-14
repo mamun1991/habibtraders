@@ -190,6 +190,11 @@ $('.showPrice').click(function() {
         var vendor_rate = $("#retailRate_"+sl).val();
         var product_rate = $("#product_rate_"+sl).val();
         var discount = $("#discount_"+sl).val();
+        var flatDiscount = $("#flatDiscount").val();
+
+        if(flatDiscount < 1){
+          flatDiscount = 0;
+        }
 
         
 
@@ -205,9 +210,6 @@ $('.showPrice').click(function() {
 
         var prolos = item_ctn_qty * profitlos;
         // console.log('profit::', prolos);
-        // $('#pl_'+sl).html(' PL : ' + prolos);
-
-        // $('#product_rate_'+sl).val(Math.round(discountRate));
 
         if(discountRate < maindp){
           $('#pl_'+sl).css('color', 'red');
@@ -230,36 +232,34 @@ $('.showPrice').click(function() {
             // console.log('gr_tot::', gr_tot);
         });
 
+        $("#grandTotal").val(Math.round(gr_tot));
+        
+
         var netPl = 0;
 
         $(".subprofitloss").each(function() {
           var pl = $(this).val();
-          // let mainpl = Math.floor(parseFloat(pl.match(/[\d.]+/)));
-
-          console.log('main pl:', pl);
-
           if(isNaN(pl)){
             netPl = 0;
           } else {
             netPl = parseFloat(netPl) + parseFloat(pl);
           }
+        });
+        netPl = parseFloat(netPl) - parseFloat(flatDiscount);
+        gr_tot = parseFloat(gr_tot) - parseFloat(flatDiscount);
 
-          if(netPl < 0) {
-            $(".netPL").css('color', 'red');
-          } else {
-            $(".netPL").css('color', 'green');
-          }
-          // console.log('netPl::', gr_tot);
-      });
-
-      // console.log('net Pl=', netPl);
-
-        // $("#grandTotal").val(gr_tot.toFixed(2,2));
-        $("#grandTotal").val(Math.round(gr_tot));
+        if(netPl < 0) {
+          $(".netPL").css('color', 'red');
+        } else {
+          $(".netPL").css('color', 'green');
+        }
+        
         $("#netTotal").val(Math.round(gr_tot));
         $(".netPL").html(netPl);
         $("#mainprolo").val(netPl);
     }
+
+
     function deleteRow(e) {
         var t = $("#saleTable > tbody > tr").length;
         if (1 == t) alert("There only one row you can't delete.");
@@ -267,25 +267,37 @@ $('.showPrice').click(function() {
           var a = e.parentNode.parentNode;
           a.parentNode.removeChild(a);
 
-
           var gr_tot = 0;
           $(".total_price").each(function() {
             isNaN(this.value) || 0 == this.value.length || (gr_tot += parseFloat(this.value))
           });
 
-          console.log(gr_tot);
+          var netPl = 0;
+          $(".subprofitloss").each(function() {
+            var pl = $(this).val();
+            if(isNaN(pl)){
+              netPl = 0;
+            } else {
+              netPl = parseFloat(netPl) + parseFloat(pl);
+            }
+          });
 
-        var fd = $("#flatDiscount").val();
+          var flatDiscount = $("#flatDiscount").val();
+          netPl = parseFloat(netPl) - parseFloat(flatDiscount);
 
-        if(fd < 1){
+          if(netPl < 0) {
+            $(".netPL").css('color', 'red');
+          } else {
+            $(".netPL").css('color', 'green');
+          }
 
-        }
-
-        var fld = parseFloat(gr_tot) - parseFloat(fd);
+          var fld = parseFloat(gr_tot) - parseFloat(flatDiscount);
 
 
-        $("#grandTotal").val(gr_tot.toFixed(2,2));
-        $("#netTotal").val(fld.toFixed(2,2));
+          $("#grandTotal").val(gr_tot.toFixed(2,2));
+          $("#netTotal").val(fld.toFixed(2,2));
+          $(".netPL").html(netPl);
+          $("#mainprolo").val(netPl);
 
             
         }
