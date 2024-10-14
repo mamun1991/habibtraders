@@ -111,3 +111,9 @@ UPDATE `user` SET `last_login` = '2024-10-13 06:49:37', `ip_address` = '::1'
 WHERE `id` = '1';
 UPDATE `user` SET `last_login` = '2024-10-14 05:44:20', `ip_address` = '::1'
 WHERE `id` = '1';
+UPDATE `user` SET `last_login` = '2024-10-14 12:51:17', `ip_address` = '::1'
+WHERE `id` = '1';
+UPDATE `user` SET `last_logout` = '2024-10-14 16:53:48'
+WHERE `id` = '1';
+UPDATE `user` SET `last_login` = '2024-10-14 16:53:53', `ip_address` = '::1'
+WHERE `id` = '1';

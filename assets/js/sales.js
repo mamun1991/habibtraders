@@ -118,13 +118,13 @@ $('.showPrice').click(function() {
 
 
             newdiv.innerHTML =
-            '<td class="span3 supplier"><input type="text" name="product_name" required class="form-control product_name productSelection" onkeyup="product_sale_list('+ count +');" placeholder="Product Name" id="product_name_'+ count +'" tabindex="'+tab1+'" > <input type="hidden" class="autocomplete_hidden_value product_id_'+ count +'" name="product_id[]" id="SchoolHiddenId"/>  <input type="hidden" class="sl" value="'+ count +'">  </td>'
+            '<td class="span3 supplier"><input type="text" name="product_name[]" required class="form-control product_name productSelection" onkeyup="product_sale_list('+ count +');" placeholder="Product Name" id="product_name_'+ count +'" tabindex="'+tab1+'" > <input type="hidden" class="autocomplete_hidden_value product_id_'+ count +'" name="product_id[]" id="SchoolHiddenId"/>  <input type="hidden" class="sl" value="'+ count +'">  </td>'
             +'<td class="wt"> <input type="text" id="available_quantity_'+ count +'" class="form-control text-right stock_ctn_'+ count +'" placeholder="0.00" readonly/> </td>'
             +'<td class="text-right"><input type="text" name="product_quantity[]" tabindex="'+tab2+'" required  id="quantity_'+ count +'" class="form-control text-right store_cal_' + count + '" onkeyup="calculate_store(' + count + '),checkqty(' + count + ');" placeholder="0.00" value="" min="0"/>  </td>'
             +'<td class="text-right"><input type="text" id="unit_'+ count +'" class="form-control text-right unit_'+ count +'" placeholder="0.00" readonly/></td>'
             +'<td class="test"><input type="text" name="product_rate[]" required onkeyup="calculate_store('+ count +'),checkqty(' + count + ');" id="product_rate_'+ count +'" class="form-control product_rate_'+ count +' text-right" placeholder="0.00" value="" min="0" tabindex="'+tab3+'"/><input type="hidden" name="" id="retailRate_'+ count +'" value=""><p id="dp_'+ count +'" class="hideprice dp_'+ count +' dpStyle">BP : 00 / </p><p id="pl_'+ count +'" class="hideprice subPl pl_'+ count +' dpStyle">PL - 00 </p><input type="hidden" name="subprofitloss" class="subprofitloss" id="subprofitloss_'+ count +'" value="" /></td>'
             +'<td class="text-right"><input class="form-control discount_'+ count +' text-right" type="text" onkeyup="calculate_store('+ count +'),checkqty(' + count + ');" name="discount[]" id="discount_'+ count +'" value="" placeholder="0%" /></td>'
-            +'<td class="text-right"><input class="form-control total_price text-right total_price_'+ count +'" type="text" name="total_price[]" id="total_price_'+ count +'" value="0.00" readonly="readonly" /> </td><td><button style="text-align: right;" class="btn btn-danger red" type="button" value="Delete" onclick="deleteRow(this)"tabindex="'+tab4+'"><i class="fa fa-close" aria-hidden="true"></i></button></td>';
+            +'<td class="text-right"><input class="form-control total_price tp text-right total_price_'+ count +'" type="text" name="total_price[]" id="total_price_'+ count +'" value="0.00" readonly="readonly" /><input class="form-control total_price_dis tp text-right total_price_dis_'+ count +'" type="text" name="total_price_dis[]" id="total_price_dis_'+ count +'" value="0.00" readonly="readonly" /> </td><td><button style="text-align: right;" class="btn btn-danger red" type="button" value="Delete" onclick="deleteRow(this)"tabindex="'+tab4+'"><i class="fa fa-close" aria-hidden="true"></i></button></td>';
             document.getElementById(divName).appendChild(newdiv);
             document.getElementById(tabin).focus();
             document.getElementById("add_invoice_item").setAttribute("tabindex", tab5);
@@ -141,14 +141,14 @@ $('.showPrice').click(function() {
     }
 
     $(document).on('keyup', '#flatDiscount', function(){
-      var grandTotal = $('#grandTotal').val();
+      var netTotalHide = $('#netTotalHide').val();
       var fdval = $(this).val();
       var netpl = $("#mainprolo").val();
 
       if(fdval == 0 ){
         fdval = 0;
       }
-      var netAmount = parseFloat(grandTotal) - parseFloat(fdval);
+      var netAmount = parseFloat(netTotalHide) - parseFloat(fdval);
       var netprofit = parseFloat(netpl) - parseFloat(fdval);
       $('#netTotal').val(netAmount);
       // console.log('flat dis:', fdval);
@@ -160,7 +160,6 @@ $('.showPrice').click(function() {
       }
 
       $(".netPL").html(netprofit);
-      // $("#mainprolo").val(netprofit);
     });
 
     $(document).on('keyup', '#paidAmount', function(){
@@ -176,8 +175,14 @@ $('.showPrice').click(function() {
 
       if(parseFloat(netTotal) > parseFloat(paidAmount)){
         $("#dueAdvance").css('color', 'red');
+        $("#dueAdvText").val('due');
       } else {
         $("#dueAdvance").css('color', 'green');
+        if(parseFloat(netTotal) == parseFloat(paidAmount)){
+          $("#dueAdvText").val('paid');
+        } else {
+          $("#dueAdvText").val('advance');
+        }
       }
       // console.log('flat dis:', fdval);
     });
@@ -220,6 +225,7 @@ $('.showPrice').click(function() {
         $('#pl_'+sl).html(' PL : ' + prolos.toFixed(2));
         $('#subprofitloss_'+sl).val(prolos.toFixed(2));
         $("#total_price_"+sl).val(total_price_price.toFixed(2));
+        $("#total_price_dis_"+sl).val(total_price.toFixed(2));
        
         //Total Price
         $(".total_price").each(function() {
@@ -231,6 +237,17 @@ $('.showPrice').click(function() {
             }
             // console.log('gr_tot::', gr_tot);
         });
+
+        var grtot_dis = 0;
+        $(".total_price_dis").each(function() {
+          // isNaN(this.value) || 0 == this.value.length || (gr_tot = parseFloat(gr_tot) + parseFloat(this.value))
+          if(isNaN(this.value) || this.value.length < 1){
+            grtot_dis = 0;
+          } else {
+            grtot_dis = parseFloat(grtot_dis) + parseFloat(this.value);
+          }
+          // console.log('gr_tot::', gr_tot);
+      });
 
         $("#grandTotal").val(Math.round(gr_tot));
         
@@ -246,7 +263,7 @@ $('.showPrice').click(function() {
           }
         });
         netPl = parseFloat(netPl) - parseFloat(flatDiscount);
-        gr_tot = parseFloat(gr_tot) - parseFloat(flatDiscount);
+        grtot_dis = parseFloat(grtot_dis) - parseFloat(flatDiscount);
 
         if(netPl < 0) {
           $(".netPL").css('color', 'red');
@@ -254,9 +271,10 @@ $('.showPrice').click(function() {
           $(".netPL").css('color', 'green');
         }
         
-        $("#netTotal").val(Math.round(gr_tot));
+        $("#netTotal").val(Math.round(grtot_dis));
+        $("#netTotalHide").val(Math.round(grtot_dis));
         $(".netPL").html(netPl);
-        $("#mainprolo").val(netPl);
+        $("#mainprolo").val(Math.round(netPl));
     }
 
 
@@ -270,6 +288,11 @@ $('.showPrice').click(function() {
           var gr_tot = 0;
           $(".total_price").each(function() {
             isNaN(this.value) || 0 == this.value.length || (gr_tot += parseFloat(this.value))
+          });
+
+          var gr_tot_dis = 0;
+          $(".total_price_dis").each(function() {
+            isNaN(this.value) || 0 == this.value.length || (gr_tot_dis += parseFloat(this.value))
           });
 
           var netPl = 0;
@@ -291,13 +314,13 @@ $('.showPrice').click(function() {
             $(".netPL").css('color', 'green');
           }
 
-          var fld = parseFloat(gr_tot) - parseFloat(flatDiscount);
+          var fld = parseFloat(gr_tot_dis) - parseFloat(flatDiscount);
 
 
           $("#grandTotal").val(gr_tot.toFixed(2,2));
           $("#netTotal").val(fld.toFixed(2,2));
           $(".netPL").html(netPl);
-          $("#mainprolo").val(netPl);
+          $("#mainprolo").val(Math.round(netPl));
 
             
         }
