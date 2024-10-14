@@ -59,8 +59,9 @@ function product_sale_list(list) {
                   $('#'+pur_price).val(obj.rtp);
                   $('#retailRate_'+sl).val(obj.rtp);
                   $('#unit_'+list).val(obj.unit);
-                  $('#dp_'+list).html('DP - ' + obj.dp + ' / ');
-                  $('#pl_'+list).html(' PL - ' + prolos);
+                  $('#dp_'+list).html('BP : ' + obj.dp + ' / ');
+                  $('#pl_'+list).html(' PL : ' + prolos);
+                  $('#subprofitloss_'+list).val(prolos);
                   // <p id="dp_1" class="dp_1 dpStyle">DP - 700 / </p><p id="pl_1" class="pl_1 dpStyle">PL - 100 </p>
         
                   
@@ -121,7 +122,7 @@ $('.showPrice').click(function() {
             +'<td class="wt"> <input type="text" id="available_quantity_'+ count +'" class="form-control text-right stock_ctn_'+ count +'" placeholder="0.00" readonly/> </td>'
             +'<td class="text-right"><input type="text" name="product_quantity[]" tabindex="'+tab2+'" required  id="quantity_'+ count +'" class="form-control text-right store_cal_' + count + '" onkeyup="calculate_store(' + count + '),checkqty(' + count + ');" placeholder="0.00" value="" min="0"/>  </td>'
             +'<td class="text-right"><input type="text" id="unit_'+ count +'" class="form-control text-right unit_'+ count +'" placeholder="0.00" readonly/></td>'
-            +'<td class="test"><input type="text" name="product_rate[]" required onkeyup="calculate_store('+ count +'),checkqty(' + count + ');" id="product_rate_'+ count +'" class="form-control product_rate_'+ count +' text-right" placeholder="0.00" value="" min="0" tabindex="'+tab3+'"/><input type="hidden" name="" id="retailRate_'+ count +'" value=""><p id="dp_'+ count +'" class="hideprice dp_'+ count +' dpStyle">DP - 700 / </p><p id="pl_'+ count +'" class="hideprice pl_'+ count +' dpStyle">PL - 100 </p></td>'
+            +'<td class="test"><input type="text" name="product_rate[]" required onkeyup="calculate_store('+ count +'),checkqty(' + count + ');" id="product_rate_'+ count +'" class="form-control product_rate_'+ count +' text-right" placeholder="0.00" value="" min="0" tabindex="'+tab3+'"/><input type="hidden" name="" id="retailRate_'+ count +'" value=""><p id="dp_'+ count +'" class="hideprice dp_'+ count +' dpStyle">BP : 00 / </p><p id="pl_'+ count +'" class="hideprice subPl pl_'+ count +' dpStyle">PL - 00 </p><input type="hidden" name="subprofitloss" class="subprofitloss" id="subprofitloss_'+ count +'" value="" /></td>'
             +'<td class="text-right"><input class="form-control discount_'+ count +' text-right" type="text" onkeyup="calculate_store('+ count +'),checkqty(' + count + ');" name="discount[]" id="discount_'+ count +'" value="" placeholder="0%" /></td>'
             +'<td class="text-right"><input class="form-control total_price text-right total_price_'+ count +'" type="text" name="total_price[]" id="total_price_'+ count +'" value="0.00" readonly="readonly" /> </td><td><button style="text-align: right;" class="btn btn-danger red" type="button" value="Delete" onclick="deleteRow(this)"tabindex="'+tab4+'"><i class="fa fa-close" aria-hidden="true"></i></button></td>';
             document.getElementById(divName).appendChild(newdiv);
@@ -142,13 +143,24 @@ $('.showPrice').click(function() {
     $(document).on('keyup', '#flatDiscount', function(){
       var grandTotal = $('#grandTotal').val();
       var fdval = $(this).val();
+      var netpl = $("#mainprolo").val();
 
       if(fdval == 0 ){
         fdval = 0;
       }
       var netAmount = parseFloat(grandTotal) - parseFloat(fdval);
+      var netprofit = parseFloat(netpl) - parseFloat(fdval);
       $('#netTotal').val(netAmount);
       // console.log('flat dis:', fdval);
+
+      if(netprofit < 0) {
+        $(".netPL").css('color', 'red');
+      } else {
+        $(".netPL").css('color', 'green');
+      }
+
+      $(".netPL").html(netprofit);
+      // $("#mainprolo").val(netprofit);
     });
 
     $(document).on('keyup', '#paidAmount', function(){
@@ -176,19 +188,36 @@ $('.showPrice').click(function() {
         var gr_tot = 0;
         var item_ctn_qty    = $("#quantity_"+sl).val();
         var vendor_rate = $("#retailRate_"+sl).val();
+        var product_rate = $("#product_rate_"+sl).val();
         var discount = $("#discount_"+sl).val();
+
+        
+
         var dp = $('#dp_'+sl).html();
         var maindp = dp.replace(/\D/g, '');
 
-        var totalDis = (vendor_rate * discount) / 100;
+        var totalDis = (product_rate * discount) / 100;
         // console.log('discount::', maindp);
-        var discountRate = parseFloat(vendor_rate) - parseFloat(totalDis);
+        var discountRate = parseFloat(product_rate) - parseFloat(totalDis);
         var total_price = item_ctn_qty * discountRate;
+        var total_price_price = item_ctn_qty * product_rate;
         var profitlos = parseFloat(discountRate) - parseFloat(maindp);
 
-        $('#product_rate_'+sl).val(Math.round(discountRate));
-        $('#pl_'+sl).html(' PL - ' + profitlos.toFixed(2));
-        $("#total_price_"+sl).val(total_price.toFixed(2));
+        var prolos = item_ctn_qty * profitlos;
+        // console.log('profit::', prolos);
+        // $('#pl_'+sl).html(' PL : ' + prolos);
+
+        // $('#product_rate_'+sl).val(Math.round(discountRate));
+
+        if(discountRate < maindp){
+          $('#pl_'+sl).css('color', 'red');
+        } else {
+          $('#pl_'+sl).css('color', 'green');
+        }
+
+        $('#pl_'+sl).html(' PL : ' + prolos.toFixed(2));
+        $('#subprofitloss_'+sl).val(prolos.toFixed(2));
+        $("#total_price_"+sl).val(total_price_price.toFixed(2));
        
         //Total Price
         $(".total_price").each(function() {
@@ -201,9 +230,35 @@ $('.showPrice').click(function() {
             // console.log('gr_tot::', gr_tot);
         });
 
+        var netPl = 0;
+
+        $(".subprofitloss").each(function() {
+          var pl = $(this).val();
+          // let mainpl = Math.floor(parseFloat(pl.match(/[\d.]+/)));
+
+          console.log('main pl:', pl);
+
+          if(isNaN(pl)){
+            netPl = 0;
+          } else {
+            netPl = parseFloat(netPl) + parseFloat(pl);
+          }
+
+          if(netPl < 0) {
+            $(".netPL").css('color', 'red');
+          } else {
+            $(".netPL").css('color', 'green');
+          }
+          // console.log('netPl::', gr_tot);
+      });
+
+      // console.log('net Pl=', netPl);
+
         // $("#grandTotal").val(gr_tot.toFixed(2,2));
         $("#grandTotal").val(Math.round(gr_tot));
         $("#netTotal").val(Math.round(gr_tot));
+        $(".netPL").html(netPl);
+        $("#mainprolo").val(netPl);
     }
     function deleteRow(e) {
         var t = $("#saleTable > tbody > tr").length;
@@ -220,7 +275,17 @@ $('.showPrice').click(function() {
 
           console.log(gr_tot);
 
+        var fd = $("#flatDiscount").val();
+
+        if(fd < 1){
+
+        }
+
+        var fld = parseFloat(gr_tot) - parseFloat(fd);
+
+
         $("#grandTotal").val(gr_tot.toFixed(2,2));
+        $("#netTotal").val(fld.toFixed(2,2));
 
             
         }
