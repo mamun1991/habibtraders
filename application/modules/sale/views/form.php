@@ -16,6 +16,10 @@
         text-align: center;
         font-weight: bold;
     }
+    .tp {
+        width: 50%;
+        float: left;
+    }
    
 </style>
 
@@ -110,7 +114,7 @@
                                 <tbody id="addsaleItem">
                                     <tr>
                                         <td class="span3 manufacturer ts">
-                                           <input type="text" name="product_name" required class="form-control product_name productSelection" 
+                                           <input type="text" name="product_name[]" required class="form-control product_name productSelection" 
                                            onkeyup="product_sale_list(1)" placeholder="<?php echo display('product_name') ?>" id="product_name_1" tabindex="5" >
 
                                             <input type="hidden" class="autocomplete_hidden_value product_id_1" name="product_id[]" id="SchoolHiddenId"/>
@@ -142,7 +146,8 @@
                                         </td>
 
                                             <td class="text-right">
-                                                <input class="form-control total_price text-right" type="text" name="total_price[]" id="total_price_1" value="0.00"  />
+                                            <input class="form-control tp total_price text-right" type="text" name="total_price[]" id="total_price_1" value="0.00" readonly="readonly" />
+                                            <input class="form-control tp total_price_dis text-right" type="text" name="total_price_dis[]" id="total_price_dis_1" value="0.00" readonly="readonly" />
                                             </td>
                                             <td>
 
@@ -162,17 +167,20 @@
                                         <td style="text-align:right;"><b><?php echo display('total_amount') ?></b>
                                             <input type="text" id="grandTotal" class="text-right form-control" name="grand_total_price" value="0.00" readonly="readonly" />
                                         </td>
-                                        <td style="text-align:right;"><b>Flat Discount</b>
-                                            <input type="text" id="flatDiscount" class="text-right form-control" name="flatDiscount" value="" placeholder="0.00" />
-                                        </td>
+                                        
                                         <td class="text-right"><b>Payble Amount</b>
                                             <input type="text" id="netTotal" class="text-right form-control" name="netTotal" value="0.00" readonly="readonly" />
+                                            <input type="hidden" id="netTotalHide" name="netTotalHide" value="0.00" readonly="readonly" />
+                                        </td>
+                                        <td style="text-align:right;"><b>Flat Discount</b>
+                                            <input type="text" id="flatDiscount" class="text-right form-control" name="flatDiscount" value="" placeholder="0.00" />
                                         </td>
                                         <td style="text-align:right;"><b>Paid Amount</b>
                                             <input type="text" id="paidAmount" class="text-right form-control" name="paidAmount" value="" placeholder="0.00" />
                                         </td>
                                         <td style="text-align:right;"><b>Due / Advance</b>
                                             <input type="text" id="dueAdvance" class="text-right form-control" name="dueAdvance" value="0.00" readonly="readonly" />
+                                            <input type="hidden" name="dueAdvText" class="dueAdvText" id="dueAdvText" value="due" />
                                         </td>
                                         <td style="text-align:right;">
                                             <div class="hideprice mainprol"><b>P / L</b><p id="" class="netPL">00</p></div>

@@ -5,178 +5,175 @@ class Sale_model extends CI_Model {
 	public function create()
 	{	 
 
-    // echo '<pre>22'; exit;
- 
-    $pq = $this->input->post('product_quantity');
-    $sale_id = date('YmdHis');
-    $payment_id = date('YmdHs');
-	  $invoice_no = $this->input->post('invoice_no');
-		$p_id = $this->input->post('product_id');
-    
-
 		$createby=$this->session->userdata('id');
 		$createdate=date('Y-m-d H:i:s');
-		$gurrantor = $this->input->post('gurrantor_id');
-		// $gurrantor1=array_shift($gurrantor);
-		// $gurrantor2=array_pop($gurrantor);
-		$installmentamnt= $this->input->post('installment_price');
-    $remainamt= $this->input->post('remaining_amnt');
-		$installamnt = (!empty($installmentamnt)? $this->input->post('installment_price'):0);
-		$pack_pr= $this->input->post('package_price');
-		$package_price = (!empty($pack_pr)? $this->input->post('package_price'):0);
-
-    // echo '<pre>'; print_r($_POST);exit;
 		
-		#----------sales entry---------------------#
-	   $postparentData = array(
-	   	 'sale_id'              =>  $sale_id,
-			'invoice_no'			      =>	$invoice_no,
-			'customer_id'		        =>	$this->input->post('customer_id'),
-			'sale_type_id'	        =>	$this->input->post('sale_type'),
-			'store_id'              =>  $this->session->userdata('store_id'),
-			'salesman'		          =>	$createby,
-			'sales_date'		        =>	$this->input->post('salesdate'),
-			'sales_time'            =>  date('H:i:s'),
-			// 'gurrantor_1'           =>  $gurrantor1,
-			// 'gurrantor_2'           =>  $gurrantor2,
-			'advance_amnt'          =>  $this->input->post('paid_amount'),
-			'lease_id'              =>  $this->input->post('lease_id'),
-			'inquiry_officer'       =>  $this->input->post('inquiry'),
-			'remaining_amnt'        =>  $remainamt,
-			'installment_amnt'      =>  $installamnt,
-			'package_price'         =>  $package_price,
-			'total_amnt'            =>  $this->input->post('grand_total_price'),
-		); 
 
-    echo '<pre>'; print_r($postparentData);exit;
+		$output = "";
+		foreach ($_POST['product_name'] as $index => $name) {
+			$id = $_POST['product_id'][$index];
+			$quantity = $_POST['product_quantity'][$index];
+			$rate = $_POST['product_rate'][$index];
+			$total = $_POST['total_price'][$index];
+			$discount_percentage = isset($_POST['discount'][$index]) ? ($_POST['discount'][$index] > 0 ? $_POST['discount'][$index] : 0) : 0;
 
-	 $this->db->insert('sales_parent',$postparentData);
+			$output .= "$id | $name | $quantity | $rate | $total | $discount_percentage, ";
+		}
+
+		// Trim the trailing comma and space
+		$output = rtrim($output, ', ');
+		$output = rtrim($output, '| ');
+
+		$insertData = array(
+			'sale_id'				=> date('YmdHis'),
+			'invoice_no'			=> $this->input->post('invoice_no'),
+			'customer_id'			=> $this->input->post('customer_id'),
+			'sales_man'				=> $this->input->post('sales_man'),
+			'salesdate'				=> $this->input->post('salesdate'),
+			'product_details'		=> $output,
+			'grand_total_price'		=> $this->input->post('grand_total_price'),
+			'netTotal'				=> $this->input->post('netTotal'),
+			'paidAmount'			=> $this->input->post('paidAmount'),
+			'flatDiscount'			=> $this->input->post('flatDiscount'),
+			'dueAdvance'			=> $this->input->post('dueAdvance'),
+			'mainprolo'				=> $this->input->post('mainprolo'),
+			'dueAdvText'			=> $this->input->post('dueAdvText'),
+			'invoice_no'			=> $this->input->post('invoice_no'),
+			'createby'				=> $this->session->userdata('id'),
+			'createdate'			=> date('Y-m-d H:i:s'),
+			
+		);
+
+		// print_r($_POST['product_name']);
+    	echo '<pre>'; print_r($insertData);exit;
+
+	 	$this->db->insert('sales_parent',$postparentData);
 	  
         ///print_r( $postparentData);exit;
-	// Find the acc COAID for the store	
-	$store_info = $this->db->select('*')->from('store')->where('store_id',$this->session->userdata('store_id'))->get()->row();
-	//print_r($store_info);
-	$Store_Code = 'Cash-'.$store_info->store_code.'-'.$store_info->store_name;	
-	//echo $Store_Code;
-	$store_HeadCode = $this->db->select('*')->from('acc_coa')->where('HeadName',$Store_Code)->get()->row();
-	//print_r($store_HeadCode);
-	$cusifo = $this->db->select('*')->from('customer')->where('customer_id',$this->input->post('customer_id'))->get()->row();
-	$headn = $cusifo->customer_code.'-'.$cusifo->customer_name;
-	$coainfo = $this->db->select('*')->from('acc_coa')->where('HeadName',$headn)->get()->row();
-	$customer_headcode = $coainfo->HeadCode;
+		// Find the acc COAID for the store	
+		$store_info = $this->db->select('*')->from('store')->where('store_id',$this->session->userdata('store_id'))->get()->row();
+		//print_r($store_info);
+		$Store_Code = 'Cash-'.$store_info->store_code.'-'.$store_info->store_name;	
+		//echo $Store_Code;
+		$store_HeadCode = $this->db->select('*')->from('acc_coa')->where('HeadName',$Store_Code)->get()->row();
+		//print_r($store_HeadCode);
+		$cusifo = $this->db->select('*')->from('customer')->where('customer_id',$this->input->post('customer_id'))->get()->row();
+		$headn = $cusifo->customer_code.'-'.$cusifo->customer_name;
+		$coainfo = $this->db->select('*')->from('acc_coa')->where('HeadName',$headn)->get()->row();
+		$customer_headcode = $coainfo->HeadCode;
 	
-	if($this->input->post('sale_type')==1){
-// Cash sale credit
-	  $cc = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  30101,
-      'Narration'      =>  'Cash sale credit For Invoice No'.$invoice_no,
-      'Debit'          =>  0,
-      'Credit'         =>  $this->input->post('grand_total_price'),
-      'StoreID'        =>  $this->session->userdata('store_id'),
-      'IsPosted'       =>  1,
-      'CreateBy'       =>  $createby,
-      'CreateDate'     =>  $createdate,
-      'IsAppove'       =>  1
-    ); 
-      // $this->db->insert('acc_transaction',$cc);
-// Cash in hand debit
-	    $cdv = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  $store_HeadCode->HeadCode,
-      'Narration'      =>  'Cash in hand debit For Invoice No'.$invoice_no,
-      'Debit'          =>  $this->input->post('grand_total_price'),
-      'Credit'         =>  0,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-	//  print_r($cdv); exit;
-	   $this->db->insert('acc_transaction',$cdv);
-          // Cost of sale debit
- 	$cosdr = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  403,
-      'Narration'      =>  'Cost of sale debit For Invoice No'.$invoice_no,
-      'Debit'          =>  $sumval,
-      'Credit'         =>  0,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-       $this->db->insert('acc_transaction',$cosdr);
+		if($this->input->post('sale_type')==1){
+			// Cash sale credit
+			$cc = array(
+			'VNo'            =>  $invoice_no,
+			'Vtype'          =>  'CIV',
+			'VDate'          =>  $createdate,
+			'COAID'          =>  30101,
+			'Narration'      =>  'Cash sale credit For Invoice No'.$invoice_no,
+			'Debit'          =>  0,
+			'Credit'         =>  $this->input->post('grand_total_price'),
+			'StoreID'        =>  $this->session->userdata('store_id'),
+			'IsPosted'       =>  1,
+			'CreateBy'       =>  $createby,
+			'CreateDate'     =>  $createdate,
+			'IsAppove'       =>  1
+			); 
+			// $this->db->insert('acc_transaction',$cc);
+			// Cash in hand debit
+				$cdv = array(
+			'VNo'            =>  $invoice_no,
+			'Vtype'          =>  'CIV',
+			'VDate'          =>  $createdate,
+			'COAID'          =>  $store_HeadCode->HeadCode,
+			'Narration'      =>  'Cash in hand debit For Invoice No'.$invoice_no,
+			'Debit'          =>  $this->input->post('grand_total_price'),
+			'Credit'         =>  0,
+			'StoreID'        => $this->session->userdata('store_id'),
+			'IsPosted'       => 1,
+			'CreateBy'       => $createby,
+			'CreateDate'     => $createdate,
+			'IsAppove'       => 1
+			); 
+			//  print_r($cdv); exit;
+			$this->db->insert('acc_transaction',$cdv);
+				// Cost of sale debit
+			$cosdr = array(
+			'VNo'            =>  $invoice_no,
+			'Vtype'          =>  'CIV',
+			'VDate'          =>  $createdate,
+			'COAID'          =>  403,
+			'Narration'      =>  'Cost of sale debit For Invoice No'.$invoice_no,
+			'Debit'          =>  $sumval,
+			'Credit'         =>  0,
+			'StoreID'        => $this->session->userdata('store_id'),
+			'IsPosted'       => 1,
+			'CreateBy'       => $createby,
+			'CreateDate'     => $createdate,
+			'IsAppove'       => 1
+			); 
+			$this->db->insert('acc_transaction',$cosdr);
 
-       ///Inventory credit
-       $coscr = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  10107,
-      'Narration'      =>  'Inventory credit For Invoice No'.$invoice_no,
-      'Debit'          =>  0,
-      'Credit'         =>  $sumval,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-       $this->db->insert('acc_transaction',$coscr);
-	   
-	// Customer Transactions
-	//Customer debit for Product Value
- 	$cosdr = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  $customer_headcode,
-      'Narration'      =>  'Customer debit for Product For Invoice No'.$invoice_no,
-      'Debit'          =>  $this->input->post('grand_total_price'),
-      'Credit'         =>  0,
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-       $this->db->insert('acc_transaction',$cosdr);
+			///Inventory credit
+			$coscr = array(
+			'VNo'            =>  $invoice_no,
+			'Vtype'          =>  'CIV',
+			'VDate'          =>  $createdate,
+			'COAID'          =>  10107,
+			'Narration'      =>  'Inventory credit For Invoice No'.$invoice_no,
+			'Debit'          =>  0,
+			'Credit'         =>  $sumval,
+			'StoreID'        => $this->session->userdata('store_id'),
+			'IsPosted'       => 1,
+			'CreateBy'       => $createby,
+			'CreateDate'     => $createdate,
+			'IsAppove'       => 1
+			); 
+			$this->db->insert('acc_transaction',$coscr);
+			
+			// Customer Transactions
+			//Customer debit for Product Value
+			$cosdr = array(
+			'VNo'            =>  $invoice_no,
+			'Vtype'          =>  'CIV',
+			'VDate'          =>  $createdate,
+			'COAID'          =>  $customer_headcode,
+			'Narration'      =>  'Customer debit for Product For Invoice No'.$invoice_no,
+			'Debit'          =>  $this->input->post('grand_total_price'),
+			'Credit'         =>  0,
+			'StoreID'        => $this->session->userdata('store_id'),
+			'IsPosted'       => 1,
+			'CreateBy'       => $createby,
+			'CreateDate'     => $createdate,
+			'IsAppove'       => 1
+			); 
+			$this->db->insert('acc_transaction',$cosdr);
 
-       ///Customer credit for Paid Amount
-       $coscr = array(
-      'VNo'            =>  $invoice_no,
-      'Vtype'          =>  'CIV',
-      'VDate'          =>  $createdate,
-      'COAID'          =>  $customer_headcode,
-      'Narration'      =>  'Customer credit for Paid Amount For Invoice No'.$invoice_no,
-      'Debit'          =>  0,
-      'Credit'         =>  $this->input->post('grand_total_price'),
-      'StoreID'        => $this->session->userdata('store_id'),
-      'IsPosted'       => 1,
-      'CreateBy'       => $createby,
-      'CreateDate'     => $createdate,
-      'IsAppove'       => 1
-    ); 
-       $this->db->insert('acc_transaction',$coscr);
-   }
+			///Customer credit for Paid Amount
+			$coscr = array(
+			'VNo'            =>  $invoice_no,
+			'Vtype'          =>  'CIV',
+			'VDate'          =>  $createdate,
+			'COAID'          =>  $customer_headcode,
+			'Narration'      =>  'Customer credit for Paid Amount For Invoice No'.$invoice_no,
+			'Debit'          =>  0,
+			'Credit'         =>  $this->input->post('grand_total_price'),
+			'StoreID'        => $this->session->userdata('store_id'),
+			'IsPosted'       => 1,
+			'CreateBy'       => $createby,
+			'CreateDate'     => $createdate,
+			'IsAppove'       => 1
+			); 
+			$this->db->insert('acc_transaction',$coscr);
+   		}
 
-    $prinfo  = $this->db->select('product_id,Avg(product_rate) as product_rate')->from('purchase_receive_details')->where_in('product_id',$p_id)->group_by('product_id')->get()->result();
-    $sell_avg = [];
-    $i=0;
-    foreach ($prinfo as $avg) {
-      $sell_avg [] =  $avg->product_rate*$pq[$i];
-      $i++;
-    }
-   $sumval = array_sum($sell_avg);
+		$prinfo  = $this->db->select('product_id,Avg(product_rate) as product_rate')->from('purchase_receive_details')->where_in('product_id',$p_id)->group_by('product_id')->get()->result();
+		$sell_avg = [];
+		$i=0;
+		foreach ($prinfo as $avg) {
+			$sell_avg [] =  $avg->product_rate*$pq[$i];
+			$i++;
+		}
+		$sumval = array_sum($sell_avg);
   
 	      #------------payment collection------------------#
 	      $paidamt = $this->input->post('paid_amount');

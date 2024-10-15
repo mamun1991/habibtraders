@@ -15,7 +15,7 @@ class Sale extends MX_Controller {
 	public function index()
 	{   
         $this->permission->method('sale','read')->redirect();
-		$data['title']    = display('cashsale'); 
+		$data['title']    = 'Sale List'; 
 		#-------------------------------#		
 		#
         #pagination starts
@@ -55,115 +55,114 @@ class Sale extends MX_Controller {
 		echo Modules::run('template/layout', $data); 
 	}  
 	// credit sale
-	public function credit_sale()
-	{   
-        $this->permission->method('sale','read')->redirect();
-		$data['title']    = display('creditsale'); 
-		#-------------------------------#		
-		#
-        #pagination starts
-        #
-        $config["base_url"] = base_url('sale/sale/index');
-        $config["total_rows"]  = $this->sale_model->count_credit_sale();
-        $config["per_page"]    = 10;
-        $config["uri_segment"] = 4;
-        $config["last_link"] = "Last"; 
-        $config["first_link"] = "First"; 
-        $config['next_link'] = 'Next';
-        $config['prev_link'] = 'Prev';  
-        $config['full_tag_open'] = "<ul class='pagination col-xs pull-right'>";
-        $config['full_tag_close'] = "</ul>";
-        $config['num_tag_open'] = '<li>';
-        $config['num_tag_close'] = '</li>';
-        $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
-        $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
-        $config['next_tag_open'] = "<li>";
-        $config['next_tag_close'] = "</li>";
-        $config['prev_tag_open'] = "<li>";
-        $config['prev_tagl_close'] = "</li>";
-        $config['first_tag_open'] = "<li>";
-        $config['first_tagl_close'] = "</li>";
-        $config['last_tag_open'] = "<li>";
-        $config['last_tagl_close'] = "</li>";
-        /* ends of bootstrap */
-        $this->pagination->initialize($config);
-        $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-        $data["sales"] = $this->sale_model->credit_sale($config["per_page"], $page);
-        $data["links"] = $this->pagination->create_links();
-        #
-        #pagination ends
-        #   
-		$data['module'] = "sale";
-		$data['page']   = "list";   
-		echo Modules::run('template/layout', $data); 
-	}  
-	// lease sale
-	public function lease_sale()
-	{   
-        $this->permission->method('sale','read')->redirect();
-		$data['title']    = display('leasesale'); 
-		#-------------------------------#		
-		#
-        #pagination starts
-        #
-        $config["base_url"] = base_url('sale/sale/index');
-        $config["total_rows"]  = $this->sale_model->count_lease_sale();
-        $config["per_page"]    = 10;
-        $config["uri_segment"] = 4;
-        $config["last_link"] = "Last"; 
-        $config["first_link"] = "First"; 
-        $config['next_link'] = 'Next';
-        $config['prev_link'] = 'Prev';  
-        $config['full_tag_open'] = "<ul class='pagination col-xs pull-right'>";
-        $config['full_tag_close'] = "</ul>";
-        $config['num_tag_open'] = '<li>';
-        $config['num_tag_close'] = '</li>';
-        $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
-        $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
-        $config['next_tag_open'] = "<li>";
-        $config['next_tag_close'] = "</li>";
-        $config['prev_tag_open'] = "<li>";
-        $config['prev_tagl_close'] = "</li>";
-        $config['first_tag_open'] = "<li>";
-        $config['first_tagl_close'] = "</li>";
-        $config['last_tag_open'] = "<li>";
-        $config['last_tagl_close'] = "</li>";
-        /* ends of bootstrap */
-        $this->pagination->initialize($config);
-        $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-        $data["sales"] = $this->sale_model->lease_sale($config["per_page"], $page);
-        $data["links"] = $this->pagination->create_links();
-        #
-        #pagination ends
-        #   
-		$data['module'] = "sale";
-		$data['page']   = "lease_sale_list";   
-		echo Modules::run('template/layout', $data); 
-	}  
+	// public function credit_sale()
+	// {   
+    //     $this->permission->method('sale','read')->redirect();
+	// 	$data['title']    = display('creditsale'); 
+	// 	#-------------------------------#		
+	// 	#
+    //     #pagination starts
+    //     #
+    //     $config["base_url"] = base_url('sale/sale/index');
+    //     $config["total_rows"]  = $this->sale_model->count_credit_sale();
+    //     $config["per_page"]    = 10;
+    //     $config["uri_segment"] = 4;
+    //     $config["last_link"] = "Last"; 
+    //     $config["first_link"] = "First"; 
+    //     $config['next_link'] = 'Next';
+    //     $config['prev_link'] = 'Prev';  
+    //     $config['full_tag_open'] = "<ul class='pagination col-xs pull-right'>";
+    //     $config['full_tag_close'] = "</ul>";
+    //     $config['num_tag_open'] = '<li>';
+    //     $config['num_tag_close'] = '</li>';
+    //     $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+    //     $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+    //     $config['next_tag_open'] = "<li>";
+    //     $config['next_tag_close'] = "</li>";
+    //     $config['prev_tag_open'] = "<li>";
+    //     $config['prev_tagl_close'] = "</li>";
+    //     $config['first_tag_open'] = "<li>";
+    //     $config['first_tagl_close'] = "</li>";
+    //     $config['last_tag_open'] = "<li>";
+    //     $config['last_tagl_close'] = "</li>";
+    //     /* ends of bootstrap */
+    //     $this->pagination->initialize($config);
+    //     $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+    //     $data["sales"] = $this->sale_model->credit_sale($config["per_page"], $page);
+    //     $data["links"] = $this->pagination->create_links();
+    //     #
+    //     #pagination ends
+    //     #   
+	// 	$data['module'] = "sale";
+	// 	$data['page']   = "list";   
+	// 	echo Modules::run('template/layout', $data); 
+	// }  
+	// // lease sale
+	// public function lease_sale()
+	// {   
+    //     $this->permission->method('sale','read')->redirect();
+	// 	$data['title']    = display('leasesale'); 
+	// 	#-------------------------------#		
+	// 	#
+    //     #pagination starts
+    //     #
+    //     $config["base_url"] = base_url('sale/sale/index');
+    //     $config["total_rows"]  = $this->sale_model->count_lease_sale();
+    //     $config["per_page"]    = 10;
+    //     $config["uri_segment"] = 4;
+    //     $config["last_link"] = "Last"; 
+    //     $config["first_link"] = "First"; 
+    //     $config['next_link'] = 'Next';
+    //     $config['prev_link'] = 'Prev';  
+    //     $config['full_tag_open'] = "<ul class='pagination col-xs pull-right'>";
+    //     $config['full_tag_close'] = "</ul>";
+    //     $config['num_tag_open'] = '<li>';
+    //     $config['num_tag_close'] = '</li>';
+    //     $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+    //     $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+    //     $config['next_tag_open'] = "<li>";
+    //     $config['next_tag_close'] = "</li>";
+    //     $config['prev_tag_open'] = "<li>";
+    //     $config['prev_tagl_close'] = "</li>";
+    //     $config['first_tag_open'] = "<li>";
+    //     $config['first_tagl_close'] = "</li>";
+    //     $config['last_tag_open'] = "<li>";
+    //     $config['last_tagl_close'] = "</li>";
+    //     /* ends of bootstrap */
+    //     $this->pagination->initialize($config);
+    //     $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+    //     $data["sales"] = $this->sale_model->lease_sale($config["per_page"], $page);
+    //     $data["links"] = $this->pagination->create_links();
+    //     #
+    //     #pagination ends
+    //     #   
+	// 	$data['module'] = "sale";
+	// 	$data['page']   = "lease_sale_list";   
+	// 	echo Modules::run('template/layout', $data); 
+	// }  
 //puchase data insert process
     public function form()
 	{ 
-	      	$this->permission->method('sale','create')->redirect();
-		   $this->form_validation->set_rules('customer_id', display('customer_id')  ,'max_length[50]');
+	    $this->permission->method('sale','create')->redirect();
+		$this->form_validation->set_rules('customer_id', display('customer_id')  ,'max_length[50]');
 
 		//    echo '<pre>---';
 		
-		     if ($this->form_validation->run()) { 
-				echo '<pre>11';
-				if ($this->sale_model->create()) { 
-					echo '<pre>22'; exit;
-					$this->session->set_flashdata('message', display('save_successfully'));
-					if($this->input->post('sale_type') ==1){
-					redirect('sale/sale/index/');
-					}else if($this->input->post('sale_type') ==2){
-						redirect('sale/sale/credit_sale/');
-					}else{
-						redirect('sale/sale/lease_sale/');	
-					}
-				} else {
-					$this->session->set_flashdata('exception',  'Please try again!');
+		if ($this->form_validation->run()) { 
+			if ($this->sale_model->create()) { 
+				echo '<pre>22'; exit;
+				$this->session->set_flashdata('message', display('save_successfully'));
+				if($this->input->post('sale_type') ==1){
+				redirect('sale/sale/index/');
+				}else if($this->input->post('sale_type') ==2){
+					redirect('sale/sale/credit_sale/');
+				}else{
+					redirect('sale/sale/lease_sale/');	
 				}
-				redirect("sale/sale/form");
+			} else {
+				$this->session->set_flashdata('exception',  'Please try again!');
+			}
+			redirect("sale/sale/form");
  
 
 		} else { 

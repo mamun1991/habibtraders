@@ -12,11 +12,11 @@ $HmvcMenu["sale"] = array(
             "method"     => "form",
             "permission" => "create"
         ), 
-        // 'cash_sale_list'  => array( 
-        //     "controller" => "sale",
-        //     "method"     => "index",
-        //     "permission" => "read"
-        // ), 
+        'cash_sale_list'  => array( 
+            "controller" => "sale",
+            "method"     => "index",
+            "permission" => "read"
+        ), 
         //  'credit_sale_list'  => array( 
         //     "controller" => "sale",
         //     "method"     => "credit_sale",
