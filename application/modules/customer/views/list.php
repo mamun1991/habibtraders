@@ -15,9 +15,11 @@
                         <thead>
                             <tr>
                                 <th><?php echo display('sl_no') ?></th>
+                                <th>Customer Code</th>
                                 <th><?php echo display('name') ?></th>
-                                <th><?php echo display('contact') ?></th>
-                                <th><?php echo display('cnic') ?></th>
+                                <th>Contact</th>
+                                <th>Address</th>
+                                <th>Delivary Address</th>
                                 <th><?php echo display('isactive') ?></th>
                                 <th><?php echo display('action') ?></th> 
                             </tr>
@@ -28,9 +30,11 @@
                             <?php foreach ($customers as $customer) { ?>
                             <tr>
                                 <td><?php echo $sl++; ?></td>
+                                <td><?php echo $customer->customer_id; ?></td>
                                 <td><?php echo $customer->customer_name; ?></td>
                                 <td><?php echo $customer->customer_phone; ?></td>
-                                <td><?php echo $customer->customer_cnic; ?></td>
+                                <td><?php echo $customer->customer_address; ?></td>
+                                <td><?php echo $customer->business_address; ?></td>
                                 <td><?php echo (($customer->isactive==1)?display('active'):display('inactive')); ?></td>
                                 <td>
                                    <?php if($customer->isactive == 1) { ?>
@@ -38,9 +42,7 @@
                                 <?php } else { ?>
                                 <a href="<?php echo base_url("customer/customer/isactive/$customer->customer_id/active") ?>" onclick="return confirm('<?php echo display("are_you_sure") ?>')" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="right" title="Active"><?php echo display('active')?></a>
                                 <?php } ?>
-                                <?php if($this->permission->method('customer','read')->access()): ?>
-                                    <a href="<?php echo base_url("customer/customer/view/$customer->customer_id") ?>" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="left" title="View"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                <?php endif; ?>
+                                
 
                                 <?php if($this->permission->method('customer','update')->access()): ?>
                                     <a href="<?php echo base_url("customer/customer/form/$customer->customer_id") ?>" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="left" title="Update"><i class="fa fa-pencil" aria-hidden="true"></i></a>

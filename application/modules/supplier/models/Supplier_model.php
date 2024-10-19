@@ -26,7 +26,24 @@ class Supplier_model extends CI_Model {
     		->limit($limit, $start)
 			->get()
 			->row();
+	} 
 
+	public function brandName()
+	{ 
+		$data = $this->db->select("*")
+			->from('product_brand')
+			->where('isactive', 1)  
+			->get()
+			->result();
+
+		$list[''] = display('select_option');
+		if (!empty($data)) {
+			foreach($data as $value)
+				$list[$value->brand_name] = $value->brand_name;
+			return $list;
+		} else {
+			return false; 
+		}
 	} 
  
 	public function update($data = [])

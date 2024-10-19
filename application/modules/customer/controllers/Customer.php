@@ -55,124 +55,114 @@ class Customer extends MX_Controller {
 		echo Modules::run('template/layout', $data); 
 	}  
 
- public function form($id = null)
- {
-         $coa = $this->customer_model->headcode();
-           if($coa->HeadCode!=NULL){
-                $headcode=$coa->HeadCode+1;
-           }else{
-                $headcode="1020301000001";
-            }
+public function form($id = null)
+{
+    $coa = $this->customer_model->headcode();
+    if($coa->HeadCode!=NULL){
+        $headcode=$coa->HeadCode+1;
+    }else{
+        $headcode="1020301000001";
+    }
 
+    $c_code = $this->input->post('customer_code');
+    $c_name = $this->input->post('name');
+    $c_acc=$c_code.'-'.$c_name;
 
+    $this->permission->method('customer','create')->redirect();
+    $data['title'] = display('add');
+    $this->form_validation->set_rules('name', display('name')  ,'required|max_length[50]');
+    $this->form_validation->set_rules('isactive', display('isactive') ,'required'); 
+    $createby=$this->session->userdata('id');
+    $createdate=date('Y-m-d H:i:s');
+    $ids = $this->input->post('customer_id');
+    $updatedby = (!empty($ids)?$this->session->userdata('id'):'');
+    $updatdate = (!empty($ids)?date('Y-m-d H:i:s'):'');
+    $data['customer']      = (Object) $postData = [
+        // 'customer_id'      => $this->input->post('customer_id'), 
+        'customer_name'    => $this->input->post('name'),
+        'customer_phone'   => $this->input->post('customer_phone'),
+        'customer_address' => $this->input->post('customer_address'), 
+        'business_address' => $this->input->post('business_address'),  
+        'isactive'         => $this->input->post('isactive'),
+        'createby'         => $createby,
+        'createdate'       => $createdate,
+        'updateby'         => $updatedby,
+        'updatedate'       => $updatdate,
+    ];
 
-        $c_code = $this->input->post('customer_code');
-        $c_name = $this->input->post('name');
-        $c_acc=$c_code.'-'.$c_name;
+    
 
-  $this->permission->method('customer','create')->redirect();
-  $data['title'] = display('add');
-  #-------------------------------#
-  $this->form_validation->set_rules('name', display('name')  ,'required|max_length[50]');
-  $this->form_validation->set_rules('store_id', display('store_id')  ,'max_length[30]');
-  $this->form_validation->set_rules('job_designation', display('job_designation')  ,'max_length[100]');
-  $this->form_validation->set_rules('customer_cnic', 'customer_cnic', 'is_unique[customer.customer_cnic]');
-  $this->form_validation->set_rules('isactive', display('isactive') ,'required'); 
-     $createby=$this->session->userdata('id');
-  $createdate=date('Y-m-d H:i:s');
-  $ids = $this->input->post('customer_id');
-  $updatedby = (!empty($ids)?$this->session->userdata('id'):'');
-  $updatdate = (!empty($ids)?date('Y-m-d H:i:s'):'');
-  #-------------------------------#
-   $data['customer']   = (Object) $postData = [
-   'customer_id'     => $this->input->post('customer_id'), 
-   'customer_code'    => $this->input->post('customer_code'),
-   'customer_name'    => $this->input->post('name'),
-   'type'             => $this->input->post('customer_type'),
-   'customer_phone'   => $this->input->post('customer_phone'),
-   'store_id'         => $this->input->post('store_id'), 
-   'job_designation'  => $this->input->post('job_designation'), 
-   'customer_address' => $this->input->post('customer_address'), 
-   'customer_cnic'    => $this->input->post('customer_cnic'),
-   'business_address' => $this->input->post('business_address'),  
-   'isactive'         => $this->input->post('isactive'),
-   'createby'         => $createby,
-   'createdate'       => $createdate,
-   'updateby'         => $updatedby,
-   'updatedate'       => $updatdate, 
-  ];
-
-        $data['aco']  = (Object) $postData1 = [
-             'HeadCode'         => $headcode,
-             'HeadName'         => $c_acc,
-             'PHeadName'        => 'Customer Receivable',
-             'HeadLevel'        => '4',
-             'IsActive'         => '1',
-             'IsTransaction'    => '1',
-             'IsGL'             => '0',
-             'HeadType'         => 'A',
-             'IsBudget'         => '0',
-             'IsDepreciation'   => '0',
-             'DepreciationRate' => '0',
-             'CreateBy'         => $createby,
-             'CreateDate'       => $createdate,
-        ];
+    $data['aco']  = (Object) $postData1 = [
+        'HeadCode'         => $headcode,
+        'HeadName'         => $c_acc,
+        'PHeadName'        => 'Customer Receivable',
+        'HeadLevel'        => '4',
+        'IsActive'         => '1',
+        'IsTransaction'    => '1',
+        'IsGL'             => '0',
+        'HeadType'         => 'A',
+        'IsBudget'         => '0',
+        'IsDepreciation'   => '0',
+        'DepreciationRate' => '0',
+        'CreateBy'         => $createby,
+        'CreateDate'       => $createdate,
+    ];
 
   if ($this->form_validation->run()) { 
 
-   if (empty($postData['customer_id'])) {
+    // echo '<pre>'; print_r($data['customer']);
+    // echo '<pre>'; print_r($_POST);exit;
 
-          $this->permission->method('customer','create')->redirect();
-          //if($this->input->post('customer_type')==2 || $this->input->post('customer_type')==3){
-                $this->customer_model->create_coa($postData1);
-            //  }
-    if ($this->customer_model->create($postData)) { 
-     $id = $this->db->insert_id();
-     $accesslog = array(
-    'action_page'       => 'Customer',
-    'action_done'     => 'create',
-    'remarks'      => $id,
-    'user_name'   =>  $this->session->userdata('id'),
-    'entry_date'     => date('Y-m-d H:i:s')
-   );
-  $this->db->insert('accesslog',$accesslog);
-     $this->session->set_flashdata('message', display('save_successfully'));
-     redirect('customer/customer/view/'. $id);
-    } else {
-     $this->session->set_flashdata('exception',  display('please_try_again'));
-    }
-    redirect("customer/customer/form"); 
-
+   if (empty($this->input->post('customer_id'))) {
+    // echo '<pre>'; print_r($_POST);exit;
+        $this->permission->method('customer','create')->redirect();
+        $this->customer_model->create_coa($postData1);
+        if ($this->customer_model->create($postData)) { 
+            $id = $this->db->insert_id();
+            $accesslog = array(
+                'action_page'     => 'Customer',
+                'action_done'     => 'create',
+                'remarks'         => $id,
+                'user_name'       =>  $this->session->userdata('id'),
+                'entry_date'      => date('Y-m-d H:i:s')
+            );
+            $this->db->insert('accesslog',$accesslog);
+            $this->session->set_flashdata('message', display('save_successfully'));
+            redirect('customer/customer/index/');   
+        } else {
+            $this->session->set_flashdata('exception',  display('please_try_again'));
+        }
+        redirect("customer/customer/form"); 
    } else {
 
-    $this->permission->method('customer','update')->redirect();
+        $this->permission->method('customer','update')->redirect();
 
-    if ($this->customer_model->update($postData)) { 
-     $accesslog = array(
-    'action_page'       => 'Customer',
-    'action_done'     => 'update',
-    'remarks'      => 'customer ID :'.$postData['customer_id'],
-    'user_name'   =>  $this->session->userdata('id'),
-    'entry_date'     => date('Y-m-d H:i:s')
-   );
-   $this->db->insert('accesslog',$accesslog);
-     $this->session->set_flashdata('message', display('update_successfully'));
-    } else {
-     $this->session->set_flashdata('exception',  display('please_try_again'));
-    }
-    redirect("customer/customer/form/".$postData['customer_id']);  
+        if ($this->customer_model->update($postData)) { 
+            $accesslog = array(
+                'action_page'       => 'Customer',
+                'action_done'     => 'update',
+                'remarks'      => 'customer ID :'.$postData['customer_id'],
+                'user_name'   =>  $this->session->userdata('id'),
+                'entry_date'     => date('Y-m-d H:i:s')
+            );
+            $this->db->insert('accesslog',$accesslog);
+            $this->session->set_flashdata('message', display('update_successfully'));
+        } else {
+            $this->session->set_flashdata('exception',  display('please_try_again'));
+        }
+        redirect("customer/customer/form/".$postData['customer_id']);  
    }
  
 
   } else { 
-   if(!empty($id)) {
-    $data['title'] = display('update');
-    $data['customers']   = $this->customer_model->findById($id);
-   }
-   $data['module'] = "customer";
-   $data['store']  = $this->customer_model->store_list();
-   $data['page']   = "form";   
-   echo Modules::run('template/layout', $data); 
+    if(!empty($id)) {
+        $data['title'] = display('update');
+        $data['customers']   = $this->customer_model->findById($id);
+    }
+    $data['module'] = "customer";
+    $data['store']  = $this->customer_model->store_list();
+    $data['page']   = "form";   
+    echo Modules::run('template/layout', $data); 
    }   
  }
 
@@ -259,5 +249,4 @@ class Customer extends MX_Controller {
 	}
 
 	
-
 }

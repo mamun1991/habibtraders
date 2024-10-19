@@ -17,6 +17,7 @@
                                 <th><?php echo display('sl_no') ?></th>
                                 <th><?php echo display('supplier_code') ?></th>
                                 <th><?php echo display('supplier_name') ?></th>
+                                <th>Brand</th>
                                 <th><?php echo display('phone') ?></th>
                                 <th><?php echo display('email') ?></th>
                                 <th><?php echo display('isactive') ?></th>
@@ -31,6 +32,7 @@
                                 <td><?php echo $sl++; ?></td>
                                 <td><?php echo $supplier->supplier_code; ?></td>
                                 <td><?php echo $supplier->supplier_name; ?></td>
+                                <td><?php echo $supplier->supplier_brand; ?></td>
                                 <td><?php echo $supplier->phone; ?></td>
                                 <td><?php echo $supplier->email; ?></td>
                                 <td><?php echo (($supplier->isactive==1)?display('active'):display('inactive')); ?></td>

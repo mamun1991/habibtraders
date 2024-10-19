@@ -55,7 +55,7 @@ class Supplier extends MX_Controller {
 		echo Modules::run('template/layout', $data); 
 	}  
 
- public function form($id = null)
+ 	public function form($id = null)
 	{
 
         $coa = $this->supplier_model->headcode();
@@ -83,6 +83,7 @@ class Supplier extends MX_Controller {
 	    $data['supplier']   = (Object) $postData = [
 			'supplier_id' 	   => $this->input->post('supplier_id'), 
 			'supplier_name'    => $this->input->post('supplier_name'),
+			'supplier_brand'   => $this->input->post('brand_name'),
 			'supplier_code'    => $this->input->post('supplier_code'),
 			'phone'            => $this->input->post('phone'),
 			'address'          => $this->input->post('address'), 
@@ -144,21 +145,21 @@ class Supplier extends MX_Controller {
             $this->db->where('HeadName',$c_accup)
 			->delete('acc_coa');
 
-          $data['aco']   = (Object) $updatecoasup = [
-            'HeadCode'         => $headcode,
-            'HeadName'         => $c_acc,
-            'PHeadName'        => 'Account Payable',
-            'HeadLevel'        => '3',
-            'IsActive'         => '1',
-            'IsTransaction'    => '1',
-            'IsGL'             => '0',
-            'HeadType'         => 'L',
-            'IsBudget'         => '0',
-            'IsDepreciation'   => '0',
-            'DepreciationRate' => '0',
-            'CreateBy'         => $createby,
-            'CreateDate'       => $createdate,
-        ];
+          	$data['aco']   = (Object) $updatecoasup = [
+				'HeadCode'         => $headcode,
+				'HeadName'         => $c_acc,
+				'PHeadName'        => 'Account Payable',
+				'HeadLevel'        => '3',
+				'IsActive'         => '1',
+				'IsTransaction'    => '1',
+				'IsGL'             => '0',
+				'HeadType'         => 'L',
+				'IsBudget'         => '0',
+				'IsDepreciation'   => '0',
+				'DepreciationRate' => '0',
+				'CreateBy'         => $createby,
+				'CreateDate'       => $createdate,
+        	];
 
 				if ($this->supplier_model->update($postData)) { 
 					$this->db->insert('acc_coa',$updatecoasup);
@@ -183,6 +184,10 @@ class Supplier extends MX_Controller {
 				$data['title'] = display('update');
 				$data['suppliers']   = $this->supplier_model->findById($id);
 			}
+
+			$data['brandName']   = $this->supplier_model->brandName();
+
+			// echo '<pre>'; print_r($data['brandName']);exit;
 			$text = 'sup-';
 			$data['supplier_code'] = $text.$this->code_generators();
 			$data['module'] = "supplier";

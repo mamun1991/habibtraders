@@ -30,8 +30,15 @@
                     <div class="form-group row">
                         <label for="name" class="col-sm-3 col-form-label"><?php echo display('supplier_name') ?> *</label>
                         <div class="col-sm-9">
-                                    <input name="supplier_name" class="form-control" type="text" placeholder="<?php echo display('supplier_name') ?>" id="supplier_name" value="<?php echo $suppliers->supplier_name; ?>">
-                                    <input type="hidden" name="oldname" value="<?php echo $suppliers->supplier_name; ?>">
+                            <input name="supplier_name" class="form-control" type="text" placeholder="<?php echo display('supplier_name') ?>" id="supplier_name" value="<?php echo $suppliers->supplier_name; ?>">
+                            <input type="hidden" name="oldname" value="<?php echo $suppliers->supplier_name; ?>">
+                        </div>
+                    </div> 
+
+                    <div class="form-group row">
+                        <label for="brand_name" class="col-sm-3 col-form-label">Supplier Brand *</label>
+                        <div class="col-sm-9">
+                                    <?php echo form_dropdown('brand_name',$brandName,(!empty($brandName->brand_id)?$brandName->brand_id:null), 'class="form-control"  ') ?>
                         </div>
                     </div> 
 
@@ -77,3 +84,21 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    $(document).ready(function() {
+        var phoneNumber = $('#phone').val();
+        // Limit the phone number to 11 digits
+        if (phoneNumber.length > 11) {
+            phoneNumber = phoneNumber.substring(0, 11);
+            $('#phone').val(phoneNumber);
+        }
+    });
+    $('#phone').on('input', function() {
+        var phoneNumber = $(this).val();
+        if (phoneNumber.length > 11) {
+            $(this).val(phoneNumber.substring(0, 11));
+        }
+    });
+</script>
