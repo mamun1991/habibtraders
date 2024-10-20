@@ -15,7 +15,7 @@ class Customer_model extends CI_Model {
 	{
 	 $this->db->select('*');
 		$this->db->from('customer');
-		$this->db->where('isactive',1);
+		// $this->db->where('isactive',1);
 		if($this->session->userdata('isAdmin')==0){
 		$this->db->where('store_id',$this->session->userdata('store_id'));
 		}

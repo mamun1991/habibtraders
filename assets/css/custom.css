@@ -30,6 +30,10 @@ body {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.redLabel {
+    color: red;
+}
+
 
 /*--- Layout ---*/
 
