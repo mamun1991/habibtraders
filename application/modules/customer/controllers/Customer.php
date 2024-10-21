@@ -114,9 +114,8 @@ public function form($id = null)
     // echo '<pre>'; print_r($_POST);exit;
 
    if (empty($this->input->post('customer_id'))) {
-    // echo '<pre>'; print_r($_POST);exit;
         $this->permission->method('customer','create')->redirect();
-        $this->customer_model->create_coa($postData1);
+        // $this->customer_model->create_coa($postData1);
         if ($this->customer_model->create($postData)) { 
             $id = $this->db->insert_id();
             $accesslog = array(

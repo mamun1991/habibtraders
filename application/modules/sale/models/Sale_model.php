@@ -496,13 +496,13 @@ class Sale_model extends CI_Model {
 	//Product search item
 	public function lease_product_search_item($product_name,$lease_id){
 		$query=$this->db->select('product.*,lease_product_map.lease_id')
-				->from('product')
-				->join('lease_product_map','product.product_id=lease_product_map.product_id')
-				->where('lease_product_map.lease_id',$lease_id)
-				->where('product.isactive',1)
-				->like('product.product_name', $product_name, 'after')
-				->group_by('product.product_id')
-				->get();
+			->from('product')
+			->join('lease_product_map','product.product_id=lease_product_map.product_id')
+			->where('lease_product_map.lease_id',$lease_id)
+			->where('product.isactive',1)
+			->like('product.product_name', $product_name, 'after')
+			->group_by('product.product_id')
+			->get();
 		if ($query->num_rows() > 0) {
 			return $query->result_array();	
 		}
@@ -510,55 +510,33 @@ class Sale_model extends CI_Model {
 	}
 	// stock available qty
 	public function get_total_product($product_id)
-  {
-	  $id = 0;   
+	{
+		$id = 0;   
+		$sql = 'SELECT SUM(purchase_order_details.order_qty) AS qty, 
+			product.retail_price, 
+			(SELECT `purchase_order_details`.`product_rate` 
+			FROM `purchase_order_details` 
+			WHERE `purchase_order_details`.`product_id` = ? 
+			ORDER BY `purchase_order_details`.`pod_id` DESC 
+			LIMIT 1) AS product_rate, 
+			purchase_order_details.unit 
+			FROM purchase_order_details 
+			JOIN product ON product.product_id = purchase_order_details.product_id 
+			WHERE purchase_order_details.product_id = ?';
 
-    // echo '<pre>'; print_r($product_id);exit;
+		$pur = $this->db->query($sql, [$product_id, $product_id])->row();
 
-    // $this->db->query("CALL get_store_stock('".$id."',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id)");
-		$this->db->select('sum(purchase_order_details.order_qty) as qty, product.retail_price, purchase_order_details.product_rate, purchase_order_details.unit');
-		$this->db->from('purchase_order_details');
-		$this->db->join('product', 'product.product_id = purchase_order_details.product_id');
-		$this->db->where('purchase_order_details.product_id',$product_id);
-		if($this->session->userdata('isAdmin')==0){
-		  $this->db->where('purchase_order_details.store_id',$this->session->userdata('store_id'));
-		}
-    // $this->db->order_by('purchase_order_details.pod_id', 'ASC');
-		$pur = $this->db->get()->row();
+		// echo $this->db->last_query();exit;
 
-    $resultarray = array(
-      'qty'     => $pur->qty,
-      'rtp'     => $pur->retail_price,
-      'dp'      => $pur->product_rate,
-      'unit'    => $pur->unit,
-    );
+		$resultarray = array(
+			'qty'     => $pur->qty,
+			'rtp'     => $pur->retail_price,
+			'dp'      => $pur->product_rate,
+			'unit'    => $pur->unit,
+		);
 
-    return $resultarray;
+		return $resultarray;
 
-    //echo '<pre>'; print_r($resultarray);exit;
-
-		// $this->db->select('sum(tmp_store_stock.OutQty) as sqty');
-		// $this->db->from('tmp_store_stock');
-		// $this->db->where('tmp_store_stock.ProdID',$product_id);
-		// if($this->session->userdata('isAdmin')==0){
-		// $this->db->where('tmp_store_stock.StoreID',$this->session->userdata('store_id'));
-		// }
-		// $sal = $this->db->get()->row();		     
-						     
-		// //$sal= $this->db->select('sum(qty) as sqty')->from('sale_details')->where('product_id',$product_id)->get()->row();
-    //     $pro_price = $this->db->select('*')->from('product')->where('product_id',$product_id)->get()->row();
-		// $available_quantity = $pur->qty-$sal->sqty;
-    //     $price = $pro_price->retail_price;
-    //     $minprice = $pro_price->minimum_price;
-    //     $blocprice = $pro_price->block_price;
-		// $data2 = array(
-		// 	'total_product'  => $available_quantity,
-		// 	'price'          => $price,
-		// 	'minprice'       => $minprice,
-		// 	'blockprice'     => $blocprice,
-		// 	);
-
-		// return $data2;
 	}
 	
 	// Retrive lease product info
