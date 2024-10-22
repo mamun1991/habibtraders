@@ -334,3 +334,5 @@ INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `supplier_id`, `store_id`
 INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241020153055', '5', '2', '7400', '1', '');
 INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241020153024', 'PO', '2024-10-20', 10107, 'PO Receive Receive No 20241020153055', '14800.00', 0, '1', 1, '1', '2024-10-20', 1);
 INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241020153024', 'PO', '2024-10-20', '5020200009', 'PO received For PO No.20241020153024 Receive No.20241020153055', 0, '14800.00', NULL, 1, '1', '2024-10-20', 1);
+UPDATE `user` SET `last_login` = '2024-10-22 06:12:10', `ip_address` = '::1'
+WHERE `id` = '1';
