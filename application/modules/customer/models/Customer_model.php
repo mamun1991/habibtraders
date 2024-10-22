@@ -32,7 +32,7 @@ class Customer_model extends CI_Model {
 	{ 
 		return $this->db->select("*")->from("customer")
 			->where('customer_id',$id) 
-    		->limit($limit, $start)
+    		// ->limit($limit, $start)
 			->get()
 			->row();
 

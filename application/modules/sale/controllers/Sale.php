@@ -150,7 +150,7 @@ class Sale extends MX_Controller {
 		
 		if ($this->form_validation->run()) { 
 			if ($this->sale_model->create()) { 
-				echo '<pre>22'; exit;
+				// echo '<pre>22'; exit;
 				$this->session->set_flashdata('message', display('save_successfully'));
 				if($this->input->post('sale_type') ==1){
 				redirect('sale/sale/index/');
@@ -170,9 +170,6 @@ class Sale extends MX_Controller {
 			$data['title']       = display('create');	
 			$data['module']      = "sale";
 			$data['customer']    =  $this->sale_model->customer();
-			$data['cr_customer'] =  $this->sale_model->cr_customer();
-			$data['ls_customer'] =  $this->sale_model->ls_customer();
-			$data['leasinfo']    =  $this->sale_model->leaseinf();
 			$data['inquiry']     =  $this->sale_model->inquiry();
 			$data['invoice_no']  =  $this->number_generator();
 			$data['page']        = "form";   
