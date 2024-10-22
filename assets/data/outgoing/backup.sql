@@ -307,3 +307,11 @@ INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActi
 INSERT INTO `customer` (`customer_name`, `customer_phone`, `customer_address`, `business_address`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('adfadsf', 'adsfadsfadsf', 'asdf', 'sdf', '1', '1', '2024-10-19 16:13:18', '', '');
 INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Customer', 'create', 1009, '1', '2024-10-19 16:13:18');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`) VALUES (1020301000011, '-adfadsf', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0', '1', '2024-10-19 16:13:32');
+UPDATE `user` SET `last_login` = '2024-10-20 08:55:43', `ip_address` = '::1'
+WHERE `id` = '1';
+UPDATE `user` SET `last_login` = '2024-10-21 06:54:55', `ip_address` = '::1'
+WHERE `id` = '1';
+UPDATE `user` SET `last_login` = '2024-10-21 12:42:01', `ip_address` = '::1'
+WHERE `id` = '1';
+UPDATE `user` SET `last_login` = '2024-10-22 05:59:43', `ip_address` = '::1'
+WHERE `id` = '1';
