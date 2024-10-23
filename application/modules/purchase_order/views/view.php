@@ -42,7 +42,7 @@
           </tr>
           <tr>
             <td align="left">Currency:</td>
-            <td align="right">Pak Rupee</td>
+            <td align="right">BDT</td>
           </tr>
           <tr>
             <td align="left">Contact Person:</td>

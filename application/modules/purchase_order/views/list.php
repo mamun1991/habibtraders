@@ -17,6 +17,8 @@
                                 <th><?php echo display('sl_no') ?></th>
                                 <th><?php echo display('order_no') ?></th>
                                 <th><?php echo display('date') ?></th>
+                                <th>Brand</th>
+                                <th>Supplier</th>
                                 <th><?php echo display('total') ?></th>
                                 <th><?php echo display('status') ?></th>
                                 <th><?php echo display('action') ?></th> 
@@ -42,6 +44,8 @@
                                 <td><?php echo $sl++; ?></td>
                                 <td><?php echo $order->po_no; ?></td>
                                 <td><?php echo $order->createdate; ?></td>
+                                <td><?php echo $order->supplier_brand; ?></td>
+                                <td><?php echo $order->supplier_name; ?></td>
                                 <td><?php echo $order->total_amnt; ?></td>
                                 <td><?php
                                                           $btnrcb = 0;

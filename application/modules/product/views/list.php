@@ -13,18 +13,19 @@
                     </h4>
                 </div>
             </div>
-            <div class="panel-body">
+            <div class="">
  
                 <div class="">
 
                      <?= form_open_multipart('product/product/update_product') ?>
-                    <table class="datatable2 table table-bordered table-hover">
+                    <table id="testdt" class="datatable2 table table-bordered table-hover">
                          <?php if($this->permission->method('product','update')->access()): ?>
                          <p class="text-right"> <button type="submit" class="btn btn-success w-md m-b-5"><?php echo display('save') ?></button></p>
                          <?php endif ?>
                         <thead>
                             <tr>
                                 <th><?php echo display('sl_no') ?></th>
+                                <th>P.Code</th>
                                 <th><?php echo display('product_name') ?></th>
                                 <th><?php echo display('category') ?></th>
                                 <th><?php echo display('model') ?></th>
@@ -43,7 +44,7 @@
                             <?php $sl = 1; ?>
                             <?php foreach ($products as $product) { 
 
-$product_info = $this->db->select('product.*,product_category.category_name,product_model.model_name,product_brand.brand_name,product_unit.unit_name')
+                        $product_info = $this->db->select('product.*,product_category.category_name,product_model.model_name,product_brand.brand_name,product_unit.unit_name')
                          ->from('product')
                          ->join('product_category','product.category=product_category.category_id')
                          ->join('product_model','product.model=product_model.model_id')
@@ -57,6 +58,7 @@ $product_info = $this->db->select('product.*,product_category.category_name,prod
                                 ?>
                             <tr>
                                 <td><?php echo $sl++; ?></td>
+                                <td><?php echo $product->product_code; ?></td>
                                 <td><?php echo $product->product_name; ?><input type="hidden" name="product_name[]" class="form-control" value="<?php echo $product->product_name; ?>"/>
                                     <input type="hidden" name="product_code[]" style="width:100px" class="form-control" value="<?php echo $product->product_code; ?>"/>
                                 <input type="hidden" name="product_id[]" value="<?php echo $product->product_id; ?>">
@@ -104,5 +106,3 @@ $product_info = $this->db->select('product.*,product_category.category_name,prod
         </div>
     </div>
 </div>
-
- 

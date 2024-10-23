@@ -75,8 +75,12 @@ class Product_model extends CI_Model {
 
 	public function findById($id = null)
 	{ 
-		return $this->db->select("*")->from("product")
-			->where('product_id',$id) 
+		return $this->db->select("product.*, product_brand.brand_name, product_category.category_name, product_model.model_name, product_unit.unit_name")->from("product")
+			->join('product_brand', 'product.brand = product_brand.brand_id')
+			->join('product_category', 'product.category = product_category.category_id')
+			->join('product_model', 'product.model = product_model.model_id')
+			->join('product_unit', 'product.unit = product_unit.unit_id')
+			->where('product.product_id',$id) 
     		->limit($limit, $start)
 			->get()
 			->row();
@@ -181,6 +185,8 @@ class Product_model extends CI_Model {
 			->where('isactive', 1)  
 			->get()
 			->result();
+
+			// echo '<pre>';print_r($data);exit;
 
 		$list[''] = display('select_option');
 		if (!empty($data)) {

@@ -146,10 +146,14 @@ class Product extends MX_Controller {
 	{  
 		$this->permission->method('product','create')->redirect();
 		$data['title'] = display('add');
+
+		
+		$product_name = $this->security->xss_clean($this->input->post('product_name'));
+		// echo '<pre>'; print_r($product_name);exit;
 		#-------------------------------#
-		$this->form_validation->set_rules('product_name', display('product_name')  ,'required|max_length[50]');
+		$this->form_validation->set_rules('product_name', display('product_name')  ,'required|max_length[255]');
 	
-		$this->form_validation->set_rules('product_details', display('product_details')  ,'max_length[200]');
+		$this->form_validation->set_rules('product_details', display('product_details')  ,'max_length[255]');
 	    $createby=$this->session->userdata('id');
 		$createdate=date('Y-m-d H:i:s');
 		$model = $this->db->select('*')->from('product_model')->where('model_name',$this->input->post('model_name'))->get()->row();
@@ -162,7 +166,7 @@ class Product extends MX_Controller {
 		#-------------------------------#
 	       $data['product']   = (Object) $postData = [
 			'product_id' 	  => $this->input->post('product_id'), 
-			'product_name'    => $this->input->post('product_name'),
+			'product_name'    => $product_name,
 			'product_code'    => $this->input->post('product_code'),
 			'model'           => $model->model_id,
 			'category'        => $category->category_id,
@@ -183,34 +187,34 @@ class Product extends MX_Controller {
 
 			if (empty($postData['product_id'])) {
 
-        	$this->permission->method('product','create')->redirect();
-        $this->db->select('*');
-		$this->db->from('product');
-		$this->db->where('isactive',1);
-		$this->db->where('product_code',$this->input->post('product_code'));
-		//$this->db->where('product_name',$this->input->post('product_name'));
-		$query = $this->db->get();
-		if ($query->num_rows() > 0) {
-			$this->session->set_flashdata('exception',  display('please_choose_another_p_code'));
-		}else{
+				$this->permission->method('product','create')->redirect();
+				$this->db->select('*');
+				$this->db->from('product');
+				$this->db->where('isactive',1);
+				$this->db->where('product_code',$this->input->post('product_code'));
+				//$this->db->where('product_name',$this->input->post('product_name'));
+				$query = $this->db->get();
+				if ($query->num_rows() > 0) {
+					$this->session->set_flashdata('exception',  display('please_choose_another_p_code'));
+				}else{
 
-				if ($this->product_model->create($postData)) { 
-					$id = $this->db->insert_id();
-					$accesslog = array(
-				'action_page'       =>	'Product',
-				'action_done'	    =>	'create',
-				'remarks'		    =>	'product ID :'.$id,
-				'user_name'			=>	 $this->session->userdata('id'),
-				'entry_date'	    =>	date('Y-m-d H:i:s')
-			);
-			$this->db->insert('accesslog',$accesslog);
-					$this->session->set_flashdata('message', display('save_successfully'));
-					redirect('product/product/index');
-				} else {
-					$this->session->set_flashdata('exception',  display('please_try_again'));
+					if ($this->product_model->create($postData)) { 
+						$id = $this->db->insert_id();
+						$accesslog = array(
+					'action_page'       =>	'Product',
+					'action_done'	    =>	'create',
+					'remarks'		    =>	'product ID :'.$id,
+					'user_name'			=>	 $this->session->userdata('id'),
+					'entry_date'	    =>	date('Y-m-d H:i:s')
+				);
+				$this->db->insert('accesslog',$accesslog);
+						$this->session->set_flashdata('message', display('save_successfully'));
+						redirect('product/product/index');
+					} else {
+						$this->session->set_flashdata('exception',  display('please_try_again'));
+					}
 				}
-			}
-				redirect("product/product/form"); 
+					redirect("product/product/form"); 
 
 			} else {
 
@@ -236,7 +240,7 @@ class Product extends MX_Controller {
 		} else { 
 			if(!empty($id)) {
 				$data['title']   = display('update');
-			$data['products']    = $this->product_model->findById($id);
+				$data['products']    = $this->product_model->findById($id);
 			}
 			$data['module']      = "product";
 			$text                ='pro-';

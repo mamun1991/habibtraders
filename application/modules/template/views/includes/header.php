@@ -13,8 +13,8 @@
        background-color:#FFF ; 
     }
     .ui-menu-item-wrapper{
-    background-color: white;
-   }
+        background-color: white;
+    }
 </style>
 <a href="<?php echo base_url('dashboard/home') ?>" class="logo"> 
     <span class="logo-lg">

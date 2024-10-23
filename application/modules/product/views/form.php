@@ -18,48 +18,46 @@
                      <div class="form-group row">
                         <label for="product_code" class="col-sm-3 col-form-label"><?php echo display('product_code') ?> <span class="redLabel">*</span></label>
                         <div class="col-sm-9">
-                                    <input name="product_code" class="form-control" type="text" placeholder="<?php echo display('product_code') ?>" id="product_code" value="<?php if(empty($products->product_code)){
-                                        echo $product_code;
-                                    }else{
-                                       echo $products->product_code; 
-                                    } ?>" required>
+                            <input name="product_code" class="form-control" type="text" placeholder="<?php echo display('product_code') ?>" id="product_code" value="<?php if(empty($products->product_code)){
+                                echo $product_code;
+                            }else{
+                                echo $products->product_code; 
+                            } ?>" required>
                         </div>
                     </div>
 
+                    <?php
+                        // echo '<pre>';print_r($brand);print_r($products);exit;
+                    ?>
 
                     <div class="form-group row">
                         <label for="product_name" class="col-sm-3 col-form-label"><?php echo display('product_name') ?> <span class="redLabel">*</span></label>
                         <div class="col-sm-9">
-                                    
-                                    <textarea name="product_name" id="product_name" class="form-control" readonly=""><?php echo $products->product_name; ?></textarea>
+                            <textarea name="product_name" id="product_name" class="form-control" readonly=""><?php echo $products->product_name; ?></textarea>
                         </div>
                     </div> 
-              <div class="form-group row">
-                        <label for="category_name" class="col-sm-3 col-form-label"><?php echo display('category_name') ?> <span class="redLabel">*</span></label>
-                        <div class="col-sm-9">
-                                  
-                                    <?php echo form_dropdown('category_name',$category,(!empty($products->category)?$products->category:null), 'class="form-control superSelect"  ') ?>
-                        </div>
-                    </div> 
-                     <div class="form-group row">
+                    <div class="form-group row">
                         <label for="brand_name" class="col-sm-3 col-form-label"><?php echo display('brand_name') ?> <span class="redLabel">*</span></label>
                         <div class="col-sm-9">
-                                    <?php echo form_dropdown('brand_name',$brand,(!empty($products->brand)?$products->brand:null), 'class="form-control superSelect"  ') ?>
+                            <?php echo form_dropdown('brand_name',$brand,(!empty($products->brand_name)?$products->brand_name:null), 'class="form-control superSelect"  ') ?>
                         </div>
                     </div> 
-
-                   <div class="form-group row">
+                    <div class="form-group row">
+                        <label for="category_name" class="col-sm-3 col-form-label"><?php echo display('category_name') ?> <span class="redLabel">*</span></label>
+                        <div class="col-sm-9">
+                            <?php echo form_dropdown('category_name',$category,(!empty($products->category_name)?$products->category_name:null), 'class="form-control superSelect"  ') ?>
+                        </div>
+                    </div> 
+                    <div class="form-group row">
                         <label for="model_name" class="col-sm-3 col-form-label"><?php echo display('model_name') ?> <span class="redLabel">*</span></label>
                         <div class="col-sm-9">
-                            <?php echo form_dropdown('model_name',$model,(!empty($products->model)?$products->model:null), 'class="form-control superSelect" ') ?>
+                            <?php echo form_dropdown('model_name',$model,(!empty($products->model_name)?$products->model_name:null), 'class="form-control superSelect" ') ?>
                         </div>
                     </div> 
-                   
-                    
                      <div class="form-group row">
                         <label for="unit_name" class="col-sm-3 col-form-label"><?php echo display('um') ?><span class="redLabel"> *</span></label>
                         <div class="col-sm-9">
-                            <?php echo form_dropdown('unit_name',$unit,(!empty($products->unit)?$products->unit:null), 'class="form-control"') ?>
+                            <?php echo form_dropdown('unit_name',$unit,(!empty($products->unit_name)?$products->unit_name:null), 'class="form-control"') ?>
                         </div>
                     </div> 
                      

@@ -1,6 +1,7 @@
 
 <style type="text/css">
     .close{color:white;}
+    
 </style>
 
         <!-- Purchase report -->

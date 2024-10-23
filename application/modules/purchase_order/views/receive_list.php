@@ -17,6 +17,7 @@
                                 <th><?php echo display('sl_no') ?></th>
                                 <th><?php echo display('voucher_no') ?></th>
                                 <th><?php echo display('order_no') ?></th>
+                                <th>Brand</th>
                                 <th><?php echo display('supplier') ?></th>
                                 <th><?php echo display('store') ?></th>
                                 <th><?php echo display('date') ?></th>
@@ -31,6 +32,7 @@
                                 <td><?php echo $sl++; ?></td>
                                 <td> <a href="<?php echo base_url("purchase_order/purchase_order/receive_view/$order->receive_id") ?>"><?php echo $order->voucher_no; ?></a></td>
                                 <td><?php echo $order->po_no; ?></td>
+                                <td><?php echo $order->supplier_brand; ?></td>
                                 <td><?php echo $order->supplier_name; ?></td>
                                 <td><?php echo $order->store_name; ?></td>
                                 <td><?php echo $order->receive_date ; ?></td>

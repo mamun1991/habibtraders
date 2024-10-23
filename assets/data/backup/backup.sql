@@ -23,7 +23,17 @@ CREATE TABLE `acc_coa` (
   PRIMARY KEY (`HeadName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('3010101', '', 'Cash Sale', '2', '1', '1', '1', 'I', '0', '0', '0.00', '1', '2024-10-09 13:31:24', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020301000010', '-adfadsf', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-19 16:13:18', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020301000004', '-adfasd', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-19 15:46:16', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020301000009', '-adsf', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-19 16:12:32', '', '0000-00-00 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020301000001', '-customer 1', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-08 08:44:41', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020301000006', '-fasdf', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-19 16:09:05', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020301000005', '-Mamun', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-19 15:50:34', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020301000002', '-Naim', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-19 15:14:12', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020301000008', '-teadf', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-19 16:11:11', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020301000007', '-teat', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-19 16:09:29', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020301000003', '-test', 'Customer Receivable', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-19 15:40:51', '', '0000-00-00 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('40100004', '123-HT - 1', 'Store Expenses', '2', '1', '1', '0', 'E', '0', '0', '0.00', '1', '2024-10-09 09:02:29', '', '0000-00-00 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('40100003', '1234-store 1', 'Store Expenses', '2', '1', '1', '0', 'E', '0', '0', '0.00', '1', '2024-10-08 08:44:01', '', '0000-00-00 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('4021403', 'AC', 'Repair and Maintenance', '3', '1', '1', '0', 'E', '0', '0', '0.00', 'admin', '2015-10-15 19:33:55', '', '2015-10-15 00:00:00');
@@ -54,6 +64,7 @@ INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActi
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('30101', 'Cash Sale', 'Store Income', '1', '1', '1', '1', 'I', '0', '0', '0.00', '2', '2018-07-08 07:51:26', '', '2015-10-15 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020101000002', 'Cash-123-HT - 1', 'Cash In Hand', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-09 09:02:29', '', '0000-00-00 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020101000001', 'Cash-1234-store 1', 'Cash In Hand', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-08 08:44:01', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1020101000003', 'Cash-ht2-HT - 2', 'Cash In Hand', '4', '1', '1', '0', 'A', '0', '0', '0.00', '1', '2024-10-19 12:31:49', '', '0000-00-00 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1010207', 'CCTV', 'Office Equipment', '3', '1', '1', '0', 'A', '0', '0', '0.00', 'admin', '2015-10-15 15:51:24', '', '2015-10-15 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('102020102', 'CEO Current A/C', 'Advance', '4', '1', '1', '0', 'A', '0', '0', '0.00', 'admin', '2016-09-25 11:54:54', '', '2015-10-15 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1010101', 'Class Room Chair', 'Furniture & Fixturers', '3', '1', '1', '0', 'A', '0', '0', '0.00', 'admin', '2015-10-15 15:45:29', '', '2015-10-15 00:00:00');
@@ -105,6 +116,7 @@ INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActi
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('40205', 'House Rent', 'Other Expenses', '2', '1', '0', '1', 'E', '0', '0', '0.00', 'anwarul', '2013-08-24 10:26:56', '', '2015-10-15 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('40100001', 'HP-Hasilpur', 'Academic Expenses', '2', '1', '1', '0', 'E', '0', '0', '0.00', '2', '2018-07-29 03:44:23', '', '2015-10-15 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('4020702', 'HR Recruitment Expenses', 'Miscellaneous Expenses', '3', '1', '1', '0', 'E', '0', '0', '0.00', 'admin', '2016-09-25 12:55:49', '', '2015-10-15 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('40100005', 'ht2-HT - 2', 'Store Expenses', '2', '1', '1', '0', 'E', '0', '0', '0.00', '1', '2024-10-19 12:31:49', '', '0000-00-00 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('4020703', 'Incentive on Admission', 'Miscellaneous Expenses', '3', '1', '1', '0', 'E', '0', '0', '0.00', 'admin', '2016-09-25 12:56:09', '', '2015-10-15 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('3', 'Income', 'COA', '0', '1', '0', '0', 'I', '0', '0', '0.00', '', '2015-10-15 00:00:00', '', '2015-10-15 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('30204', 'Income from Photocopy & Printing', 'Other Income', '2', '1', '1', '1', 'I', '0', '0', '0.00', 'Zoherul', '2015-07-14 10:29:54', 'admin', '2016-09-25 11:04:28');
@@ -180,9 +192,12 @@ INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActi
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('301', 'Store Income', 'Income', '1', '1', '0', '0', 'I', '0', '0', '0.00', '2', '2018-07-07 13:40:37', 'admin', '2015-09-17 17:00:02');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('3020501', 'Students Info. Correction Fee', 'Others (Non-Academic Income)', '3', '1', '1', '0', 'I', '0', '0', '0.00', 'admin', '2015-10-15 17:24:45', '', '2015-10-15 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('1010601', 'Sub Station', 'Electrical Equipment', '3', '1', '1', '0', 'A', '0', '0', '0.00', 'admin', '2016-03-27 10:44:11', '', '2015-10-15 00:00:00');
-INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('5020200008', 'sup-1-Suman Ali', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0.00', '1', '2024-10-09 09:01:29', '', '0000-00-00 00:00:00');
-INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('5020200009', 'sup-2-Musa', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0.00', '1', '2024-10-09 09:10:03', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('5020200014', 'sup-1-Suman Ali', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0.00', '1', '2024-10-19 13:37:17', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('5020200013', 'sup-2-Musa', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0.00', '1', '2024-10-19 13:37:04', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('5020200015', 'sup-2-Riyaz', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0.00', '1', '2024-10-22 09:16:29', '', '0000-00-00 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('5020200011', 'sup-3-Mamun 1', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0.00', '1', '2024-10-19 12:28:41', '', '0000-00-00 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('5020200006', 'sup-4-Eco star', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0.00', '2', '2018-07-27 10:15:58', '', '2015-10-15 00:00:00');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('5020200012', 'sup-4-Maznu', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0.00', '1', '2024-10-19 13:35:07', '', '0000-00-00 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('5020200007', 'sup-5-New', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0.00', '2', '2018-08-02 16:23:42', '', '2015-10-15 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('5020200002', 'sup-5-Sharif', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0.00', '2', '2018-07-12 10:04:21', '', '2015-10-15 00:00:00');
 INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`) VALUES ('5020200003', 'sup-6-Talha', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0.00', '2', '2018-07-14 10:16:52', '', '2015-10-15 00:00:00');
@@ -303,10 +318,23 @@ CREATE TABLE `acc_transaction` (
   `UpdateDate` datetime DEFAULT NULL,
   `IsAppove` char(10) DEFAULT NULL,
   UNIQUE KEY `ID` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=359 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=372 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('357', '20241009090654', 'PO', '2024-10-09', '10107', 'PO Receive Receive No 20241009090728', '24990.00', '0.00', '2', '1', '1', '2024-10-09 00:00:00', NULL, NULL, '1');
 INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('358', '20241009090654', 'PO', '2024-10-09', '10107', 'PO Receive Receive No 20241009091247', '24990.00', '0.00', '2', '1', '1', '2024-10-09 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('359', '20241009091116', 'PO', '2024-10-13', '10107', 'PO Receive Receive No 20241013113911', '12500.00', '0.00', '2', '1', '1', '2024-10-13 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('360', '20241013131218', 'PO', '2024-10-13', '10107', 'PO Receive Receive No 20241013131256', '36260.00', '0.00', '2', '1', '1', '2024-10-13 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('361', '20241013131218', 'PO', '2024-10-13', '10107', 'PO Receive Receive No 20241013131256', '20780.00', '0.00', '2', '1', '1', '2024-10-13 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('362', '20241013131218', 'PO', '2024-10-13', '10107', 'PO Receive Receive No 20241013131256', '25750.00', '0.00', '2', '1', '1', '2024-10-13 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('363', '20241013131218', 'PO', '2024-10-13', '10107', 'PO Receive Receive No 20241013180527', '18130.00', '0.00', '2', '1', '1', '2024-10-13 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('364', '20241013131218', 'PO', '2024-10-13', '10107', 'PO Receive Receive No 20241013180527', '10390.00', '0.00', '2', '1', '1', '2024-10-13 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('365', '20241013131218', 'PO', '2024-10-13', '10107', 'PO Receive Receive No 20241013180527', '5150.00', '0.00', '2', '1', '1', '2024-10-13 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('366', '20241015133231', 'PO', '2024-10-15', '10107', 'PO Receive Receive No 20241015133243', '36000.00', '0.00', '2', '1', '1', '2024-10-15 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('367', '20241015133543', 'PO', '2024-10-15', '10107', 'PO Receive Receive No 20241015133553', '19130.00', '0.00', '2', '1', '1', '2024-10-15 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('368', '20241015134317', 'PO', '2024-10-17', '10107', 'PO Receive Receive No 20241017130734', '20780.00', '0.00', '2', '1', '1', '2024-10-17 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('369', '20241022092952', 'PO', '2024-10-22', '10107', 'PO Receive Receive No 20241022093129', '42000.00', '0.00', '2', '1', '1', '2024-10-22 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('370', '20241022092952', 'PO', '2024-10-22', '10107', 'PO Receive Receive No 20241022093129', '6840.00', '0.00', '3', '1', '1', '2024-10-22 00:00:00', NULL, NULL, '1');
+INSERT INTO `acc_transaction` (`ID`, `VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `UpdateBy`, `UpdateDate`, `IsAppove`) VALUES ('371', '20241022092952', 'PO', '2024-10-22', '10107', 'PO Receive Receive No 20241022093129', '9216.00', '0.00', '3', '1', '1', '2024-10-22 00:00:00', NULL, NULL, '1');
 
 
 #
@@ -323,7 +351,7 @@ CREATE TABLE `accesslog` (
   `user_name` varchar(50) DEFAULT NULL,
   `entry_date` datetime DEFAULT NULL,
   UNIQUE KEY `SerialNo` (`sl_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('1', 'Store', 'create', 'Store ID :1', '1', '2024-10-08 08:44:01');
 INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('2', 'Customer', 'create', '27', '1', '2024-10-08 08:44:41');
@@ -340,6 +368,74 @@ INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user
 INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('13', 'Supplier', 'create', 'Supplier ID :2', '1', '2024-10-09 09:10:03');
 INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('14', 'purchase order', 'create', 'Orde Id-20241009091116 total amount-12400.00', '1', '2024-10-09 09:11:16');
 INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('15', 'Stockmovment', 'create', 'Stockmovment ID :2', '1', '2024-10-09 09:16:53');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('16', 'Product', 'update', 'product ID :2', '1', '2024-10-09 13:35:01');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('17', 'Product', 'delete', 'product ID :2', '1', '2024-10-13 12:57:37');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('18', 'Product', 'delete', 'product ID :1', '1', '2024-10-13 12:57:41');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('19', 'purchase order', 'create', 'Orde Id-20241013131218 total amount-116460.00', '1', '2024-10-13 13:12:18');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('20', 'Product', 'create', 'product ID :7', '1', '2024-10-15 13:30:36');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('21', 'purchase order', 'create', 'Orde Id-20241015133231 total amount-36000.00', '1', '2024-10-15 13:32:31');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('22', 'purchase order', 'create', 'Orde Id-20241015133543 total amount-19130.00', '1', '2024-10-15 13:35:43');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('23', 'purchase order', 'create', 'Orde Id-20241015134317 total amount-20780.00', '1', '2024-10-15 13:43:17');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('24', 'Supplier', 'create', 'Supplier ID :3', '1', '2024-10-19 12:27:16');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('25', 'Supplier', 'update', 'Supplier ID :3', '1', '2024-10-19 12:28:41');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('26', 'Store', 'create', 'Store ID :3', '1', '2024-10-19 12:31:49');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('27', 'Store', 'update', 'Store ID :1', '1', '2024-10-19 12:32:42');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('28', 'Supplier', 'create', 'Supplier ID :4', '1', '2024-10-19 13:35:07');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('29', 'Supplier', 'update', 'Supplier ID :2', '1', '2024-10-19 13:37:04');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('30', 'Supplier', 'update', 'Supplier ID :1', '1', '2024-10-19 13:37:17');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('31', 'Supplier', 'delete', 'Supplier ID :3', '1', '2024-10-19 13:50:28');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('32', 'Product', 'create', 'product ID :8', '1', '2024-10-19 14:39:30');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('33', 'Customer', 'create', '1001', '1', '2024-10-19 15:46:16');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('34', 'Customer', 'create', '1002', '1', '2024-10-19 15:50:34');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('35', 'Customer', 'update', 'customer ID :1002', '1', '2024-10-19 15:53:38');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('36', 'Customer', 'delete', 'customer ID :1002', '1', '2024-10-19 16:01:14');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('37', 'Customer', 'create', '1007', '1', '2024-10-19 16:11:11');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('38', 'Customer', 'delete', 'customer ID :1007', '1', '2024-10-19 16:11:16');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('39', 'Customer', 'create', '1008', '1', '2024-10-19 16:12:32');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('40', 'Customer', 'create', '1009', '1', '2024-10-19 16:13:18');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('41', 'Product', 'create', 'product ID :9', '1', '2024-10-22 07:53:52');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('42', 'Product', 'create', 'product ID :10', '1', '2024-10-22 07:55:28');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('43', 'Product', 'create', 'product ID :11', '1', '2024-10-22 07:56:34');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('44', 'Product', 'create', 'product ID :12', '1', '2024-10-22 07:57:50');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('45', 'Product', 'create', 'product ID :13', '1', '2024-10-22 07:58:39');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('46', 'Product', 'create', 'product ID :14', '1', '2024-10-22 07:59:30');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('47', 'Product', 'create', 'product ID :15', '1', '2024-10-22 08:00:45');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('48', 'Product', 'delete', 'product ID :15', '1', '2024-10-22 08:01:19');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('49', 'Product', 'create', 'product ID :16', '1', '2024-10-22 08:03:20');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('50', 'Product', 'update', 'product ID :16', '1', '2024-10-22 08:08:25');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('51', 'Product', 'create', 'product ID :17', '1', '2024-10-22 08:09:32');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('52', 'Product', 'create', 'product ID :18', '1', '2024-10-22 08:12:14');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('53', 'Product', 'update', 'product ID :17', '1', '2024-10-22 08:14:20');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('54', 'Product', 'update', 'product ID :16', '1', '2024-10-22 08:15:48');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('55', 'Product', 'create', 'product ID :19', '1', '2024-10-22 08:17:22');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('56', 'Product', 'create', 'product ID :20', '1', '2024-10-22 08:44:14');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('57', 'Product', 'create', 'product ID :21', '1', '2024-10-22 08:46:08');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('58', 'Product', 'create', 'product ID :22', '1', '2024-10-22 08:53:08');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('59', 'Product', 'create', 'product ID :23', '1', '2024-10-22 08:53:33');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('60', 'Product', 'create', 'product ID :24', '1', '2024-10-22 08:54:04');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('61', 'Product', 'create', 'product ID :25', '1', '2024-10-22 08:54:49');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('62', 'Product', 'create', 'product ID :26', '1', '2024-10-22 08:55:10');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('63', 'Product', 'create', 'product ID :27', '1', '2024-10-22 08:55:36');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('64', 'Product', 'create', 'product ID :28', '1', '2024-10-22 08:56:05');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('65', 'Product', 'create', 'product ID :29', '1', '2024-10-22 08:56:39');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('66', 'Product', 'create', 'product ID :30', '1', '2024-10-22 08:57:01');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('67', 'Product', 'create', 'product ID :31', '1', '2024-10-22 08:58:16');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('68', 'Product', 'create', 'product ID :32', '1', '2024-10-22 08:59:02');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('69', 'Product', 'create', 'product ID :33', '1', '2024-10-22 09:00:27');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('70', 'Product', 'create', 'product ID :34', '1', '2024-10-22 09:00:51');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('71', 'Product', 'create', 'product ID :35', '1', '2024-10-22 09:01:26');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('72', 'Product', 'create', 'product ID :36', '1', '2024-10-22 09:02:48');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('73', 'Product', 'create', 'product ID :37', '1', '2024-10-22 09:03:45');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('74', 'Product', 'create', 'product ID :38', '1', '2024-10-22 09:04:01');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('75', 'Product', 'create', 'product ID :39', '1', '2024-10-22 09:04:36');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('76', 'Product', 'create', 'product ID :40', '1', '2024-10-22 09:06:28');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('77', 'Product', 'create', 'product ID :41', '1', '2024-10-22 09:07:33');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('78', 'Product', 'create', 'product ID :42', '1', '2024-10-22 09:11:14');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('79', 'Product', 'create', 'product ID :43', '1', '2024-10-22 09:11:59');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('80', 'Product', 'create', 'product ID :44', '1', '2024-10-22 09:12:22');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('81', 'Supplier', 'create', 'Supplier ID :5', '1', '2024-10-22 09:16:29');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('82', 'purchase order', 'create', 'Orde Id-20241022092652 total amount-68556.00', '1', '2024-10-22 09:26:52');
+INSERT INTO `accesslog` (`sl_no`, `action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('83', 'purchase order', 'create', 'Orde Id-20241022092952 total amount-68556.00', '1', '2024-10-22 09:29:52');
 
 
 #
@@ -365,26 +461,22 @@ INSERT INTO `country_state_city` (`id`, `name`, `text`, `parent_id`) VALUES ('1'
 DROP TABLE IF EXISTS `customer`;
 
 CREATE TABLE `customer` (
-  `customer_id` int(11) NOT NULL AUTO_INCREMENT,
-  `customer_code` varchar(10) NOT NULL,
-  `store_id` int(11) NOT NULL COMMENT 'This is Store ID',
+  `customer_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '1001',
   `customer_name` varchar(50) NOT NULL,
   `customer_phone` varchar(50) NOT NULL,
   `customer_address` varchar(200) DEFAULT NULL,
-  `customer_cnic` varchar(32) NOT NULL,
-  `job_designation` varchar(120) DEFAULT NULL,
   `business_address` varchar(200) DEFAULT NULL,
-  `type` int(11) NOT NULL,
   `createby` varchar(20) NOT NULL,
   `createdate` datetime NOT NULL,
   `updateby` varchar(20) NOT NULL,
   `updatedate` datetime NOT NULL,
   `isactive` tinyint(1) NOT NULL,
-  PRIMARY KEY (`customer_id`),
-  UNIQUE KEY `customer_code_unique` (`customer_code`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  PRIMARY KEY (`customer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1010 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `customer` (`customer_id`, `customer_code`, `store_id`, `customer_name`, `customer_phone`, `customer_address`, `customer_cnic`, `job_designation`, `business_address`, `type`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('27', '', '1', 'customer 1', '23452345', '2345', '2452435', '5345', '345', '1', '1', '2024-10-08 08:44:41', '', '0000-00-00 00:00:00', '1');
+INSERT INTO `customer` (`customer_id`, `customer_name`, `customer_phone`, `customer_address`, `business_address`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('1001', 'Naim', '01734098785', 'Tangail', 'Delduar', '1', '2024-10-19 15:46:16', '', '0000-00-00 00:00:00', '1');
+INSERT INTO `customer` (`customer_id`, `customer_name`, `customer_phone`, `customer_address`, `business_address`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('1008', 'adsf', 'adf', 'asdf', 'adsf', '1', '2024-10-19 16:12:32', '', '0000-00-00 00:00:00', '1');
+INSERT INTO `customer` (`customer_id`, `customer_name`, `customer_phone`, `customer_address`, `business_address`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('1009', 'adfadsf', 'adsfadsfadsf', 'asdf', 'sdf', '1', '2024-10-19 16:13:18', '', '0000-00-00 00:00:00', '1');
 
 
 #
@@ -745,7 +837,7 @@ INSERT INTO `language` (`id`, `phrase`, `english`) VALUES ('280', 'credit', 'Cre
 INSERT INTO `language` (`id`, `phrase`, `english`) VALUES ('281', 'customer_type', 'Customer Type');
 INSERT INTO `language` (`id`, `phrase`, `english`) VALUES ('282', 'code', 'Code');
 INSERT INTO `language` (`id`, `phrase`, `english`) VALUES ('283', 'cnic', 'CNIC');
-INSERT INTO `language` (`id`, `phrase`, `english`) VALUES ('284', 'um', 'U/M');
+INSERT INTO `language` (`id`, `phrase`, `english`) VALUES ('284', 'um', 'Unit');
 INSERT INTO `language` (`id`, `phrase`, `english`) VALUES ('285', 'contact', 'Contact#');
 INSERT INTO `language` (`id`, `phrase`, `english`) VALUES ('286', 'package_amount', 'Package Amount');
 INSERT INTO `language` (`id`, `phrase`, `english`) VALUES ('287', 'recovery_received', 'Recovery Received');
@@ -999,7 +1091,7 @@ INSERT INTO `module` (`id`, `name`, `description`, `image`, `directory`, `status
 INSERT INTO `module` (`id`, `name`, `description`, `image`, `directory`, `status`) VALUES ('3', 'Store Management', 'Store Management System', 'application/modules/store/assets/images/thumbnail.jpg', 'store', '1');
 INSERT INTO `module` (`id`, `name`, `description`, `image`, `directory`, `status`) VALUES ('6', 'Customer Management', 'Customer Information', 'application/modules/customer/assets/images/thumbnail.jpg', 'customer', '1');
 INSERT INTO `module` (`id`, `name`, `description`, `image`, `directory`, `status`) VALUES ('7', 'Product Management', 'Product Information', 'application/modules/product/assets/images/thumbnail.jpg', 'product', '1');
-INSERT INTO `module` (`id`, `name`, `description`, `image`, `directory`, `status`) VALUES ('9', 'supplier Management', 'supplier Information', 'application/modules/supplier/assets/images/thumbnail.jpg', 'supplier', '1');
+INSERT INTO `module` (`id`, `name`, `description`, `image`, `directory`, `status`) VALUES ('9', 'Supplier Management', 'supplier Information', 'application/modules/supplier/assets/images/thumbnail.jpg', 'supplier', '1');
 INSERT INTO `module` (`id`, `name`, `description`, `image`, `directory`, `status`) VALUES ('10', 'purchase Order Management', 'purchase_order Information', 'application/modules/purchase_order/assets/images/thumbnail.jpg', 'purchase_order', '1');
 INSERT INTO `module` (`id`, `name`, `description`, `image`, `directory`, `status`) VALUES ('12', 'sale Management', 'sale Information', 'application/modules/sale/assets/images/thumbnail.jpg', 'sale', '1');
 INSERT INTO `module` (`id`, `name`, `description`, `image`, `directory`, `status`) VALUES ('13', 'lease Management', 'lease Information', 'application/modules/lease/assets/images/thumbnail.jpg', 'lease', '1');
@@ -1055,14 +1147,49 @@ CREATE TABLE `product` (
   `updateby` varchar(20) NOT NULL,
   `updatedate` datetime NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('1', 'pro-1001', 'Basin-Stella-B-21', '1', '1', '1', '1', 'Something...', '2300', '2400', '2450', '2500', '1', '1', '2024-10-08 08:49:55', '', '0000-00-00 00:00:00');
-INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('2', 'pro-1002', 'Basin-Stella-B-21', '1', '1', '1', '1', '', '4300', '4500', '4600', '4700', '1', '1', '2024-10-08 09:03:48', '', '0000-00-00 00:00:00');
-INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('3', 'pro-1003', 'Pillar Cock-Astra-Moving - Prominant', '3', '4', '1', '4', '', '0', '0', '0', '0', '1', '1', '2024-10-09 08:57:19', '', '0000-00-00 00:00:00');
-INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('4', 'pro-1004', 'Pillar Cock-Astra-Moving - Lever', '3', '4', '1', '2', '', '0', '0', '0', '0', '1', '1', '2024-10-09 08:58:34', '', '0000-00-00 00:00:00');
-INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('5', 'pro-1005', 'Bib Cock-Astra-Lever', '6', '4', '1', '3', '', '0', '0', '0', '0', '1', '1', '2024-10-09 08:59:13', '', '0000-00-00 00:00:00');
-INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('6', 'pro-1006', 'Bib Cock-Astra-Prominant', '6', '4', '1', '5', '', '0', '0', '0', '0', '1', '1', '2024-10-09 08:59:27', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('3', 'pro-1003', 'Pillar Cock-Astra-Moving - Prominant', '3', '4', '1', '4', '', '1813', '2499', '2200', '0', '1', '1', '2024-10-09 08:57:19', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('4', 'pro-1004', 'Pillar Cock-Astra-Moving - Lever', '3', '4', '1', '2', '', '1813', '2499', '2200', '0', '1', '1', '2024-10-09 08:58:34', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('5', 'pro-1005', 'Bib Cock-Astra-Lever', '6', '4', '1', '3', '', '1039', '1432', '1310', '0', '1', '1', '2024-10-09 08:59:13', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('6', 'pro-1006', 'Bib Cock-Astra-Prominant', '6', '4', '1', '5', '', '1030', '1499', '1300', '0', '1', '1', '2024-10-09 08:59:27', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('7', 'pro-1007', 'Sink Cock-Astra-Moving - Lever', '5', '4', '1', '2', '', '1813', '2499', '2200', '0', '1', '1', '2024-10-15 13:30:36', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('8', 'pro-1008', 'Basin-BHL / Parla-Nice', '1', '7', '1', '6', '', '2360', '2950', '2950', '0', '1', '1', '2024-10-19 14:39:30', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('9', 'pro-1009', 'Upvc Plumbing Pipe-Akij-1/2', '27', '20', '1', '28', '', '169', '190', '220', '0', '1', '1', '2024-10-22 07:53:52', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('10', 'pro-1010', 'Upvc Plumbing Pipe-Akij-3/4', '27', '20', '1', '29', '', '218', '260', '235', '0', '1', '1', '2024-10-22 07:55:28', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('11', 'pro-1011', 'Upvc Plumbing Pipe-Akij-1', '27', '20', '1', '30', '', '290', '363', '340', '0', '1', '1', '2024-10-22 07:56:34', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('12', 'pro-1012', 'Upvc Plumbing Pipe-Akij-1.25', '27', '20', '1', '31', '', '444', '499', '480', '0', '1', '1', '2024-10-22 07:57:50', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('13', 'pro-1013', 'Upvc Plumbing Pipe-Akij-1.5', '27', '20', '1', '32', '', '540', '627', '595', '0', '1', '1', '2024-10-22 07:58:39', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('14', 'pro-1014', 'Upvc Plumbing Pipe-Akij-2', '27', '20', '1', '33', '', '723', '813', '772', '0', '1', '1', '2024-10-22 07:59:30', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('16', 'pro-1015', 'Upvc SWR Pipe-Akij-40 mm (1.25', '50', '20', '1', '34', '', '214', '255', '240', '0', '1', '1', '2024-10-22 08:15:48', '1', '2024-10-22 08:15:48');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('17', 'pro-1016', 'Upvc SWR Pipe-Akij-110 mm (4', '50', '20', '1', '40', 'AVG', '1050', '1287', '1220', '0', '1', '1', '2024-10-22 08:14:20', '1', '2024-10-22 08:14:20');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('18', 'pro-1017', 'Upvc SWR Pipe-Akij-110 mm (4', '50', '20', '1', '44', 'AVG', '1252', '1490', '1360', '0', '1', '1', '2024-10-22 08:12:14', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('19', 'pro-1018', 'Upvc SWR Pipe-Akij-160 mm (6', '50', '20', '1', '41', 'AVG', '2245', '2673', '2700', '0', '1', '1', '2024-10-22 08:17:22', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('20', 'pro-1019', 'Upvc SWR Socket-Akij-110 mm (4', '76', '20', '1', '45', '', '55', '65', '81', '0', '1', '1', '2024-10-22 08:44:14', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('21', 'pro-1020', 'Upvc SWR Socket-Akij-160 mm (6', '76', '20', '1', '46', '', '106', '126', '250', '0', '1', '1', '2024-10-22 08:46:08', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('22', 'pro-1021', 'Upvc SWR Elbow-Akij-40 mm (1.25\") 1.9-2.2', '52', '20', '1', '34', '', '0', '0', '0', '0', '1', '1', '2024-10-22 08:53:08', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('23', 'pro-1022', 'Upvc SWR Elbow-Akij-110 mm (4\")', '52', '20', '1', '45', '', '0', '0', '0', '0', '1', '1', '2024-10-22 08:53:33', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('24', 'pro-1023', 'Upvc SWR Elbow-Akij-160 mm (6\") ', '52', '20', '1', '46', '', '0', '0', '0', '0', '1', '1', '2024-10-22 08:54:04', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('25', 'pro-1024', 'Upvc SWR Back Door Elbow-Akij-110 mm (4\")', '68', '20', '1', '45', '', '0', '0', '0', '0', '1', '1', '2024-10-22 08:54:49', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('26', 'pro-1025', 'Upvc SWR Back Door Elbow-Akij-160 mm (6\") ', '68', '20', '1', '46', '', '0', '0', '0', '0', '1', '1', '2024-10-22 08:55:10', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('27', 'pro-1026', 'Upvc SWR Side Door Elbow-Akij-110 mm (4\")', '67', '20', '1', '45', '', '0', '0', '0', '0', '1', '1', '2024-10-22 08:55:36', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('28', 'pro-1027', 'Upvc SWR Side Door Elbow-Akij-160 mm (6\") ', '67', '20', '1', '46', '', '0', '0', '0', '0', '1', '1', '2024-10-22 08:56:05', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('29', 'pro-1028', 'Upvc SWR Back Door Tee-Akij-110 mm (4\")', '71', '20', '1', '45', '', '0', '0', '0', '0', '1', '1', '2024-10-22 08:56:39', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('30', 'pro-1029', 'Upvc SWR Side Door Tee-Akij-160 mm (6\") ', '70', '20', '1', '46', '', '0', '0', '0', '0', '1', '1', '2024-10-22 08:57:01', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('31', 'pro-1030', 'Upvc SWR Side Door Tee-Akij-110 mm (4\")', '70', '20', '1', '45', '', '0', '0', '0', '0', '1', '1', '2024-10-22 08:58:16', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('32', 'pro-1031', 'Upvc SWR Back Door Tee-Akij-160 mm (6\") ', '71', '20', '1', '46', '', '0', '0', '0', '0', '1', '1', '2024-10-22 08:59:02', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('33', 'pro-1032', 'Upvc SWR Tee-Akij-110 mm (4\")', '69', '20', '1', '45', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:00:27', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('34', 'pro-1033', 'Upvc SWR Tee-Akij-160 mm (6\") ', '69', '20', '1', '46', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:00:51', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('35', 'pro-1034', 'Upvc SWR Tee-Akij-40 mm (1.25\") 1.9-2.2', '69', '20', '1', '34', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:01:26', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('36', 'pro-1035', 'Upvc SWR Reducing Tee-Akij-160 mm X 110 mm (6\"X4\")', '72', '20', '1', '47', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:02:48', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('37', 'pro-1036', 'Upvc SWR Y Tee-Akij-110 mm (4\")', '74', '20', '1', '45', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:03:45', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('38', 'pro-1037', 'Upvc SWR Y Tee-Akij-160 mm (6\") ', '74', '20', '1', '46', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:04:01', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('39', 'pro-1038', 'Upvc SWR Cross Tee-Akij-110 mm (4\")', '75', '20', '1', '45', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:04:36', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('40', 'pro-1039', 'Upvc SWR Door Socket-Akij-110 mm (4\")', '77', '20', '1', '45', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:06:28', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('41', 'pro-1040', 'Upvc SWR Door Socket-Akij-160 mm (6\") ', '77', '20', '1', '46', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:07:33', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('42', 'pro-1041', 'Upvc SWR Long Trap-Akij-110 mm (4\")', '82', '20', '1', '45', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:11:14', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('43', 'pro-1042', 'Upvc SWR Off Set-Akij-110 mm (4\")', '84', '20', '1', '45', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:11:59', '', '0000-00-00 00:00:00');
+INSERT INTO `product` (`product_id`, `product_code`, `product_name`, `category`, `brand`, `unit`, `model`, `product_details`, `purchase_price`, `minimum_price`, `retail_price`, `block_price`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('44', 'pro-1043', 'Upvc SWR Off Set-Akij-160 mm (6\") ', '84', '20', '1', '46', '', '0', '0', '0', '0', '1', '1', '2024-10-22 09:12:22', '', '0000-00-00 00:00:00');
 
 
 #
@@ -1077,14 +1204,28 @@ CREATE TABLE `product_brand` (
   `isactive` tinyint(1) NOT NULL,
   PRIMARY KEY (`brand_id`),
   UNIQUE KEY `brand_name_unique` (`brand_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('1', 'Stella', '1');
-INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('2', 'BHL/Parla', '1');
 INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('3', 'ABC/Cosmo', '1');
 INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('4', 'Astra', '1');
-INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('5', 'Apex', '1');
 INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('6', 'Islam Metal', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('7', 'BHL / Parla', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('8', 'RFL / Shine', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('9', 'RFL / Platinum', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('11', 'N Poly', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('12', 'Apex', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('13', 'A1', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('14', 'AG', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('15', 'Era', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('16', 'Lira', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('17', 'China', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('18', 'Luxury', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('19', 'Lux', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('20', 'Akij', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('21', 'SKB', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('22', 'Hatim', '1');
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('23', 'PCL', '1');
 
 
 #
@@ -1099,12 +1240,73 @@ CREATE TABLE `product_category` (
   `isactive` tinyint(1) NOT NULL,
   PRIMARY KEY (`category_id`),
   UNIQUE KEY `category_name_unique` (`category_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('1', 'Basin', '1');
 INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('3', 'Pillar Cock', '1');
 INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('5', 'Sink Cock', '1');
 INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('6', 'Bib Cock', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('8', 'Angle Valve', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('9', 'Two In One Bib  Cock', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('10', '3/4 Conceal Stop Cock', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('11', '1/2 Conceal Stop Cock', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('12', '1 Conceal Stop Cock', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('13', 'Basin Mixer', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('14', 'Sink Mixer', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('15', 'Sink Bib Cock', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('16', 'Shower Mixer', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('17', 'Bathtub Mixer', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('19', 'Waste', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('20', 'Shower', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('21', 'Towel Rail', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('22', 'Ring Towel Rail', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('23', 'Soap Case', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('24', 'Tissue Box', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('25', 'Push Shower', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('26', '5\" Net', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('27', 'Upvc Plumbing Pipe', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('28', 'Upvc Elbow', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('29', 'Upvc Tee', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('30', 'Upvc Socket', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('31', 'Upvc End Cap', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('32', 'Upvc Plug', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('33', 'Upvc Brass Elbow', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('34', 'Upvc Brass Tee', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('35', 'Upvc Brass MTA', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('36', 'Upvc Reducing Brass MTA', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('37', 'Upvc Brass FTA', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('38', 'Upvc Reducing Brass FTA', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('39', 'Upvc Reducing Bush', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('40', 'Upvc Reducing Socket', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('41', 'Upvc Union', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('42', 'Upvc Cross Tee', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('43', 'Upvc Step Over Bend', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('44', 'Upvc Reducing Elbow', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('45', 'Upvc Reducing Tee', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('46', 'Upvc Compact Ball Valve', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('47', 'Upvc Single Union Ball Valve', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('48', 'Upvc Solvent Cement', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('49', 'Cpvc Solvent Cement', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('50', 'Upvc SWR Pipe', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('52', 'Upvc SWR Elbow', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('67', 'Upvc SWR Side Door Elbow', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('68', 'Upvc SWR Back Door Elbow', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('69', 'Upvc SWR Tee', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('70', 'Upvc SWR Side Door Tee', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('71', 'Upvc SWR Back Door Tee', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('72', 'Upvc SWR Reducing Tee', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('73', 'Upvc SWR Reducing Socket', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('74', 'Upvc SWR Y Tee', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('75', 'Upvc SWR Cross Tee', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('76', 'Upvc SWR Socket', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('77', 'Upvc SWR Door Socket', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('78', 'Upvc SWR Bush', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('79', 'Upvc SWR End Cap', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('80', 'Upvc SWR Plug', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('81', 'Upvc SWR Cowl', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('82', 'Upvc SWR Long Trap', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('83', 'Upvc SWR Short Trap', '1');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('84', 'Upvc SWR Off Set', '1');
 
 
 #
@@ -1119,13 +1321,52 @@ CREATE TABLE `product_model` (
   `isactive` tinyint(1) NOT NULL,
   PRIMARY KEY (`model_id`),
   UNIQUE KEY `model_name_unique` (`model_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('1', 'B-21', '1');
 INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('2', 'Moving - Lever', '1');
 INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('3', 'Lever', '1');
-INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('4', 'Moving - Prominant', '1');
-INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('5', 'Prominant', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('4', 'Moving - Prominant / Coaster', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('5', 'Prominant / Coaster', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('6', 'Nice', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('7', 'Square', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('8', '304', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('9', 'Mini', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('10', 'Midas', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('11', 'Linus', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('12', 'Titan', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('13', 'Push', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('14', 'Body', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('15', '4\" Wall Mount', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('16', '6\" Wall Mount', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('17', '8\" Wall Mount', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('18', '8\" Ceiling', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('19', '6\" Ceiling', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('20', '4\" Ceiling', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('21', 'Oval', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('22', 'White Standard', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('23', 'Paragon', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('24', 'CP / SS', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('25', 'White', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('26', 'Round', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('27', 'Triangle', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('28', '1/2\"', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('29', '3/4\"', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('30', '1\"', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('31', '1.25\"', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('32', '1.5\"', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('33', '2\"', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('34', '40 mm (1.25\") 1.9-2.2', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('35', '50 mm (2\")', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('37', '36 mm', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('39', '82 mm', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('40', '110 mm (4\") 2.7', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('41', '160 mm (6\") 4.0', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('42', '200 mm (8\")', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('43', '160 mm (6\") 2.7', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('44', '110 mm (4\") 3.0', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('45', '110 mm (4\")', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('46', '160 mm (6\") ', '1');
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('47', '160 mm X 110 mm (6\"X4\")', '1');
 
 
 #
@@ -1140,10 +1381,10 @@ CREATE TABLE `product_unit` (
   `isactive` tinyint(1) NOT NULL,
   PRIMARY KEY (`unit_id`),
   UNIQUE KEY `unit_name_unique` (`unit_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `product_unit` (`unit_id`, `unit_name`, `isactive`) VALUES ('1', 'Pcs', '1');
-INSERT INTO `product_unit` (`unit_id`, `unit_name`, `isactive`) VALUES ('2', 'Ft', '1');
+INSERT INTO `product_unit` (`unit_id`, `unit_name`, `isactive`) VALUES ('3', 'Ft', '1');
 
 
 #
@@ -1167,7 +1408,13 @@ CREATE TABLE `purchase_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `purchase_order` (`po_no`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`, `supplier_id`, `total_amnt`, `updateby`, `updatedate`) VALUES ('20241009090654', '0', '0', '1', '2024-10-09 09:06:54', '1', '1', '49294', NULL, NULL);
-INSERT INTO `purchase_order` (`po_no`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`, `supplier_id`, `total_amnt`, `updateby`, `updatedate`) VALUES ('20241009091116', '0', '0', '1', '2024-10-09 09:11:16', '0', '2', '12400', NULL, NULL);
+INSERT INTO `purchase_order` (`po_no`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`, `supplier_id`, `total_amnt`, `updateby`, `updatedate`) VALUES ('20241009091116', '0', '0', '1', '2024-10-09 09:11:16', '1', '2', '12400', NULL, NULL);
+INSERT INTO `purchase_order` (`po_no`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`, `supplier_id`, `total_amnt`, `updateby`, `updatedate`) VALUES ('20241013131218', '0', '0', '1', '2024-10-13 13:12:18', '0', '1', '116460', NULL, NULL);
+INSERT INTO `purchase_order` (`po_no`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`, `supplier_id`, `total_amnt`, `updateby`, `updatedate`) VALUES ('20241015133231', '0', '0', '1', '2024-10-15 13:32:31', '0', '1', '36000', NULL, NULL);
+INSERT INTO `purchase_order` (`po_no`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`, `supplier_id`, `total_amnt`, `updateby`, `updatedate`) VALUES ('20241015133543', '0', '0', '1', '2024-10-15 13:35:43', '0', '1', '19130', NULL, NULL);
+INSERT INTO `purchase_order` (`po_no`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`, `supplier_id`, `total_amnt`, `updateby`, `updatedate`) VALUES ('20241015134317', '0', '0', '1', '2024-10-15 13:43:17', '0', '1', '20780', NULL, NULL);
+INSERT INTO `purchase_order` (`po_no`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`, `supplier_id`, `total_amnt`, `updateby`, `updatedate`) VALUES ('20241022092652', '0', '0', '1', '2024-10-22 09:27:46', '0', '5', '68556', NULL, NULL);
+INSERT INTO `purchase_order` (`po_no`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`, `supplier_id`, `total_amnt`, `updateby`, `updatedate`) VALUES ('20241022092952', '0', '0', '1', '2024-10-22 09:29:52', '1', '5', '68556', NULL, NULL);
 
 
 #
@@ -1177,19 +1424,29 @@ INSERT INTO `purchase_order` (`po_no`, `store_id`, `warehouse_id`, `createby`, `
 DROP TABLE IF EXISTS `purchase_order_details`;
 
 CREATE TABLE `purchase_order_details` (
-  `row_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `pod_id` int(11) NOT NULL AUTO_INCREMENT,
   `po_no` bigint(20) NOT NULL,
   `product_id` bigint(20) NOT NULL,
   `order_qty` int(11) NOT NULL,
   `product_rate` float NOT NULL,
   `discount` float NOT NULL,
+  `unit` varchar(255) NOT NULL,
   `store_id` int(11) NOT NULL,
-  PRIMARY KEY (`row_id`),
+  PRIMARY KEY (`pod_id`),
   KEY `fk_po_no1` (`po_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=351441862849263 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `purchase_order_details` (`row_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`) VALUES ('219523336521851', '20241009091116', '1', '5', '2500', '100', '2');
-INSERT INTO `purchase_order_details` (`row_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`) VALUES ('351441862849262', '20241009090654', '3', '20', '2499', '686', '2');
+INSERT INTO `purchase_order_details` (`pod_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `unit`, `store_id`) VALUES ('1', '20241009091116', '1', '5', '2600', '100', 'Pcs', '2');
+INSERT INTO `purchase_order_details` (`pod_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `unit`, `store_id`) VALUES ('2', '20241009090654', '3', '20', '1200', '686', 'Pcs', '2');
+INSERT INTO `purchase_order_details` (`pod_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `unit`, `store_id`) VALUES ('3', '20241013131218', '4', '30', '1813', '0', 'Pcs', '2');
+INSERT INTO `purchase_order_details` (`pod_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `unit`, `store_id`) VALUES ('4', '20241013131218', '5', '30', '1039', '0', 'Pcs', '2');
+INSERT INTO `purchase_order_details` (`pod_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `unit`, `store_id`) VALUES ('5', '20241013131218', '6', '30', '1030', '0', 'Pcs', '2');
+INSERT INTO `purchase_order_details` (`pod_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `unit`, `store_id`) VALUES ('6', '20241015133231', '7', '20', '1800', '0', 'Pcs', '2');
+INSERT INTO `purchase_order_details` (`pod_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `unit`, `store_id`) VALUES ('7', '20241015133543', '7', '10', '1913', '0', 'Pcs', '2');
+INSERT INTO `purchase_order_details` (`pod_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `unit`, `store_id`) VALUES ('8', '20241015134317', '5', '20', '1039', '0', 'Pcs', '2');
+INSERT INTO `purchase_order_details` (`pod_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `unit`, `store_id`) VALUES ('12', '20241022092952', '17', '50', '1050', '0', 'Pcs', '2');
+INSERT INTO `purchase_order_details` (`pod_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `unit`, `store_id`) VALUES ('13', '20241022092952', '23', '72', '95', '0', 'Pcs', '3');
+INSERT INTO `purchase_order_details` (`pod_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `unit`, `store_id`) VALUES ('14', '20241022092952', '33', '72', '128', '0', 'Pcs', '3');
 
 
 #
@@ -1215,6 +1472,13 @@ CREATE TABLE `purchase_receive` (
 
 INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `store_id`, `receive_by`, `receive_date`, `supplier_id`, `voucher_no`, `warehouse_id`, `updateby`, `updatedate`) VALUES ('20241009090728', '20241009090654', '0', '1', '2024-10-09', '1', '1000', '0', '0', '0000-00-00 00:00:00');
 INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `store_id`, `receive_by`, `receive_date`, `supplier_id`, `voucher_no`, `warehouse_id`, `updateby`, `updatedate`) VALUES ('20241009091247', '20241009090654', '0', '1', '2024-10-09', '1', '1001', '0', '0', '0000-00-00 00:00:00');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `store_id`, `receive_by`, `receive_date`, `supplier_id`, `voucher_no`, `warehouse_id`, `updateby`, `updatedate`) VALUES ('20241013113911', '20241009091116', '0', '1', '2024-10-13', '2', '1002', '0', '0', '0000-00-00 00:00:00');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `store_id`, `receive_by`, `receive_date`, `supplier_id`, `voucher_no`, `warehouse_id`, `updateby`, `updatedate`) VALUES ('20241013131256', '20241013131218', '0', '1', '2024-10-13', '1', '1003', '0', '0', '0000-00-00 00:00:00');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `store_id`, `receive_by`, `receive_date`, `supplier_id`, `voucher_no`, `warehouse_id`, `updateby`, `updatedate`) VALUES ('20241013180527', '20241013131218', '0', '1', '2024-10-13', '1', '1004', '0', '0', '0000-00-00 00:00:00');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `store_id`, `receive_by`, `receive_date`, `supplier_id`, `voucher_no`, `warehouse_id`, `updateby`, `updatedate`) VALUES ('20241015133243', '20241015133231', '0', '1', '2024-10-15', '1', '1005', '0', '0', '0000-00-00 00:00:00');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `store_id`, `receive_by`, `receive_date`, `supplier_id`, `voucher_no`, `warehouse_id`, `updateby`, `updatedate`) VALUES ('20241015133553', '20241015133543', '0', '1', '2024-10-15', '1', '1006', '0', '0', '0000-00-00 00:00:00');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `store_id`, `receive_by`, `receive_date`, `supplier_id`, `voucher_no`, `warehouse_id`, `updateby`, `updatedate`) VALUES ('20241017130734', '20241015134317', '0', '1', '2024-10-17', '1', '1007', '0', '0', '0000-00-00 00:00:00');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `store_id`, `receive_by`, `receive_date`, `supplier_id`, `voucher_no`, `warehouse_id`, `updateby`, `updatedate`) VALUES ('20241022093129', '20241022092952', '0', '1', '2024-10-22', '5', '1008', '0', '0', '0000-00-00 00:00:00');
 
 
 #
@@ -1235,6 +1499,19 @@ CREATE TABLE `purchase_receive_details` (
 
 INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241009090728', '3', '10', '2499', '2', '0');
 INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241009091247', '3', '10', '2499', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241013113911', '1', '5', '2500', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241013131256', '4', '20', '1813', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241013131256', '5', '20', '1039', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241013131256', '6', '25', '1030', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241013180527', '4', '10', '1813', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241013180527', '5', '10', '1039', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241013180527', '6', '5', '1030', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241015133243', '7', '20', '1800', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241015133553', '7', '10', '1913', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241017130734', '5', '20', '1039', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241022093129', '17', '40', '1050', '2', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241022093129', '23', '72', '95', '3', '0');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241022093129', '33', '72', '128', '3', '0');
 
 
 #
@@ -1542,7 +1819,7 @@ CREATE TABLE `setting` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
-INSERT INTO `setting` (`id`, `title`, `address`, `email`, `phone`, `logo`, `favicon`, `language`, `site_align`, `footer_text`) VALUES ('2', 'Habib Traders', 'Amghat Road, College Para, Tangail', 'ahsan.habib2512@gmail.com', '01959632369', 'assets/img/icons/logo.png', 'assets/img/icons/m.png', 'english', 'LTR', '');
+INSERT INTO `setting` (`id`, `title`, `address`, `email`, `phone`, `logo`, `favicon`, `language`, `site_align`, `footer_text`) VALUES ('2', 'Habib Traders', 'Amghat Road, College Para, Tangail', 'ahsan.habib2512@gmail.com', '01959632369', 'assets/img/icons/2024-10-22/H.png', 'assets/img/icons/m.png', 'english', 'LTR', '');
 
 
 #
@@ -1629,10 +1906,11 @@ CREATE TABLE `store` (
   `updatedate` datetime DEFAULT NULL,
   `isactive` tinyint(1) NOT NULL,
   PRIMARY KEY (`store_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `store` (`store_id`, `store_name`, `store_code`, `store_phone`, `store_address`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('1', 'store 1', '123', '22345', 'test', '1', '2024-10-08 08:44:01', NULL, NULL, '1');
+INSERT INTO `store` (`store_id`, `store_name`, `store_code`, `store_phone`, `store_address`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('1', 'Main Store - 1', '123', '01954622345', 'test', '1', '2024-10-19 12:32:42', NULL, NULL, '1');
 INSERT INTO `store` (`store_id`, `store_name`, `store_code`, `store_phone`, `store_address`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('2', 'HT - 1', '123', '0190000000', 'Tangail', '1', '2024-10-09 09:02:29', NULL, NULL, '1');
+INSERT INTO `store` (`store_id`, `store_name`, `store_code`, `store_phone`, `store_address`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('3', 'HT - 2', 'ht2', '012228282872', 'Tangail', '1', '2024-10-19 12:31:49', NULL, NULL, '1');
 
 
 #
@@ -1645,6 +1923,7 @@ CREATE TABLE `supplier` (
   `supplier_id` int(11) NOT NULL AUTO_INCREMENT,
   `supplier_code` varchar(20) NOT NULL,
   `supplier_name` varchar(200) NOT NULL,
+  `supplier_brand` varchar(255) NOT NULL,
   `address` varchar(150) NOT NULL,
   `phone` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -1656,10 +1935,12 @@ CREATE TABLE `supplier` (
   `updateby` int(11) NOT NULL,
   `updatedate` datetime NOT NULL,
   PRIMARY KEY (`supplier_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `supplier` (`supplier_id`, `supplier_code`, `supplier_name`, `address`, `phone`, `email`, `contact_per_name`, `c_p_contact`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('1', 'sup-1', 'Suman Ali', '', '01812345678', '', '', '', '1', '1', '2024-10-09 09:01:29', '0', '0000-00-00 00:00:00');
-INSERT INTO `supplier` (`supplier_id`, `supplier_code`, `supplier_name`, `address`, `phone`, `email`, `contact_per_name`, `c_p_contact`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('2', 'sup-2', 'Musa', '', '01712345678', '', '', '', '1', '1', '2024-10-09 09:10:03', '0', '0000-00-00 00:00:00');
+INSERT INTO `supplier` (`supplier_id`, `supplier_code`, `supplier_name`, `supplier_brand`, `address`, `phone`, `email`, `contact_per_name`, `c_p_contact`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('1', 'sup-1', 'Suman Ali', 'Astra', '', '01812345678', '', '', '', '1', '1', '2024-10-19 13:37:17', '1', '2024-10-19 13:37:17');
+INSERT INTO `supplier` (`supplier_id`, `supplier_code`, `supplier_name`, `supplier_brand`, `address`, `phone`, `email`, `contact_per_name`, `c_p_contact`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('2', 'sup-2', 'Musa', 'ABC/Cosmo', '', '01712345678', '', '', '', '1', '1', '2024-10-19 13:37:04', '1', '2024-10-19 13:37:04');
+INSERT INTO `supplier` (`supplier_id`, `supplier_code`, `supplier_name`, `supplier_brand`, `address`, `phone`, `email`, `contact_per_name`, `c_p_contact`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('4', 'sup-4', 'Maznu', 'BHL / Parla', 'Tangail', '01977833224', '', '', '', '1', '1', '2024-10-19 13:35:07', '0', '0000-00-00 00:00:00');
+INSERT INTO `supplier` (`supplier_id`, `supplier_code`, `supplier_name`, `supplier_brand`, `address`, `phone`, `email`, `contact_per_name`, `c_p_contact`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('5', 'sup-2', 'Riyaz', 'Akij', 'Tangail', '01303313140', '', '', '', '1', '1', '2024-10-22 09:16:29', '0', '0000-00-00 00:00:00');
 
 
 #
@@ -1748,7 +2029,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
-INSERT INTO `user` (`id`, `firstname`, `lastname`, `about`, `email`, `password`, `password_reset_token`, `image`, `last_login`, `last_logout`, `ip_address`, `status`, `is_admin`, `store_id`) VALUES ('1', 'Ahsan', 'Habib', '', 'ahsan.habib2512@gmail.com', 'c0e78f35834f4686cb9ea19da3d9c8ed', NULL, './assets/img/user/1694547379481.jpg', '2024-10-09 06:47:53', '2024-10-08 08:21:01', '::1', '1', '1', NULL);
+INSERT INTO `user` (`id`, `firstname`, `lastname`, `about`, `email`, `password`, `password_reset_token`, `image`, `last_login`, `last_logout`, `ip_address`, `status`, `is_admin`, `store_id`) VALUES ('1', 'Ahsan', 'Habib', '', 'ahsan.habib2512@gmail.com', 'c0e78f35834f4686cb9ea19da3d9c8ed', NULL, './assets/img/user/1694547379481.jpg', '2024-10-22 05:59:43', '2024-10-08 08:21:01', '::1', '1', '1', NULL);
 
 
 #

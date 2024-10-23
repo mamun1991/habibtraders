@@ -346,3 +346,777 @@ INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `D
 UPDATE `user` SET `last_login` = '2024-10-22 06:12:10', `ip_address` = '::1'
 >>>>>>> c465e5d76ba98c145134571412b30f3fdc56f7b8
 WHERE `id` = '1';
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'Apex', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'A1', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'AG', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'Era', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'Lira', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'China', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'Luxury', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'Lux', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'Akij', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'SKB', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'Hatim', 1);
+INSERT INTO `product_brand` (`brand_id`, `brand_name`, `isactive`) VALUES ('', 'PCL', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Angle Valve', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Two In One Bib  Cock', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', '3/4 Conceal Stop Cock', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', '1/2 Conceal Stop Cock', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', '1 Conceal Stop Cock', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Basin Mixer', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Sink Mixer', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Sink Bib Cock', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Shower Mixer', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Bathtub Mixer', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Waist', 1);
+DELETE FROM `product_category`
+WHERE `category_id` = '18';
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Waste', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Shower', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Towel Rail', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Ring Towel Rail', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Soap Case', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Tissue Box', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Push Shower', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', '5\" Net', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Square', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '304', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Mini', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Midas', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Linus', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Titan', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Push', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Body', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '4\" Wall Mount', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '6\" Wall Mount', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '8\" Wall Mount', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '8\" Ceiling', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '6\" Ceiling', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '4\" Ceiling', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Oval', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'White Standard', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Paragon', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'CP', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'White', 1);
+UPDATE `product_model` SET `model_id` = '24', `model_name` = 'CP / SS', `isactive` = 1
+WHERE `model_id` = '24';
+DELETE FROM `product_model`
+WHERE `model_id` = '1';
+UPDATE `product_model` SET `model_id` = '5', `model_name` = 'Prominant / Coaster', `isactive` = 1
+WHERE `model_id` = '5';
+UPDATE `product_model` SET `model_id` = '4', `model_name` = 'Moving - Prominant / Coaster', `isactive` = 1
+WHERE `model_id` = '4';
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Round', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', 'Triangle', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Plumbing Pipe', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Elbow', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Socket', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'End Cap', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Plug', 1);
+UPDATE `product_category` SET `category_id` = '27', `category_name` = 'Upvc Plumbing Pipe', `isactive` = 1
+WHERE `category_id` = '27';
+UPDATE `product_category` SET `category_id` = '32', `category_name` = 'Upvc Plug', `isactive` = 1
+WHERE `category_id` = '32';
+UPDATE `product_category` SET `category_id` = '31', `category_name` = 'Upvc End Cap', `isactive` = 1
+WHERE `category_id` = '31';
+UPDATE `product_category` SET `category_id` = '30', `category_name` = 'Upvc Socket', `isactive` = 1
+WHERE `category_id` = '30';
+UPDATE `product_category` SET `category_id` = '29', `category_name` = 'Upvc Tee', `isactive` = 1
+WHERE `category_id` = '29';
+UPDATE `product_category` SET `category_id` = '28', `category_name` = 'Upvc Elbow', `isactive` = 1
+WHERE `category_id` = '28';
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Brass Elbow', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Brass Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Brass MTA', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Reducing Brass MTA', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Brass FTA', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Reducing Brass FTA', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Reducing Bush', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Reducing Socket', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Union', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Cross Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Step Over Bend', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Reducing Elbow', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Reducing Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Compact Ball Valve', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Single Union Ball Valve', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Solvent Cement', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Cpvc Solvent Cement', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'SWR Pipe', 1);
+UPDATE `product_category` SET `category_id` = '50', `category_name` = 'Upvc SWR Pipe', `isactive` = 1
+WHERE `category_id` = '50';
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Back Door Elbow', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Side Door Elbow', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Back Door Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Side Door Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Y Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Reducing Y Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Long Trap', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Short Trap', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Cowl', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc Off Set', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '1/2\"', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '3/4\"', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '1\"', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '1.25\"', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '1.5\"', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '2\"', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '40 mm', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '50 mm', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '60 mm', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '36 mm', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '42 mm', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '82 mm', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '110 mm (4\")', 1);
+UPDATE `product_model` SET `model_id` = '34', `model_name` = '40 mm (1.25\")', `isactive` = 1
+WHERE `model_id` = '34';
+UPDATE `product_model` SET `model_id` = '35', `model_name` = '50 mm (2\")', `isactive` = 1
+WHERE `model_id` = '35';
+DELETE FROM `product_model`
+WHERE `model_id` = '36';
+DELETE FROM `product_model`
+WHERE `model_id` = '38';
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '160 mm (6\")', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '200 mm (8\")', 1);
+UPDATE `product_model` SET `model_id` = '41', `model_name` = '160 mm (6\") 4.0', `isactive` = 1
+WHERE `model_id` = '41';
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '160 mm (6\") 2.7', 1);
+UPDATE `product_model` SET `model_id` = '40', `model_name` = '110 mm (4\") 2.7', `isactive` = 1
+WHERE `model_id` = '40';
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '110 mm (4\") 3.0', 1);
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc Plumbing Pipe-Akij-1/2\"', 'pro-1009', '28', '27', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 07:53:52', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :9', '1', '2024-10-22 07:53:52');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '8', `product_name` = 'Basin-BHL / Parla-Nice', `product_code` = 'pro-1008', `category` = '1', `model` = '6', `unit` = '1', `brand` = '7', `product_details` = '', `purchase_price` = '2360', `minimum_price` = '2950', `retail_price` = '2950', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('8');
+UPDATE `product` SET `product_id` = '7', `product_name` = 'Sink Cock-Astra-Moving - Lever', `product_code` = 'pro-1007', `category` = '5', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('7');
+UPDATE `product` SET `product_id` = '6', `product_name` = 'Bib Cock-Astra-Prominant', `product_code` = 'pro-1006', `category` = '6', `model` = '5', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1030', `minimum_price` = '1499', `retail_price` = '1300', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('6');
+UPDATE `product` SET `product_id` = '5', `product_name` = 'Bib Cock-Astra-Lever', `product_code` = 'pro-1005', `category` = '6', `model` = '3', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1039', `minimum_price` = '1432', `retail_price` = '1310', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('5');
+UPDATE `product` SET `product_id` = '4', `product_name` = 'Pillar Cock-Astra-Moving - Lever', `product_code` = 'pro-1004', `category` = '3', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('4');
+UPDATE `product` SET `product_id` = '3', `product_name` = 'Pillar Cock-Astra-Moving - Prominant', `product_code` = 'pro-1003', `category` = '3', `model` = '4', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('3');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc Plumbing Pipe-Akij-3/4\"', 'pro-1010', '29', '27', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 07:55:28', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :10', '1', '2024-10-22 07:55:28');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '8', `product_name` = 'Basin-BHL / Parla-Nice', `product_code` = 'pro-1008', `category` = '1', `model` = '6', `unit` = '1', `brand` = '7', `product_details` = '', `purchase_price` = '2360', `minimum_price` = '2950', `retail_price` = '2950', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('8');
+UPDATE `product` SET `product_id` = '7', `product_name` = 'Sink Cock-Astra-Moving - Lever', `product_code` = 'pro-1007', `category` = '5', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('7');
+UPDATE `product` SET `product_id` = '6', `product_name` = 'Bib Cock-Astra-Prominant', `product_code` = 'pro-1006', `category` = '6', `model` = '5', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1030', `minimum_price` = '1499', `retail_price` = '1300', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('6');
+UPDATE `product` SET `product_id` = '5', `product_name` = 'Bib Cock-Astra-Lever', `product_code` = 'pro-1005', `category` = '6', `model` = '3', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1039', `minimum_price` = '1432', `retail_price` = '1310', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('5');
+UPDATE `product` SET `product_id` = '4', `product_name` = 'Pillar Cock-Astra-Moving - Lever', `product_code` = 'pro-1004', `category` = '3', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('4');
+UPDATE `product` SET `product_id` = '3', `product_name` = 'Pillar Cock-Astra-Moving - Prominant', `product_code` = 'pro-1003', `category` = '3', `model` = '4', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('3');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc Plumbing Pipe-Akij-1\"', 'pro-1011', '30', '27', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 07:56:34', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :11', '1', '2024-10-22 07:56:34');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '8', `product_name` = 'Basin-BHL / Parla-Nice', `product_code` = 'pro-1008', `category` = '1', `model` = '6', `unit` = '1', `brand` = '7', `product_details` = '', `purchase_price` = '2360', `minimum_price` = '2950', `retail_price` = '2950', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('8');
+UPDATE `product` SET `product_id` = '7', `product_name` = 'Sink Cock-Astra-Moving - Lever', `product_code` = 'pro-1007', `category` = '5', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('7');
+UPDATE `product` SET `product_id` = '6', `product_name` = 'Bib Cock-Astra-Prominant', `product_code` = 'pro-1006', `category` = '6', `model` = '5', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1030', `minimum_price` = '1499', `retail_price` = '1300', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('6');
+UPDATE `product` SET `product_id` = '5', `product_name` = 'Bib Cock-Astra-Lever', `product_code` = 'pro-1005', `category` = '6', `model` = '3', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1039', `minimum_price` = '1432', `retail_price` = '1310', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('5');
+UPDATE `product` SET `product_id` = '4', `product_name` = 'Pillar Cock-Astra-Moving - Lever', `product_code` = 'pro-1004', `category` = '3', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('4');
+UPDATE `product` SET `product_id` = '3', `product_name` = 'Pillar Cock-Astra-Moving - Prominant', `product_code` = 'pro-1003', `category` = '3', `model` = '4', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('3');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc Plumbing Pipe-Akij-1.25\"', 'pro-1012', '31', '27', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 07:57:50', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :12', '1', '2024-10-22 07:57:50');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '8', `product_name` = 'Basin-BHL / Parla-Nice', `product_code` = 'pro-1008', `category` = '1', `model` = '6', `unit` = '1', `brand` = '7', `product_details` = '', `purchase_price` = '2360', `minimum_price` = '2950', `retail_price` = '2950', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('8');
+UPDATE `product` SET `product_id` = '7', `product_name` = 'Sink Cock-Astra-Moving - Lever', `product_code` = 'pro-1007', `category` = '5', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('7');
+UPDATE `product` SET `product_id` = '6', `product_name` = 'Bib Cock-Astra-Prominant', `product_code` = 'pro-1006', `category` = '6', `model` = '5', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1030', `minimum_price` = '1499', `retail_price` = '1300', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('6');
+UPDATE `product` SET `product_id` = '5', `product_name` = 'Bib Cock-Astra-Lever', `product_code` = 'pro-1005', `category` = '6', `model` = '3', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1039', `minimum_price` = '1432', `retail_price` = '1310', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('5');
+UPDATE `product` SET `product_id` = '4', `product_name` = 'Pillar Cock-Astra-Moving - Lever', `product_code` = 'pro-1004', `category` = '3', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('4');
+UPDATE `product` SET `product_id` = '3', `product_name` = 'Pillar Cock-Astra-Moving - Prominant', `product_code` = 'pro-1003', `category` = '3', `model` = '4', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('3');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc Plumbing Pipe-Akij-1.5\"', 'pro-1013', '32', '27', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 07:58:39', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :13', '1', '2024-10-22 07:58:39');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '8', `product_name` = 'Basin-BHL / Parla-Nice', `product_code` = 'pro-1008', `category` = '1', `model` = '6', `unit` = '1', `brand` = '7', `product_details` = '', `purchase_price` = '2360', `minimum_price` = '2950', `retail_price` = '2950', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('8');
+UPDATE `product` SET `product_id` = '7', `product_name` = 'Sink Cock-Astra-Moving - Lever', `product_code` = 'pro-1007', `category` = '5', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('7');
+UPDATE `product` SET `product_id` = '6', `product_name` = 'Bib Cock-Astra-Prominant', `product_code` = 'pro-1006', `category` = '6', `model` = '5', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1030', `minimum_price` = '1499', `retail_price` = '1300', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('6');
+UPDATE `product` SET `product_id` = '5', `product_name` = 'Bib Cock-Astra-Lever', `product_code` = 'pro-1005', `category` = '6', `model` = '3', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1039', `minimum_price` = '1432', `retail_price` = '1310', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('5');
+UPDATE `product` SET `product_id` = '4', `product_name` = 'Pillar Cock-Astra-Moving - Lever', `product_code` = 'pro-1004', `category` = '3', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('4');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc Plumbing Pipe-Akij-2\"', 'pro-1014', '33', '27', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 07:59:30', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :14', '1', '2024-10-22 07:59:30');
+UPDATE `product` SET `product_id` = '14', `product_name` = 'Upvc Plumbing Pipe-Akij-2', `product_code` = 'pro-1014', `category` = '27', `model` = '33', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '723', `minimum_price` = '813', `retail_price` = '760', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('14');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '8', `product_name` = 'Basin-BHL / Parla-Nice', `product_code` = 'pro-1008', `category` = '1', `model` = '6', `unit` = '1', `brand` = '7', `product_details` = '', `purchase_price` = '2360', `minimum_price` = '2950', `retail_price` = '2950', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('8');
+UPDATE `product` SET `product_id` = '7', `product_name` = 'Sink Cock-Astra-Moving - Lever', `product_code` = 'pro-1007', `category` = '5', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('7');
+UPDATE `product` SET `product_id` = '6', `product_name` = 'Bib Cock-Astra-Prominant', `product_code` = 'pro-1006', `category` = '6', `model` = '5', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1030', `minimum_price` = '1499', `retail_price` = '1300', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('6');
+UPDATE `product` SET `product_id` = '5', `product_name` = 'Bib Cock-Astra-Lever', `product_code` = 'pro-1005', `category` = '6', `model` = '3', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1039', `minimum_price` = '1432', `retail_price` = '1310', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('5');
+UPDATE `product` SET `product_id` = '14', `product_name` = 'Upvc Plumbing Pipe-Akij-2', `product_code` = 'pro-1014', `category` = '27', `model` = '33', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '723', `minimum_price` = '813', `retail_price` = '772', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('14');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '8', `product_name` = 'Basin-BHL / Parla-Nice', `product_code` = 'pro-1008', `category` = '1', `model` = '6', `unit` = '1', `brand` = '7', `product_details` = '', `purchase_price` = '2360', `minimum_price` = '2950', `retail_price` = '2950', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('8');
+UPDATE `product` SET `product_id` = '7', `product_name` = 'Sink Cock-Astra-Moving - Lever', `product_code` = 'pro-1007', `category` = '5', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('7');
+UPDATE `product` SET `product_id` = '6', `product_name` = 'Bib Cock-Astra-Prominant', `product_code` = 'pro-1006', `category` = '6', `model` = '5', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1030', `minimum_price` = '1499', `retail_price` = '1300', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('6');
+UPDATE `product` SET `product_id` = '5', `product_name` = 'Bib Cock-Astra-Lever', `product_code` = 'pro-1005', `category` = '6', `model` = '3', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1039', `minimum_price` = '1432', `retail_price` = '1310', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('5');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Pipe-Akij-40 mm (1.25\")', 'pro-1015', '34', '50', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:00:45', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :15', '1', '2024-10-22 08:00:45');
+DELETE FROM `product`
+WHERE `product_id` = '15';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'delete', 'product ID :15', '1', '2024-10-22 08:01:19');
+UPDATE `product_model` SET `model_id` = '34', `model_name` = '40 mm (1.25\") 1.9-2.2', `isactive` = 1
+WHERE `model_id` = '34';
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc Plumbing Pipe-Akij-40 mm (1.25\") 1.9-2.2', 'pro-1015', '34', '27', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:03:20', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :16', '1', '2024-10-22 08:03:20');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Upvc Plumbing Pipe-Akij-40 mm (1.25', `product_code` = 'pro-1015', `category` = '27', `model` = '34', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '214', `minimum_price` = '255', `retail_price` = '240', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('16');
+UPDATE `product` SET `product_id` = '14', `product_name` = 'Upvc Plumbing Pipe-Akij-2', `product_code` = 'pro-1014', `category` = '27', `model` = '33', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '723', `minimum_price` = '813', `retail_price` = '772', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('14');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '8', `product_name` = 'Basin-BHL / Parla-Nice', `product_code` = 'pro-1008', `category` = '1', `model` = '6', `unit` = '1', `brand` = '7', `product_details` = '', `purchase_price` = '2360', `minimum_price` = '2950', `retail_price` = '2950', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('8');
+UPDATE `product` SET `product_id` = '7', `product_name` = 'Sink Cock-Astra-Moving - Lever', `product_code` = 'pro-1007', `category` = '5', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('7');
+UPDATE `product` SET `product_id` = '6', `product_name` = 'Bib Cock-Astra-Prominant', `product_code` = 'pro-1006', `category` = '6', `model` = '5', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1030', `minimum_price` = '1499', `retail_price` = '1300', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('6');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Upvc SWR Pipe-Akij-40 mm (1.25\") 1.9-2.2', `product_code` = 'pro-1015', `model` = '34', `category` = '50', `brand` = '20', `unit` = '1', `product_details` = '', `purchase_price` = '214', `block_price` = '0', `minimum_price` = '255', `retail_price` = '240', `createby` = '1', `createdate` = '2024-10-22 08:08:25', `updateby` = '1', `updatedate` = '2024-10-22 08:08:25', `isactive` = 1
+WHERE `product_id` = '16';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'update', 'product ID :16', '1', '2024-10-22 08:08:25');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Pipe-Akij-110 mm (4\") 2.7', 'pro-1016', '40', '50', '20', '1', 'AVG', '0', '0', '0', '0', '1', '2024-10-22 08:09:32', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :17', '1', '2024-10-22 08:09:32');
+UPDATE `product` SET `product_id` = '17', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1016', `category` = '50', `model` = '40', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1050', `minimum_price` = '1287', `retail_price` = '1220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('17');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Upvc SWR Pipe-Akij-40 mm (1.25', `product_code` = 'pro-1015', `category` = '50', `model` = '34', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '214', `minimum_price` = '255', `retail_price` = '240', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('16');
+UPDATE `product` SET `product_id` = '14', `product_name` = 'Upvc Plumbing Pipe-Akij-2', `product_code` = 'pro-1014', `category` = '27', `model` = '33', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '723', `minimum_price` = '813', `retail_price` = '772', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('14');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '8', `product_name` = 'Basin-BHL / Parla-Nice', `product_code` = 'pro-1008', `category` = '1', `model` = '6', `unit` = '1', `brand` = '7', `product_details` = '', `purchase_price` = '2360', `minimum_price` = '2950', `retail_price` = '2950', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('8');
+UPDATE `product` SET `product_id` = '7', `product_name` = 'Sink Cock-Astra-Moving - Lever', `product_code` = 'pro-1007', `category` = '5', `model` = '2', `unit` = '1', `brand` = '4', `product_details` = '', `purchase_price` = '1813', `minimum_price` = '2499', `retail_price` = '2200', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('7');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Pipe-Akij-110 mm (4\") 3.0', 'pro-1017', '44', '50', '20', '1', 'AVG', '0', '0', '0', '0', '1', '2024-10-22 08:12:14', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :18', '1', '2024-10-22 08:12:14');
+UPDATE `product` SET `product_id` = '17', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4\") 2.7', `product_code` = 'pro-1016', `model` = '40', `category` = '50', `brand` = '20', `unit` = '1', `product_details` = 'AVG', `purchase_price` = '1050', `block_price` = '0', `minimum_price` = '1287', `retail_price` = '1220', `createby` = '1', `createdate` = '2024-10-22 08:14:20', `updateby` = '1', `updatedate` = '2024-10-22 08:14:20', `isactive` = 1
+WHERE `product_id` = '17';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'update', 'product ID :17', '1', '2024-10-22 08:14:20');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Upvc SWR Pipe-Akij-40 mm (1.25\") 1.9-2.2', `product_code` = 'pro-1015', `model` = '34', `category` = '50', `brand` = '20', `unit` = '1', `product_details` = '', `purchase_price` = '214', `block_price` = '0', `minimum_price` = '255', `retail_price` = '240', `createby` = '1', `createdate` = '2024-10-22 08:15:48', `updateby` = '1', `updatedate` = '2024-10-22 08:15:48', `isactive` = 1
+WHERE `product_id` = '16';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'update', 'product ID :16', '1', '2024-10-22 08:15:48');
+UPDATE `product` SET `product_id` = '18', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1017', `category` = '50', `model` = '44', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1252', `minimum_price` = '1490', `retail_price` = '1360', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('18');
+UPDATE `product` SET `product_id` = '17', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1016', `category` = '50', `model` = '40', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1050', `minimum_price` = '1287', `retail_price` = '1220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('17');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Upvc SWR Pipe-Akij-40 mm (1.25', `product_code` = 'pro-1015', `category` = '50', `model` = '34', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '214', `minimum_price` = '255', `retail_price` = '240', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('16');
+UPDATE `product` SET `product_id` = '14', `product_name` = 'Upvc Plumbing Pipe-Akij-2', `product_code` = 'pro-1014', `category` = '27', `model` = '33', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '723', `minimum_price` = '813', `retail_price` = '772', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('14');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '8', `product_name` = 'Basin-BHL / Parla-Nice', `product_code` = 'pro-1008', `category` = '1', `model` = '6', `unit` = '1', `brand` = '7', `product_details` = '', `purchase_price` = '2360', `minimum_price` = '2950', `retail_price` = '2950', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('8');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Pipe-Akij-160 mm (6\") 4.0', 'pro-1018', '41', '50', '20', '1', 'AVG', '0', '0', '0', '0', '1', '2024-10-22 08:17:22', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :19', '1', '2024-10-22 08:17:22');
+UPDATE `product` SET `product_id` = '19', `product_name` = 'Upvc SWR Pipe-Akij-160 mm (6', `product_code` = 'pro-1018', `category` = '50', `model` = '41', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '2245', `minimum_price` = '2673', `retail_price` = '2700', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('19');
+UPDATE `product` SET `product_id` = '18', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1017', `category` = '50', `model` = '44', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1252', `minimum_price` = '1490', `retail_price` = '1360', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('18');
+UPDATE `product` SET `product_id` = '17', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1016', `category` = '50', `model` = '40', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1050', `minimum_price` = '1287', `retail_price` = '1220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('17');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Upvc SWR Pipe-Akij-40 mm (1.25', `product_code` = 'pro-1015', `category` = '50', `model` = '34', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '214', `minimum_price` = '255', `retail_price` = '240', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('16');
+UPDATE `product` SET `product_id` = '14', `product_name` = 'Upvc Plumbing Pipe-Akij-2', `product_code` = 'pro-1014', `category` = '27', `model` = '33', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '723', `minimum_price` = '813', `retail_price` = '772', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('14');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '19', `product_name` = 'Upvc SWR Pipe-Akij-160 mm (6', `product_code` = 'pro-1018', `category` = '50', `model` = '41', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '2245', `minimum_price` = '2673', `retail_price` = '2700', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('19');
+UPDATE `product` SET `product_id` = '18', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1017', `category` = '50', `model` = '44', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1252', `minimum_price` = '1490', `retail_price` = '1360', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('18');
+UPDATE `product` SET `product_id` = '17', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1016', `category` = '50', `model` = '40', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1050', `minimum_price` = '1287', `retail_price` = '1220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('17');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Upvc SWR Pipe-Akij-40 mm (1.25', `product_code` = 'pro-1015', `category` = '50', `model` = '34', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '214', `minimum_price` = '255', `retail_price` = '240', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('16');
+UPDATE `product` SET `product_id` = '14', `product_name` = 'Upvc Plumbing Pipe-Akij-2', `product_code` = 'pro-1014', `category` = '27', `model` = '33', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '723', `minimum_price` = '813', `retail_price` = '772', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('14');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '19', `product_name` = 'Upvc SWR Pipe-Akij-160 mm (6', `product_code` = 'pro-1018', `category` = '50', `model` = '41', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '2245', `minimum_price` = '2673', `retail_price` = '2700', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('19');
+UPDATE `product` SET `product_id` = '18', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1017', `category` = '50', `model` = '44', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1252', `minimum_price` = '1490', `retail_price` = '1360', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('18');
+UPDATE `product` SET `product_id` = '17', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1016', `category` = '50', `model` = '40', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1050', `minimum_price` = '1287', `retail_price` = '1220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('17');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Upvc SWR Pipe-Akij-40 mm (1.25', `product_code` = 'pro-1015', `category` = '50', `model` = '34', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '214', `minimum_price` = '255', `retail_price` = '240', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('16');
+UPDATE `product` SET `product_id` = '14', `product_name` = 'Upvc Plumbing Pipe-Akij-2', `product_code` = 'pro-1014', `category` = '27', `model` = '33', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '723', `minimum_price` = '813', `retail_price` = '772', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('14');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+UPDATE `product` SET `product_id` = '19', `product_name` = 'Upvc SWR Pipe-Akij-160 mm (6', `product_code` = 'pro-1018', `category` = '50', `model` = '41', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '2245', `minimum_price` = '2673', `retail_price` = '2700', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('19');
+UPDATE `product` SET `product_id` = '18', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1017', `category` = '50', `model` = '44', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1252', `minimum_price` = '1490', `retail_price` = '1360', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('18');
+UPDATE `product` SET `product_id` = '17', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1016', `category` = '50', `model` = '40', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1050', `minimum_price` = '1287', `retail_price` = '1220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('17');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Upvc SWR Pipe-Akij-40 mm (1.25', `product_code` = 'pro-1015', `category` = '50', `model` = '34', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '214', `minimum_price` = '255', `retail_price` = '240', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('16');
+UPDATE `product` SET `product_id` = '14', `product_name` = 'Upvc Plumbing Pipe-Akij-2', `product_code` = 'pro-1014', `category` = '27', `model` = '33', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '723', `minimum_price` = '813', `retail_price` = '772', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('14');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+UPDATE `product` SET `product_id` = '9', `product_name` = 'Upvc Plumbing Pipe-Akij-1/2', `product_code` = 'pro-1009', `category` = '27', `model` = '28', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '169', `minimum_price` = '190', `retail_price` = '220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('9');
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR', 1);
+DELETE FROM `product_category`
+WHERE `category_id` = '61';
+UPDATE `product_category` SET `category_id` = '58', `category_name` = 'Upvc SWR Short Trap', `isactive` = 1
+WHERE `category_id` = '58';
+UPDATE `product_category` SET `category_id` = '60', `category_name` = 'Upvc SWR Off Set', `isactive` = 1
+WHERE `category_id` = '60';
+UPDATE `product_category` SET `category_id` = '59', `category_name` = 'Upvc SWR Cowl', `isactive` = 1
+WHERE `category_id` = '59';
+UPDATE `product_category` SET `category_id` = '57', `category_name` = 'Upvc SWR Long Trap', `isactive` = 1
+WHERE `category_id` = '57';
+UPDATE `product_category` SET `category_id` = '57', `category_name` = 'Upvc SWR Long Trap', `isactive` = 1
+WHERE `category_id` = '57';
+UPDATE `product_category` SET `category_id` = '56', `category_name` = 'Upvc SWR Reducing Y Tee', `isactive` = 1
+WHERE `category_id` = '56';
+UPDATE `product_category` SET `category_id` = '55', `category_name` = 'Upvc SWR Y Tee', `isactive` = 1
+WHERE `category_id` = '55';
+UPDATE `product_category` SET `category_id` = '54', `category_name` = 'Upvc SWR Side Door Tee', `isactive` = 1
+WHERE `category_id` = '54';
+UPDATE `product_category` SET `category_id` = '53', `category_name` = 'Upvc SWR Back Door Tee', `isactive` = 1
+WHERE `category_id` = '53';
+UPDATE `product_category` SET `category_id` = '52', `category_name` = 'Upvc SWR Side Door Elbow', `isactive` = 1
+WHERE `category_id` = '52';
+UPDATE `product_category` SET `category_id` = '51', `category_name` = 'Upvc SWR Back Door Elbow', `isactive` = 1
+WHERE `category_id` = '51';
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Elbow', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Socket', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Reducing Socket', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Bush', 1);
+DELETE FROM `product_category`
+WHERE `category_id` = '51';
+DELETE FROM `product_category`
+WHERE `category_id` = '66';
+DELETE FROM `product_category`
+WHERE `category_id` = '65';
+DELETE FROM `product_category`
+WHERE `category_id` = '64';
+DELETE FROM `product_category`
+WHERE `category_id` = '63';
+DELETE FROM `product_category`
+WHERE `category_id` = '62';
+DELETE FROM `product_category`
+WHERE `category_id` = '60';
+DELETE FROM `product_category`
+WHERE `category_id` = '59';
+DELETE FROM `product_category`
+WHERE `category_id` = '58';
+DELETE FROM `product_category`
+WHERE `category_id` = '57';
+DELETE FROM `product_category`
+WHERE `category_id` = '56';
+DELETE FROM `product_category`
+WHERE `category_id` = '55';
+DELETE FROM `product_category`
+WHERE `category_id` = '54';
+DELETE FROM `product_category`
+WHERE `category_id` = '53';
+UPDATE `product_category` SET `category_id` = '52', `category_name` = 'Upvc SWR Fitting', `isactive` = 1
+WHERE `category_id` = '52';
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '110 mm (4\")', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '160 mm (6\") ', 1);
+UPDATE `product_category` SET `category_id` = '52', `category_name` = 'Upvc SWR Elbow', `isactive` = 1
+WHERE `category_id` = '52';
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Side Door Elbow', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Back Door Elbow', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Side Door Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Back Door Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Reducing Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Reducing Socket', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Y Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Cross Tee', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Socket', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Door Socket', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Bush', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR End Cap', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Plug', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Cowl', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Long Trap', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Short Trap', 1);
+INSERT INTO `product_category` (`category_id`, `category_name`, `isactive`) VALUES ('', 'Upvc SWR Off Set', 1);
+INSERT INTO `product_model` (`model_id`, `model_name`, `isactive`) VALUES ('', '6X4', 1);
+UPDATE `product_model` SET `model_id` = '47', `model_name` = '160 mm X 110 mm (6\"X4\")', `isactive` = 1
+WHERE `model_id` = '47';
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Socket-Akij-110 mm (4\")', 'pro-1019', '45', '76', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:44:14', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :20', '1', '2024-10-22 08:44:14');
+UPDATE `product` SET `product_id` = '20', `product_name` = 'Upvc SWR Socket-Akij-110 mm (4', `product_code` = 'pro-1019', `category` = '76', `model` = '45', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '55', `minimum_price` = '65', `retail_price` = '81', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('20');
+UPDATE `product` SET `product_id` = '19', `product_name` = 'Upvc SWR Pipe-Akij-160 mm (6', `product_code` = 'pro-1018', `category` = '50', `model` = '41', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '2245', `minimum_price` = '2673', `retail_price` = '2700', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('19');
+UPDATE `product` SET `product_id` = '18', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1017', `category` = '50', `model` = '44', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1252', `minimum_price` = '1490', `retail_price` = '1360', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('18');
+UPDATE `product` SET `product_id` = '17', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1016', `category` = '50', `model` = '40', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1050', `minimum_price` = '1287', `retail_price` = '1220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('17');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Upvc SWR Pipe-Akij-40 mm (1.25', `product_code` = 'pro-1015', `category` = '50', `model` = '34', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '214', `minimum_price` = '255', `retail_price` = '240', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('16');
+UPDATE `product` SET `product_id` = '14', `product_name` = 'Upvc Plumbing Pipe-Akij-2', `product_code` = 'pro-1014', `category` = '27', `model` = '33', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '723', `minimum_price` = '813', `retail_price` = '772', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('14');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+UPDATE `product` SET `product_id` = '10', `product_name` = 'Upvc Plumbing Pipe-Akij-3/4', `product_code` = 'pro-1010', `category` = '27', `model` = '29', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '218', `minimum_price` = '260', `retail_price` = '235', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('10');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Socket-Akij-160 mm (6\") ', 'pro-1020', '46', '76', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:46:08', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :21', '1', '2024-10-22 08:46:08');
+UPDATE `product` SET `product_id` = '21', `product_name` = 'Upvc SWR Socket-Akij-160 mm (6', `product_code` = 'pro-1020', `category` = '76', `model` = '46', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '106', `minimum_price` = '126', `retail_price` = '250', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('21');
+UPDATE `product` SET `product_id` = '20', `product_name` = 'Upvc SWR Socket-Akij-110 mm (4', `product_code` = 'pro-1019', `category` = '76', `model` = '45', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '55', `minimum_price` = '65', `retail_price` = '81', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('20');
+UPDATE `product` SET `product_id` = '19', `product_name` = 'Upvc SWR Pipe-Akij-160 mm (6', `product_code` = 'pro-1018', `category` = '50', `model` = '41', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '2245', `minimum_price` = '2673', `retail_price` = '2700', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('19');
+UPDATE `product` SET `product_id` = '18', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1017', `category` = '50', `model` = '44', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1252', `minimum_price` = '1490', `retail_price` = '1360', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('18');
+UPDATE `product` SET `product_id` = '17', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1016', `category` = '50', `model` = '40', `unit` = '1', `brand` = '20', `product_details` = 'AVG', `purchase_price` = '1050', `minimum_price` = '1287', `retail_price` = '1220', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('17');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Upvc SWR Pipe-Akij-40 mm (1.25', `product_code` = 'pro-1015', `category` = '50', `model` = '34', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '214', `minimum_price` = '255', `retail_price` = '240', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('16');
+UPDATE `product` SET `product_id` = '14', `product_name` = 'Upvc Plumbing Pipe-Akij-2', `product_code` = 'pro-1014', `category` = '27', `model` = '33', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '723', `minimum_price` = '813', `retail_price` = '772', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('14');
+UPDATE `product` SET `product_id` = '13', `product_name` = 'Upvc Plumbing Pipe-Akij-1.5', `product_code` = 'pro-1013', `category` = '27', `model` = '32', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '540', `minimum_price` = '627', `retail_price` = '595', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('13');
+UPDATE `product` SET `product_id` = '12', `product_name` = 'Upvc Plumbing Pipe-Akij-1.25', `product_code` = 'pro-1012', `category` = '27', `model` = '31', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '444', `minimum_price` = '499', `retail_price` = '480', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('12');
+UPDATE `product` SET `product_id` = '11', `product_name` = 'Upvc Plumbing Pipe-Akij-1', `product_code` = 'pro-1011', `category` = '27', `model` = '30', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '290', `minimum_price` = '363', `retail_price` = '340', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('11');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Elbow-Akij-40 mm (1.25\") 1.9-2.2', 'pro-1021', '34', '52', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:53:08', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :22', '1', '2024-10-22 08:53:08');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Elbow-Akij-110 mm (4\")', 'pro-1022', '45', '52', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:53:33', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :23', '1', '2024-10-22 08:53:33');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Elbow-Akij-160 mm (6\") ', 'pro-1023', '46', '52', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:54:04', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :24', '1', '2024-10-22 08:54:04');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Back Door Elbow-Akij-110 mm (4\")', 'pro-1024', '45', '68', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:54:49', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :25', '1', '2024-10-22 08:54:49');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Back Door Elbow-Akij-160 mm (6\") ', 'pro-1025', '46', '68', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:55:10', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :26', '1', '2024-10-22 08:55:10');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Side Door Elbow-Akij-110 mm (4\")', 'pro-1026', '45', '67', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:55:36', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :27', '1', '2024-10-22 08:55:36');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Side Door Elbow-Akij-160 mm (6\") ', 'pro-1027', '46', '67', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:56:05', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :28', '1', '2024-10-22 08:56:05');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Back Door Tee-Akij-110 mm (4\")', 'pro-1028', '45', '71', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:56:39', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :29', '1', '2024-10-22 08:56:39');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Side Door Tee-Akij-160 mm (6\") ', 'pro-1029', '46', '70', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:57:01', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :30', '1', '2024-10-22 08:57:01');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Side Door Tee-Akij-110 mm (4\")', 'pro-1030', '45', '70', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:58:16', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :31', '1', '2024-10-22 08:58:16');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Back Door Tee-Akij-160 mm (6\") ', 'pro-1031', '46', '71', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 08:59:02', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :32', '1', '2024-10-22 08:59:02');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Tee-Akij-110 mm (4\")', 'pro-1032', '45', '69', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:00:27', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :33', '1', '2024-10-22 09:00:27');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Tee-Akij-160 mm (6\") ', 'pro-1033', '46', '69', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:00:51', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :34', '1', '2024-10-22 09:00:51');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Tee-Akij-40 mm (1.25\") 1.9-2.2', 'pro-1034', '34', '69', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:01:26', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :35', '1', '2024-10-22 09:01:26');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Reducing Tee-Akij-160 mm X 110 mm (6\"X4\")', 'pro-1035', '47', '72', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:02:48', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :36', '1', '2024-10-22 09:02:48');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Y Tee-Akij-110 mm (4\")', 'pro-1036', '45', '74', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:03:45', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :37', '1', '2024-10-22 09:03:45');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Y Tee-Akij-160 mm (6\") ', 'pro-1037', '46', '74', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:04:01', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :38', '1', '2024-10-22 09:04:01');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Cross Tee-Akij-110 mm (4\")', 'pro-1038', '45', '75', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:04:36', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :39', '1', '2024-10-22 09:04:36');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Door Socket-Akij-110 mm (4\")', 'pro-1039', '45', '77', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:06:28', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :40', '1', '2024-10-22 09:06:28');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Door Socket-Akij-160 mm (6\") ', 'pro-1040', '46', '77', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:07:33', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :41', '1', '2024-10-22 09:07:33');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Long Trap-Akij-110 mm (4\")', 'pro-1041', '45', '82', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:11:14', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :42', '1', '2024-10-22 09:11:14');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Off Set-Akij-110 mm (4\")', 'pro-1042', '45', '84', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:11:59', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :43', '1', '2024-10-22 09:11:59');
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Off Set-Akij-160 mm (6\") ', 'pro-1043', '46', '84', '20', '1', '', '0', '0', '0', '0', '1', '2024-10-22 09:12:22', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :44', '1', '2024-10-22 09:12:22');
+INSERT INTO `acc_coa` (`HeadCode`, `HeadName`, `PHeadName`, `HeadLevel`, `IsActive`, `IsTransaction`, `IsGL`, `HeadType`, `IsBudget`, `IsDepreciation`, `DepreciationRate`, `CreateBy`, `CreateDate`) VALUES (5020200015, 'sup-2-Riyaz', 'Account Payable', '3', '1', '1', '0', 'L', '0', '0', '0', '1', '2024-10-22 09:16:29');
+INSERT INTO `supplier` (`supplier_id`, `supplier_name`, `supplier_brand`, `supplier_code`, `phone`, `address`, `email`, `contact_per_name`, `c_p_contact`, `isactive`, `createby`, `createdate`, `updateby`, `updatedate`) VALUES ('', 'Riyaz', 'Akij', 'sup-2', '01303313140', 'Tangail', '', '', '', 1, '1', '2024-10-22 09:16:29', '', '');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Supplier', 'create', 'Supplier ID :5', '1', '2024-10-22 09:16:29');
+INSERT INTO `purchase_order` (`po_no`, `supplier_id`, `total_amnt`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`) VALUES ('20241022092652', '5', '68556.00', 0, 0, '1', '2024-10-22 09:26:52', 0);
+INSERT INTO `purchase_order_details` (`po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`, `unit`) VALUES ('20241022092652', '17', '50', '1050', '', '2', 'Pcs');
+INSERT INTO `purchase_order_details` (`po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`, `unit`) VALUES ('20241022092652', '23', '72', '95', '', '2', 'Pcs');
+INSERT INTO `purchase_order_details` (`po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`, `unit`) VALUES ('20241022092652', '33', '72', '128', '', '3', 'Pcs');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('purchase order', 'create', 'Orde Id-20241022092652 total amount-68556.00', '1', '2024-10-22 09:26:52');
+UPDATE `purchase_order` SET `po_no` = '20241022092652', `supplier_id` = '5', `total_amnt` = '68556', `store_id` = 0, `warehouse_id` = 0, `createby` = '1', `createdate` = '2024-10-22 09:27:42', `isapproved` = 0
+WHERE `po_no` = '20241022092652';
+DELETE FROM `purchase_order_details`
+WHERE `po_no` = '20241022092652';
+INSERT INTO `purchase_order_details` (`row_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`) VALUES ('246241155621954', '20241022092652', '17', '50', '1050', '0', '2');
+UPDATE `purchase_order` SET `po_no` = '20241022092652', `supplier_id` = '5', `total_amnt` = '68556', `store_id` = 0, `warehouse_id` = 0, `createby` = '1', `createdate` = '2024-10-22 09:27:46', `isapproved` = 0
+WHERE `po_no` = '20241022092652';
+DELETE FROM `purchase_order_details`
+WHERE `po_no` = '20241022092652';
+INSERT INTO `purchase_order_details` (`row_id`, `po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`) VALUES ('853448798961683', '20241022092652', '17', '50', '1050', '0', '2');
+INSERT INTO `purchase_order` (`po_no`, `supplier_id`, `total_amnt`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`) VALUES ('20241022092952', '5', '68556.00', 0, 0, '1', '2024-10-22 09:29:52', 0);
+INSERT INTO `purchase_order_details` (`po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`, `unit`) VALUES ('20241022092952', '17', '50', '1050', '', '2', 'Pcs');
+INSERT INTO `purchase_order_details` (`po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`, `unit`) VALUES ('20241022092952', '23', '72', '95', '', '3', 'Pcs');
+INSERT INTO `purchase_order_details` (`po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`, `unit`) VALUES ('20241022092952', '33', '72', '128', '', '3', 'Pcs');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('purchase order', 'create', 'Orde Id-20241022092952 total amount-68556.00', '1', '2024-10-22 09:29:52');
+UPDATE `purchase_order` SET `po_no` = '20241022092952', `isapproved` = 1
+WHERE `po_no` = '20241022092952';
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `supplier_id`, `store_id`, `warehouse_id`, `voucher_no`, `receive_by`, `receive_date`) VALUES ('20241022093129', '20241022092952', '5', 0, 0, 1008, '1', '2024-10-22');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241022093129', '17', '40', '1050', '2', '');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241022093129', '23', '72', '95', '3', '');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241022093129', '33', '72', '128', '3', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241022092952', 'PO', '2024-10-22', 10107, 'PO Receive Receive No 20241022093129', '42000.00', 0, '2', 1, '1', '2024-10-22', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241022092952', 'PO', '2024-10-22', 10107, 'PO Receive Receive No 20241022093129', '6840.00', 0, '3', 1, '1', '2024-10-22', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241022092952', 'PO', '2024-10-22', 10107, 'PO Receive Receive No 20241022093129', '9216.00', 0, '3', 1, '1', '2024-10-22', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241022092952', 'PO', '2024-10-22', '5020200015', 'PO received For PO No.20241022092952 Receive No.20241022093129', 0, '58056.00', NULL, 1, '1', '2024-10-22', 1);
+UPDATE `setting` SET `id` = '2', `title` = 'Habib Traders', `address` = 'Amghat Road, College Para, Tangail', `email` = 'ahsan.habib2512@gmail.com', `phone` = '01959632369', `logo` = 'assets/img/icons/2024-10-22/H.png', `favicon` = 'assets/img/icons/m.png', `language` = 'english', `site_align` = 'LTR', `footer_text` = ''
+WHERE `id` = '2';
+CALL get_store_stock('',@store_id,@stock_date,@prod_id,@in_qty,@outqty,@rem,@cat_id,@brand_id,@model_id);
+UPDATE `user` SET `last_login` = '2024-10-23 09:37:47', `ip_address` = '::1'
+WHERE `id` = '1';
+INSERT INTO `product` (`product_id`, `product_name`, `product_code`, `model`, `category`, `brand`, `unit`, `product_details`, `purchase_price`, `block_price`, `minimum_price`, `retail_price`, `createby`, `createdate`, `updateby`, `updatedate`, `isactive`) VALUES ('', 'Upvc SWR Pipe-Akij-110 mm (4\") 2.7', 'pro-1044', '40', '50', '20', '1', 'Duplicate', '0', '0', '0', '0', '1', '2024-10-23 10:21:24', '', '', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'create', 'product ID :45', '1', '2024-10-23 10:21:24');
+INSERT INTO `purchase_order` (`po_no`, `supplier_id`, `total_amnt`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`) VALUES ('20241023113834', '5', '38340.00', 0, 0, '1', '2024-10-23 11:38:34', 0);
+INSERT INTO `purchase_order_details` (`po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`, `unit`) VALUES ('20241023113834', '45', '30', '1050', '', '2', 'Pcs');
+INSERT INTO `purchase_order_details` (`po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`, `unit`) VALUES ('20241023113834', '23', '72', '95', '', '2', 'Pcs');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('purchase order', 'create', 'Orde Id-20241023113834 total amount-38340.00', '1', '2024-10-23 11:38:34');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `supplier_id`, `store_id`, `warehouse_id`, `voucher_no`, `receive_by`, `receive_date`) VALUES ('20241023113927', '20241023113834', '5', 0, 0, 1009, '1', '2024-10-23');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023113927', '45', '30', '1050', '2', '');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023113927', '23', '72', '95', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023113834', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023113927', '31500.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023113834', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023113927', '6840.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023113834', 'PO', '2024-10-23', '5020200015', 'PO received For PO No.20241023113834 Receive No.20241023113927', 0, '38340.00', NULL, 1, '1', '2024-10-23', 1);
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `supplier_id`, `store_id`, `warehouse_id`, `voucher_no`, `receive_by`, `receive_date`) VALUES ('20241023114012', '20241022092952', '5', 0, 0, 1010, '1', '2024-10-23');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023114012', '17', '10', '1050', '2', '');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023114012', '23', '', '95', '3', '');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023114012', '33', '', '128', '3', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241022092952', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023114012', '10500.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241022092952', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023114012', '0', 0, '3', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241022092952', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023114012', '0', 0, '3', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241022092952', 'PO', '2024-10-23', '5020200015', 'PO received For PO No.20241022092952 Receive No.20241023114012', 0, '10500.00', NULL, 1, '1', '2024-10-23', 1);
+DELETE FROM `product`
+WHERE `product_id` = '17';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'delete', 'product ID :17', '1', '2024-10-23 11:44:37');
+UPDATE `product` SET `product_id` = '21', `product_name` = 'Akij-Upvc SWR Socket-160 mm X 110 mm (6\"X4\")', `product_code` = 'pro-1020', `model` = '47', `category` = '76', `brand` = '20', `unit` = '1', `product_details` = '', `purchase_price` = '106', `block_price` = '0', `minimum_price` = '126', `retail_price` = '250', `createby` = '1', `createdate` = '2024-10-23 12:36:20', `updateby` = '1', `updatedate` = '2024-10-23 12:36:20', `isactive` = 1
+WHERE `product_id` = '21';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'update', 'product ID :21', '1', '2024-10-23 12:36:20');
+UPDATE `product` SET `product_id` = '21', `product_name` = 'Akij-Upvc SWR Socket-160 mm (6\") ', `product_code` = 'pro-1020', `model` = '46', `category` = '76', `brand` = '20', `unit` = '1', `product_details` = '', `purchase_price` = '106', `block_price` = '0', `minimum_price` = '126', `retail_price` = '250', `createby` = '1', `createdate` = '2024-10-23 12:37:02', `updateby` = '1', `updatedate` = '2024-10-23 12:37:02', `isactive` = 1
+WHERE `product_id` = '21';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'update', 'product ID :21', '1', '2024-10-23 12:37:02');
+UPDATE `product` SET `product_id` = '18', `product_name` = 'Akij-Upvc SWR Pipe-110 mm (4\") 3.0', `product_code` = 'pro-1017', `model` = '44', `category` = '50', `brand` = '20', `unit` = '1', `product_details` = 'AVG', `purchase_price` = '1252', `block_price` = '0', `minimum_price` = '1490', `retail_price` = '1360', `createby` = '1', `createdate` = '2024-10-23 12:38:03', `updateby` = '1', `updatedate` = '2024-10-23 12:38:03', `isactive` = 1
+WHERE `product_id` = '18';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'update', 'product ID :18', '1', '2024-10-23 12:38:03');
+UPDATE `product` SET `product_id` = '19', `product_name` = 'Akij-Upvc SWR Pipe-160 mm (6\") 4.0', `product_code` = 'pro-1018', `model` = '41', `category` = '50', `brand` = '20', `unit` = '1', `product_details` = 'AVG', `purchase_price` = '2245', `block_price` = '0', `minimum_price` = '2673', `retail_price` = '2700', `createby` = '1', `createdate` = '2024-10-23 12:38:40', `updateby` = '1', `updatedate` = '2024-10-23 12:38:40', `isactive` = 1
+WHERE `product_id` = '19';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'update', 'product ID :19', '1', '2024-10-23 12:38:40');
+UPDATE `product` SET `product_id` = '20', `product_name` = 'Akij-Upvc SWR Socket-110 mm (4\")', `product_code` = 'pro-1019', `model` = '45', `category` = '76', `brand` = '20', `unit` = '1', `product_details` = '', `purchase_price` = '55', `block_price` = '0', `minimum_price` = '65', `retail_price` = '81', `createby` = '1', `createdate` = '2024-10-23 12:38:55', `updateby` = '1', `updatedate` = '2024-10-23 12:38:55', `isactive` = 1
+WHERE `product_id` = '20';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'update', 'product ID :20', '1', '2024-10-23 12:38:55');
+UPDATE `product` SET `product_id` = '16', `product_name` = 'Akij-Upvc SWR Pipe-40 mm (1.25\") 1.9-2.2', `product_code` = 'pro-1015', `model` = '34', `category` = '50', `brand` = '20', `unit` = '1', `product_details` = '', `purchase_price` = '214', `block_price` = '0', `minimum_price` = '255', `retail_price` = '240', `createby` = '1', `createdate` = '2024-10-23 12:39:12', `updateby` = '1', `updatedate` = '2024-10-23 12:39:12', `isactive` = 1
+WHERE `product_id` = '16';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'update', 'product ID :16', '1', '2024-10-23 12:39:12');
+UPDATE `product` SET `product_id` = '23', `product_name` = 'Akij-Upvc SWR Elbow-110 mm (4\")', `product_code` = 'pro-1022', `model` = '45', `category` = '52', `brand` = '20', `unit` = '1', `product_details` = '', `purchase_price` = '0', `block_price` = '0', `minimum_price` = '0', `retail_price` = '0', `createby` = '1', `createdate` = '2024-10-23 12:43:39', `updateby` = '1', `updatedate` = '2024-10-23 12:43:39', `isactive` = 1
+WHERE `product_id` = '23';
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('Product', 'update', 'product ID :23', '1', '2024-10-23 12:43:39');
+UPDATE `product` SET `product_id` = '45', `product_name` = 'Upvc SWR Pipe-Akij-110 mm (4', `product_code` = 'pro-1044', `category` = '50', `model` = '40', `unit` = '1', `brand` = '20', `product_details` = 'Duplicate', `purchase_price` = '0', `minimum_price` = '0', `retail_price` = '0', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('45');
+UPDATE `product` SET `product_id` = '44', `product_name` = 'Upvc SWR Off Set-Akij-160 mm (6', `product_code` = 'pro-1043', `category` = '84', `model` = '46', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '0', `minimum_price` = '0', `retail_price` = '0', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('44');
+UPDATE `product` SET `product_id` = '43', `product_name` = 'Upvc SWR Off Set-Akij-110 mm (4', `product_code` = 'pro-1042', `category` = '84', `model` = '45', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '0', `minimum_price` = '0', `retail_price` = '0', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('43');
+UPDATE `product` SET `product_id` = '42', `product_name` = 'Upvc SWR Long Trap-Akij-110 mm (4', `product_code` = 'pro-1041', `category` = '82', `model` = '45', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '0', `minimum_price` = '0', `retail_price` = '0', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('42');
+UPDATE `product` SET `product_id` = '41', `product_name` = 'Upvc SWR Door Socket-Akij-160 mm (6', `product_code` = 'pro-1040', `category` = '77', `model` = '46', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '0', `minimum_price` = '0', `retail_price` = '0', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('41');
+UPDATE `product` SET `product_id` = '40', `product_name` = 'Upvc SWR Door Socket-Akij-110 mm (4', `product_code` = 'pro-1039', `category` = '77', `model` = '45', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '0', `minimum_price` = '0', `retail_price` = '0', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('40');
+UPDATE `product` SET `product_id` = '39', `product_name` = 'Upvc SWR Cross Tee-Akij-110 mm (4', `product_code` = 'pro-1038', `category` = '75', `model` = '45', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '0', `minimum_price` = '0', `retail_price` = '0', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('39');
+UPDATE `product` SET `product_id` = '38', `product_name` = 'Upvc SWR Y Tee-Akij-160 mm (6', `product_code` = 'pro-1037', `category` = '74', `model` = '46', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '0', `minimum_price` = '0', `retail_price` = '0', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('38');
+UPDATE `product` SET `product_id` = '37', `product_name` = 'Upvc SWR Y Tee-Akij-110 mm (4', `product_code` = 'pro-1036', `category` = '74', `model` = '45', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '0', `minimum_price` = '0', `retail_price` = '0', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('37');
+UPDATE `product` SET `product_id` = '36', `product_name` = 'Upvc SWR Reducing Tee-Akij-160 mm X 110 mm (6', `product_code` = 'pro-1035', `category` = '72', `model` = '47', `unit` = '1', `brand` = '20', `product_details` = '', `purchase_price` = '0', `minimum_price` = '0', `retail_price` = '0', `block_price` = NULL, `isactive` = '1'
+WHERE `product_id` IN('36');
+INSERT INTO `purchase_order` (`po_no`, `supplier_id`, `total_amnt`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`) VALUES ('20241023141250', '5', '22360.00', 0, 0, '1', '2024-10-23 14:12:50', 0);
+INSERT INTO `purchase_order_details` (`po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`, `unit`) VALUES ('20241023141250', '10', '100', '223.6', '', '2', 'Pcs');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('purchase order', 'create', 'Orde Id-20241023141250 total amount-22360.00', '1', '2024-10-23 14:12:50');
+UPDATE `purchase_order` SET `po_no` = '20241023113834', `isapproved` = 1
+WHERE `po_no` = '20241023113834';
+UPDATE `purchase_order` SET `po_no` = '20241023141250', `isapproved` = 1
+WHERE `po_no` = '20241023141250';
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `supplier_id`, `store_id`, `warehouse_id`, `voucher_no`, `receive_by`, `receive_date`) VALUES ('20241023142329', '20241023141250', '5', 0, 0, 1011, '1', '2024-10-23');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023142329', '10', '100', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023142329', '22360.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', '5020200015', 'PO received For PO No.20241023141250 Receive No.20241023142329', 0, '22360.00', NULL, 1, '1', '2024-10-23', 1);
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `supplier_id`, `store_id`, `warehouse_id`, `voucher_no`, `receive_by`, `receive_date`) VALUES ('20241023142703', '20241023141250', '5', 0, 0, 1012, '1', '2024-10-23');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023142703', '10', '100', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023142703', '22360.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', '5020200015', 'PO received For PO No.20241023141250 Receive No.20241023142703', 0, '22360.00', NULL, 1, '1', '2024-10-23', 1);
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023142922', '10', '100', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023142922', '22360.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', '5020200015', 'PO received For PO No.20241023141250 Receive No.20241023142922', 0, '22360.00', NULL, 1, '1', '2024-10-23', 1);
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023142955', '10', '100', '223.6', '2', '');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023143106', '10', '100', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023143106', '22360.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023143110', '10', '100', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023143110', '22360.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023143126', '10', '100', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023143126', '22360.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', '5020200015', 'PO received For PO No.20241023141250 Receive No.20241023143126', 0, '22360.00', NULL, 1, '1', '2024-10-23', 1);
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023143144', '10', '100', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023143144', '22360.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023143516', '10', '100', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023143516', '22360.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023143537', '10', '100', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023143537', '22360.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023143547', '10', '100', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023143547', '22360.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', '5020200015', 'PO received For PO No.20241023141250 Receive No.20241023143547', 0, '22360.00', 0, 1, '1', '2024-10-23', 1);
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023143601', '10', '100', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023143601', '22360.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023141250', 'PO', '2024-10-23', '5020200015', 'PO received For PO No.20241023141250 Receive No.20241023143601', 0, '22360.00', 0, 1, '1', '2024-10-23', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('purchase order receive', 'create', 'Order Id- total amount-22360.00', '1', '2024-10-23 14:36:01');
+INSERT INTO `purchase_order` (`po_no`, `supplier_id`, `total_amnt`, `store_id`, `warehouse_id`, `createby`, `createdate`, `isapproved`) VALUES ('20241023144241', '5', '11180.00', 0, 0, '1', '2024-10-23 14:42:41', 0);
+INSERT INTO `purchase_order_details` (`po_no`, `product_id`, `order_qty`, `product_rate`, `discount`, `store_id`, `unit`) VALUES ('20241023144241', '10', '50', '223.6', '', '2', 'Pcs');
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('purchase order', 'create', 'Orde Id-20241023144241 total amount-11180.00', '1', '2024-10-23 14:42:41');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `supplier_id`, `store_id`, `warehouse_id`, `voucher_no`, `receive_by`, `receive_date`) VALUES ('20241023144300', '20241023144241', '5', 0, 0, 1013, '1', '2024-10-23');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023144300', '10', '40', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023144241', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023144300', '8944.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023144241', 'PO', '2024-10-23', '5020200015', 'PO received For PO No.20241023144241 Receive No.20241023144300', 0, '8944.00', 0, 1, '1', '2024-10-23', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('purchase order receive', 'create', 'Order Id- total amount-8944.00', '1', '2024-10-23 14:43:00');
+INSERT INTO `purchase_receive` (`receive_id`, `po_no`, `supplier_id`, `store_id`, `warehouse_id`, `voucher_no`, `receive_by`, `receive_date`) VALUES ('20241023144339', '20241023144241', '5', 0, 0, 1014, '1', '2024-10-23');
+INSERT INTO `purchase_receive_details` (`receive_id`, `product_id`, `receive_qty`, `product_rate`, `store_id`, `discount`) VALUES ('20241023144339', '10', '10', '223.6', '2', '');
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023144241', 'PO', '2024-10-23', 10107, 'PO Receive Receive No 20241023144339', '2236.00', 0, '2', 1, '1', '2024-10-23', 1);
+INSERT INTO `acc_transaction` (`VNo`, `Vtype`, `VDate`, `COAID`, `Narration`, `Debit`, `Credit`, `StoreID`, `IsPosted`, `CreateBy`, `CreateDate`, `IsAppove`) VALUES ('20241023144241', 'PO', '2024-10-23', '5020200015', 'PO received For PO No.20241023144241 Receive No.20241023144339', 0, '2236.00', 0, 1, '1', '2024-10-23', 1);
+INSERT INTO `accesslog` (`action_page`, `action_done`, `remarks`, `user_name`, `entry_date`) VALUES ('purchase order receive', 'create', 'Order Id- total amount-2236.00', '1', '2024-10-23 14:43:39');
+UPDATE `sales_parent` SET `invoice_no` = NULL, `is_lease_settled` = 1
+WHERE `invoice_no` IS NULL;

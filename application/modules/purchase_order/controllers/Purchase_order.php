@@ -181,14 +181,16 @@ class Purchase_order extends MX_Controller {
     {  
         $this->permission->method('purchase_order','read')->redirect();
 		$this->form_validation->set_rules('supplier_id', display('supplier_id')  ,'max_length[50]');
-		     if ($this->form_validation->run()) { 
-				if ($this->purchase_order_model->receive()) { 
-					$this->session->set_flashdata('message', display('save_successfully'));
-					redirect('purchase_order/purchase_order/receive_list/');
-				}else{
-					$this->session->set_flashdata('exception',  display('please_try_again'));
-				}
-				redirect("purchase_order/purchase_order/receive_form");
+		
+		if ($this->form_validation->run()) { 
+			
+			if ($this->purchase_order_model->receive()) { 
+				$this->session->set_flashdata('message', display('save_successfully'));
+				redirect('purchase_order/purchase_order/receive_list/');
+			}else{
+				$this->session->set_flashdata('exception',  display('please_try_again'));
+			}
+			redirect("purchase_order/purchase_order/receive_form");
 		}else{ 
         $data['title']    = display('receive');
         $sup_inf = $this->db->select('*')->from('purchase_order')->where('po_no',$order_id)->get()->row();

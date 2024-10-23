@@ -84,6 +84,7 @@ class Purchase_order_model extends CI_Model {
 			'receive_by'		    =>	$receive_by,
 			'receive_date'		    =>	$receive_date
 		); 
+		// echo '<pre>---'; print_r($postData);exit;
 	      $this->db->insert('purchase_receive',$postData);
 
 		$rate = $this->input->post('product_rate');
@@ -111,6 +112,8 @@ class Purchase_order_model extends CI_Model {
 				$this->db->insert('purchase_receive_details',$data);
 			}
 		}
+
+		
 		// Acc transaction
 		for ($i=0, $n=count($s_id); $i < $n; $i++) {
 			$store_id = $s_id[$i];
@@ -131,12 +134,17 @@ class Purchase_order_model extends CI_Model {
 					'IsAppove'       => 1
 				); 
 			$this->db->insert('acc_transaction',$receive_transection);
-   }
+   		}
    		$supinfo =$this->db->select('*')->from('supplier')->where('supplier_id',$this->input->post('supplier_id'))->get()->row();
 		$sup_head = $supinfo->supplier_code.'-'.$supinfo->supplier_name;
 		$sup_coa = $this->db->select('*')->from('acc_coa')->where('HeadName',$sup_head)->get()->row();
 
 	  //  Supplier credit
+	  if($this->session->userdata('store_id')){
+		$stoid = $this->session->userdata('store_id');
+	  } else {
+		$stoid = 0;
+	  }
 	  $poCredit = array(
 		  'VNo'            =>  $this->input->post('po_no'),
 		  'Vtype'          =>  'PO',
@@ -145,14 +153,14 @@ class Purchase_order_model extends CI_Model {
 		  'Narration'      =>  'PO received For PO No.'.$this->input->post('po_no').' Receive No.'.$recv_id,
 		  'Debit'          =>  0,
 		  'Credit'         =>  $this->input->post('grand_total_price'),
-		  'StoreID'        =>  $this->session->userdata('store_id'),
+		  'StoreID'        =>  $stoid,
 		  'IsPosted'       =>  1,
 		  'CreateBy'       =>  $receive_by,
 		  'CreateDate'     =>  $receive_date,
 		  'IsAppove'       =>  1
     	); 
-	        //print_r($poCredit);exit;
        $this->db->insert('acc_transaction',$poCredit);
+		//    echo '<pre>---'; print_r($postData);exit;
 
 		$accesslog = array(
 				'action_page'       =>	'purchase order receive',
@@ -168,9 +176,10 @@ class Purchase_order_model extends CI_Model {
 
 	public function read($limit = null, $start = null)
 	{
-		$this->db->select('purchase_order.*,purchase_order_details.*');
+		$this->db->select('purchase_order.*,purchase_order_details.*,supplier.supplier_name,supplier.supplier_brand');
 		$this->db->from('purchase_order');
 		$this->db->join('purchase_order_details','purchase_order.po_no=purchase_order_details.po_no');
+		$this->db->join('supplier','purchase_order.supplier_id=supplier.supplier_id');
 		if($this->session->userdata('isAdmin')==0){
 		$this->db->where('purchase_order_details.store_id',$this->session->userdata('store_id'));
 		}
@@ -341,7 +350,7 @@ class Purchase_order_model extends CI_Model {
 	public function product_search_item($product_name){
 		$query=$this->db->select('*')
 				->from('product')
-				->like('product_name', $product_name, 'after')
+				->like('product_name', $product_name, 'both')
 				->group_by('product_id')
 				->get();
 		if ($query->num_rows() > 0) {
